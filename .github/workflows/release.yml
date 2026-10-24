@@ -21,6 +21,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check data consistency
+        run: node tools/check_data.js
+
       - name: Build single-file edition
         run: python3 tools/build_artifact.py dist/logos-atlas.html
 

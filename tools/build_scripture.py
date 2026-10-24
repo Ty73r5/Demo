@@ -18,32 +18,39 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 BOOKS = {
     'Gen': 'Genesis', 'Exod': 'Exodus', 'Lev': 'Leviticus', 'Num': 'Numbers', 'Deut': 'Deuteronomy', 'Josh': 'Joshua',
     'Judg': 'Judges', 'Ruth': 'Ruth', '1Sam': 'I Samuel', '2Sam': 'II Samuel', '1Kgs': 'I Kings', '2Kgs': 'II Kings',
-    'Neh': 'Nehemiah', 'Esth': 'Esther', 'Job': 'Job', 'Ps': 'Psalms', 'Prov': 'Proverbs', 'Eccl': 'Ecclesiastes',
+    '1Chr': 'I Chronicles', '2Chr': 'II Chronicles', 'Ezra': 'Ezra', 'Neh': 'Nehemiah', 'Esth': 'Esther', 'Job': 'Job', 'Ps': 'Psalms', 'Prov': 'Proverbs', 'Eccl': 'Ecclesiastes',
     'Song': 'Song of Solomon', 'Isa': 'Isaiah', 'Jer': 'Jeremiah', 'Lam': 'Lamentations', 'Ezek': 'Ezekiel', 'Dan': 'Daniel', 'Hos': 'Hosea',
-    'Amos': 'Amos', 'Jonah': 'Jonah', 'Mic': 'Micah', 'Hab': 'Habakkuk', 'Mal': 'Malachi',
-    'Tob': 'Tobit', 'Wis': 'Wisdom', 'Sir': 'Sirach', '1Macc': 'I Maccabees', '2Macc': 'II Maccabees',
+    'Joel': 'Joel', 'Amos': 'Amos', 'Obad': 'Obadiah', 'Jonah': 'Jonah', 'Mic': 'Micah', 'Nah': 'Nahum', 'Hab': 'Habakkuk',
+    'Zeph': 'Zephaniah', 'Hag': 'Haggai', 'Zech': 'Zechariah', 'Mal': 'Malachi',
+    'Tob': 'Tobit', 'Jdt': 'Judith', 'Bar': 'Baruch', 'Wis': 'Wisdom', 'Sir': 'Sirach', '1Macc': 'I Maccabees', '2Macc': 'II Maccabees',
     'Matt': 'Matthew', 'Mark': 'Mark', 'Luke': 'Luke', 'John': 'John', 'Acts': 'Acts', 'Rom': 'Romans',
     '1Cor': 'I Corinthians', '2Cor': 'II Corinthians', 'Gal': 'Galatians', 'Eph': 'Ephesians', 'Phil': 'Philippians',
-    'Col': 'Colossians', '1Thess': 'I Thessalonians', '1Tim': 'I Timothy', '2Tim': 'II Timothy', 'Titus': 'Titus',
-    'Heb': 'Hebrews', 'Jas': 'James', '1Pet': 'I Peter', '2Pet': 'II Peter', '1John': 'I John', 'Jude': 'Jude',
+    'Col': 'Colossians', '1Thess': 'I Thessalonians', '2Thess': 'II Thessalonians', '1Tim': 'I Timothy', '2Tim': 'II Timothy',
+    'Titus': 'Titus', 'Phlm': 'Philemon',
+    'Heb': 'Hebrews', 'Jas': 'James', '1Pet': 'I Peter', '2Pet': 'II Peter', '1John': 'I John', '2John': 'II John', '3John': 'III John', 'Jude': 'Jude',
     'Rev': 'Revelation of John',
 }
 NAMES = {  # display names
     '1Sam': '1 Samuel', '2Sam': '2 Samuel', '1Kgs': '1 Kings', '2Kgs': '2 Kings', 'Ps': 'Psalm', 'Song': 'Song of Songs',
     '1Macc': '1 Maccabees', '2Macc': '2 Maccabees', '1Cor': '1 Corinthians', '2Cor': '2 Corinthians',
     '1Thess': '1 Thessalonians', '1Tim': '1 Timothy', '2Tim': '2 Timothy', '1Pet': '1 Peter', '2Pet': '2 Peter',
-    '1John': '1 John', 'Rev': 'Revelation', 'Wis': 'Wisdom', 'Sir': 'Sirach',
+    '1John': '1 John', '2John': '2 John', '3John': '3 John', 'Rev': 'Revelation', 'Wis': 'Wisdom', 'Sir': 'Sirach',
+    '1Chr': '1 Chronicles', '2Chr': '2 Chronicles', '2Thess': '2 Thessalonians', 'Phlm': 'Philemon', 'Jdt': 'Judith', 'Bar': 'Baruch',
+    'Obad': 'Obadiah', 'Nah': 'Nahum', 'Zeph': 'Zephaniah', 'Hag': 'Haggai', 'Zech': 'Zechariah',
 }
 TRANSLATIONS = ['KJV', 'YLT', 'DRC', 'ASV', 'VulgClementine']
 # Hebrew (WLC) verse numbering differs from English where a psalm title is its own verse.
 HEB_REF = {'Ps.22.16': 'Ps.22.17', 'Ps.22.1': 'Ps.22.2', 'Ps.51.4': 'Ps.51.6', 'Ps.51.10': 'Ps.51.12',
-           'Ps.51.17': 'Ps.51.19', 'Ps.19.1': 'Ps.19.2', 'Ps.46.10': 'Ps.46.11', 'Ps.42.5': 'Ps.42.6', 'Isa.9.6': 'Isa.9.5'}
+           'Ps.51.17': 'Ps.51.19', 'Ps.19.1': 'Ps.19.2', 'Ps.46.10': 'Ps.46.11', 'Ps.42.5': 'Ps.42.6', 'Ps.40.6': 'Ps.40.7', 'Ps.68.18': 'Ps.68.19',
+           'Ps.55.17': 'Ps.55.18', 'Ps.88.18': 'Ps.88.19', 'Jonah.1.17': 'Jonah.2.1', 'Mal.4.5': 'Mal.3.23', 'Isa.9.6': 'Isa.9.5'}
 
 
 def lxx_psalm(c):
     """Douay-Rheims and the Vulgate follow Septuagint psalm numbering (only the ranges this site uses)."""
     if 11 <= c <= 113 or 117 <= c <= 146:
         return c - 1
+    if c in (114, 115):
+        return 113
     if c <= 8 or c >= 148:
         return c
     raise ValueError(f'psalm {c} needs a manual Septuagint mapping')
@@ -138,7 +145,7 @@ def main(src):
                 heb += w
         if heb:
             entry['heb'] = heb
-        if 'KJV' not in entry and b not in ('Tob', 'Wis', 'Sir', '1Macc', '2Macc'):
+        if 'KJV' not in entry and b not in ('Tob', 'Jdt', 'Bar', 'Wis', 'Sir', '1Macc', '2Macc'):
             missing.append(ref)
         out[ref] = entry
     dest = os.path.join(ROOT, 'assets', 'js', 'scripture.js')
