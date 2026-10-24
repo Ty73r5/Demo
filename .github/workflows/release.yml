@@ -1,0 +1,38 @@
+name: Release
+
+# Builds the single-file edition and the full site, then publishes a GitHub Release.
+# Run it from the Actions tab ("Run workflow"), or push a tag such as v1.0.1.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Version tag to create, for example v1.0.0
+        required: true
+        default: v1.0.0
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build single-file edition
+        run: python3 tools/build_artifact.py dist/logos-atlas.html
+
+      - name: Package full site
+        run: zip -r dist/logos-atlas-site.zip index.html assets README.md
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.inputs.tag || github.ref_name }}
+        run: |
+          gh release create "$TAG" dist/logos-atlas.html dist/logos-atlas-site.zip \
+            --title "Logos Atlas $TAG" \
+            --notes-file RELEASE_NOTES.md \
+            --target "$GITHUB_SHA"

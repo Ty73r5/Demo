@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Logos Atlas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="An interactive atlas of Christianity: canon and non-canon, texts and translations, the Trinity and the Trivium, ancient traditions, the great writers, critics and orders, with a voice-guided tour.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Noto+Serif+Hebrew:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="#prologue"><span class="brand-mark" aria-hidden="true">☧</span><span class="brand-name">Logos Atlas</span><span class="brand-sub">Christianity, its sources and its neighbours</span></a>
+    <button class="btn btn-primary" id="tour-start" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Guided tour</button>
+    <button class="btn icon-btn" id="theme-toggle" type="button" aria-label="Switch light or dark theme" title="Switch theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg></button>
+  </div>
+</header>
+
+<div class="codex">
+  <nav class="folio-index" aria-label="Folios">
+    <ol id="folio-list"></ol>
+    <div class="index-legend" id="legend"><h2>How claims are marked</h2></div>
+  </nav>
+
+  <main id="main">
+    <!-- Prologue -->
+    <section class="folio prologue" id="prologue" data-title="Prologue" data-num="✠">
+      <div class="prologue-grid">
+        <div>
+          <p class="eyebrow">An atlas of the Word</p>
+          <h1>Where the <em>Logos</em> has walked</h1>
+          <p class="incipit">This is a map of Christianity drawn by a believer who holds that all truth is God’s truth. It shows the canon and what was left outside it, the original words behind the English, the Trinity alongside the Trivium, and the older traditions of Egypt, Mesopotamia, Persia, Greece, Rome, India and China. It also gives a fair hearing to the faith’s strongest critics and an honest account of its harms as well as its gifts.</p>
+          <div class="prologue-actions">
+            <button class="btn btn-primary" type="button" data-action="tour"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Begin the guided tour, with voice</button>
+            <a class="btn" href="#atlas">Open the atlas</a>
+          </div>
+          <div class="intent">
+            <div><h3>Every claim is marked</h3><p>Each statement carries a label: documented fact, scholarly consensus, debated, tradition, interpretive synthesis or confession of faith. You can see what kind of claim you are reading.</p></div>
+            <div><h3>Every verse is quoted exactly</h3><p>Tap any red reference to read it in the King James, Young’s Literal, Douay–Rheims, the ASV, the Latin Vulgate, and the Hebrew or Greek with Strong’s numbers.</p></div>
+            <div><h3>Every side is steelmanned</h3><p>Canons are argued from each tradition’s best case. Critics such as Ingersoll are given their strongest form before they are answered.</p></div>
+          </div>
+        </div>
+        <aside class="scriptura" aria-label="The first verses of Genesis and John">
+          <div><div class="heb" id="hero-heb"></div><div class="gl">Genesis 1:1 · Westminster Leningrad Codex</div></div>
+          <hr>
+          <div><div class="grc" id="hero-grc"></div><div class="gl">John 1:1 · SBL Greek New Testament</div></div>
+          <hr>
+          <div><div class="grc" style="font-style:italic" id="hero-lat"></div><div class="gl">John 1:1 · Clementine Vulgate</div></div>
+          <hr>
+          <div><div class="zh" lang="zh-Hans">太初有道</div><div class="gl">John 1:1 · Chinese Union Version (1919): “In the beginning was the Dao”</div></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- I. Atlas -->
+    <section class="folio" id="atlas" data-title="The Atlas" data-num="I">
+      <header class="folio-head"><span class="folio-num">I</span><h2>The Atlas</h2><p class="dek">Five thousand years on one map. Move through time and open any place to read what happened there.</p></header>
+      <div class="atlas">
+        <div>
+          <div class="map-wrap" id="map-wrap">
+            <div class="map-year" id="map-year" aria-live="polite"></div>
+            <div class="map-tools">
+              <button class="btn icon-btn" type="button" id="zoom-in" aria-label="Zoom in">+</button>
+              <button class="btn icon-btn" type="button" id="zoom-out" aria-label="Zoom out">−</button>
+              <button class="btn icon-btn" type="button" id="zoom-reset" aria-label="Reset view" title="Reset view"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z"/></svg></button>
+            </div>
+            <svg id="map" role="img" aria-label="Map of Europe, the Mediterranean, the Near East, India and China with historical places"></svg>
+          </div>
+          <div class="map-controls">
+            <div class="timeline-row">
+              <button class="btn icon-btn" type="button" id="play" aria-label="Play through time"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+              <input type="range" id="year" min="-2600" max="2025" step="1" value="2025" aria-label="Year">
+            </div>
+            <div class="era-ticks" aria-hidden="true"><span>2600 BC</span><span>1500 BC</span><span>500 BC</span><span>AD 500</span><span>AD 1500</span><span>2025</span></div>
+            <div class="chips" id="layer-chips" role="group" aria-label="Map layers"></div>
+            <div class="chips"><button class="chip" type="button" id="journeys" aria-pressed="false"><span class="sw" style="color:var(--vermilion)"></span>Paul’s journeys</button></div>
+          </div>
+          <div class="offmap" id="offmap"><span class="muted">Beyond the map:</span></div>
+        </div>
+        <aside class="panel place-card" id="place-card" aria-live="polite"></aside>
+      </div>
+    </section>
+
+    <!-- II. Canon -->
+    <section class="folio" id="canon" data-title="Canon & Beyond" data-num="II">
+      <header class="folio-head"><span class="folio-num">II</span><h2>Canon and beyond</h2><p class="dek">What is Scripture, who decided, and what was left outside. The dashed red line marks where each church draws the canon.</p></header>
+      <div class="chips" id="trad-chips" role="tablist" aria-label="Church traditions"></div>
+      <p class="trad-note" id="trad-note"></p>
+      <div class="canon-grid">
+        <div class="rings-wrap"><svg id="rings" viewBox="0 0 560 560" role="img" aria-label="Concentric rings from the shared canon outward to rejected texts"></svg></div>
+        <div class="panel ring-detail" id="ring-detail" aria-live="polite"></div>
+      </div>
+      <h3 class="sub-h">The disputed books <span class="eyebrow">✓ canonical · ◐ appendix or read, not canon · — absent</span></h3>
+      <div class="table-scroll"><table class="matrix" id="matrix"></table></div>
+      <h3 class="sub-h">How the canon formed</h3>
+      <ol class="timeline" id="canon-timeline"></ol>
+      <h3 class="sub-h">The strongest case for each canon</h3>
+      <div class="three-col" id="canon-steel"></div>
+      <h3 class="sub-h">The tests the early Church applied</h3>
+      <div class="three-col" id="canon-criteria"></div>
+    </section>
+
+    <!-- III. Texts -->
+    <section class="folio" id="texts" data-title="Text & Translation" data-num="III">
+      <header class="folio-head"><span class="folio-num">III</span><h2>Text and translation</h2><p class="dek">How the words reached us, what changed between versions, and why the King James reads differently from the oldest manuscripts.</p></header>
+      <h3 class="sub-h">Lines of transmission <span class="eyebrow">Scale widens after 1400</span></h3>
+      <div class="chart-scroll"><svg id="lineage" role="img" aria-label="Timeline of Hebrew, Greek, Latin and English Bible transmission"></svg></div>
+      <div class="node-detail" id="lineage-detail" aria-live="polite"></div>
+      <h3 class="sub-h">The Verse Lab</h3>
+      <div class="lab">
+        <ul class="panel lab-list" id="lab-list" role="tablist" aria-label="Featured verses"></ul>
+        <div class="panel lab-main" id="lab-main" aria-live="polite"></div>
+      </div>
+      <h3 class="sub-h">The weight of the evidence</h3>
+      <div class="stat-row" id="ms-stats"></div>
+      <h3 class="sub-h">How the King James was made</h3>
+      <ul class="claims" id="kjv-rules"></ul>
+    </section>
+
+    <!-- IV. Concordance -->
+    <section class="folio" id="concordance" data-title="Concordance" data-num="IV">
+      <header class="folio-head"><span class="folio-num">IV</span><h2>A concordance of key words</h2><p class="dek">Twenty-nine Hebrew and Greek words, with Strong’s numbers, King James renderings, the verses that carry them, and what modern English loses.</p></header>
+      <div class="lex-tools">
+        <input type="search" id="lex-q" placeholder="Search a word, meaning or Strong’s number (e.g. love, H2617)" aria-label="Search the concordance">
+        <div class="chips" role="group" aria-label="Language">
+          <button class="chip" type="button" data-lang="all" aria-pressed="true">All</button>
+          <button class="chip" type="button" data-lang="heb" aria-pressed="false">Hebrew</button>
+          <button class="chip" type="button" data-lang="grc" aria-pressed="false">Greek</button>
+        </div>
+      </div>
+      <div class="lex">
+        <div class="lex-grid" id="lex-grid"></div>
+        <div class="panel lex-detail" id="lex-detail" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- V. Trinity & Trivium -->
+    <section class="folio" id="triune" data-title="Trinity & Trivium" data-num="V">
+      <header class="folio-head"><span class="folio-num">V</span><h2>The Trinity and the Trivium</h2><p class="dek">Grammar, logic and rhetoric as an image of the Father, the Word and the Spirit: where the analogy comes from, what it shows, and where it breaks.</p></header>
+      <div class="triune">
+        <div>
+          <svg class="tri-svg" id="tri" viewBox="0 0 520 470" role="img" aria-label="Triangle of the Father, Son and Spirit with the arts of grammar, logic and rhetoric"></svg>
+          <div class="chips lens-chips" id="tri-lens" role="group" aria-label="Lens"></div>
+        </div>
+        <div class="panel tri-detail" id="tri-detail" aria-live="polite"></div>
+      </div>
+      <div class="two-col" style="margin-top:28px">
+        <div class="card"><h3>Sources of the analogy</h3><ul class="claims" id="tri-sources"></ul></div>
+        <div class="card"><h3>How the three belong together</h3><ul class="claims" id="tri-bonds"></ul><h3 style="margin-top:12px">Where the analogy breaks</h3><ul class="claims" id="tri-limits"></ul></div>
+      </div>
+    </section>
+
+    <!-- VI. Traditions -->
+    <section class="folio" id="traditions" data-title="Ancient Traditions" data-num="VI">
+      <header class="folio-head"><span class="folio-num">VI</span><h2>Ancient traditions</h2><p class="dek">What Egypt, Mesopotamia, Persia, Greece, Rome, Israel, India and China gave to human culture, where the faith learned from them, and where it parted ways.</p></header>
+      <div class="chips trad-tabs" id="trad-tabs" role="tablist" aria-label="Traditions"></div>
+      <div class="panel" style="padding:20px"><div class="trad-body" id="trad-body" aria-live="polite"></div></div>
+      <h3 class="sub-h">Threads across traditions</h3>
+      <div class="chips" id="thread-tabs" role="tablist" aria-label="Themes"></div>
+      <p class="thread-q" id="thread-q"></p>
+      <div class="table-scroll"><table class="thread-table" id="thread-table"></table></div>
+    </section>
+
+    <!-- VII. Great Conversation -->
+    <section class="folio" id="conversation" data-title="The Great Conversation" data-num="VII">
+      <header class="folio-head"><span class="folio-num">VII</span><h2>The Great Conversation</h2><p class="dek">From Heraclitus to Jordan Peterson: who influenced whom, and what each added. Select a writer to light up their lines of influence.</p></header>
+      <div class="chart-scroll"><svg class="thinker-svg" id="thinkers" role="img" aria-label="Timeline of thinkers and their influences"></svg></div>
+      <div class="panel thinker-card" id="thinker-card" aria-live="polite"></div>
+      <h3 class="sub-h" id="maps-of-meaning">Maps of Meaning <span class="eyebrow">Jordan B. Peterson, 1999</span></h3>
+      <div class="maps">
+        <div>
+          <svg class="maps-svg" id="mm" viewBox="0 0 460 460" role="img" aria-label="Peterson’s elements of experience: the unknown surrounding the known, with the knower at the boundary"></svg>
+          <h4 class="ui eyebrow" style="margin:14px 0 6px">The cycle of transformation</h4>
+          <ol class="cycle" id="mm-cycle"></ol>
+        </div>
+        <div class="grid" style="display:grid;gap:16px">
+          <div class="panel" style="padding:18px" id="mm-detail" aria-live="polite"></div>
+          <div class="card"><h3>The strongest case</h3><ul class="claims" id="mm-steel"></ul></div>
+          <div class="card"><h3>Where a Christian presses back</h3><ul class="claims" id="mm-crit"></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIII. Iconoclasts & Orders -->
+    <section class="folio" id="iconoclasts" data-title="Iconoclasts & Orders" data-num="VIII">
+      <header class="folio-head"><span class="folio-num">VIII</span><h2>Iconoclasts and hidden orders</h2><p class="dek">Robert G. Ingersoll and the faith’s fiercest critics, then the Templars, Freemasons and Rosicrucians, with documented history kept separate from legend.</p></header>
+      <div class="profile">
+        <div class="portrait" aria-hidden="true">
+          <svg viewBox="0 0 300 400"><rect width="300" height="400" fill="var(--page-2)"/><g fill="none" stroke="var(--gold-leaf)" stroke-width="2"><rect x="14" y="14" width="272" height="372" rx="4"/><rect x="22" y="22" width="256" height="356" rx="2" stroke-width="0.8"/></g><text x="150" y="118" text-anchor="middle" font-family="var(--f-display)" font-size="82" fill="var(--vermilion)">R·G·I</text><text x="150" y="168" text-anchor="middle" font-family="var(--f-display-sc)" font-size="22" fill="var(--ink)">Robert Green Ingersoll</text><text x="150" y="196" text-anchor="middle" font-family="var(--f-ui)" font-size="14" fill="var(--ink-soft)">1833 – 1899</text><text x="150" y="250" text-anchor="middle" font-family="var(--f-display)" font-style="italic" font-size="17" fill="var(--ink)">“The Great Agnostic”</text><line x1="90" x2="210" y1="276" y2="276" stroke="var(--gold-leaf)"/><text x="150" y="312" text-anchor="middle" font-family="var(--f-body)" font-size="14" fill="var(--ink-soft)">Colonel · Attorney General</text><text x="150" y="332" text-anchor="middle" font-family="var(--f-body)" font-size="14" fill="var(--ink-soft)">Orator · Freethinker</text></svg>
+        </div>
+        <div>
+          <div class="chips profile-tabs" id="ing-tabs" role="tablist" aria-label="Ingersoll"></div>
+          <ul class="claims" id="ing-body" aria-live="polite"></ul>
+        </div>
+      </div>
+      <h3 class="sub-h">The critics, and what they gave</h3>
+      <ul class="critics" id="critics"></ul>
+      <h3 class="sub-h">The orders</h3>
+      <div class="chips" id="order-tabs" role="tablist" aria-label="Orders"></div>
+      <div class="panel" style="padding:20px;margin-top:12px;display:grid;gap:14px" id="order-body" aria-live="polite"></div>
+      <h3 class="sub-h">How they connect</h3>
+      <svg class="net-svg" id="net" viewBox="0 0 760 360" role="img" aria-label="Network of documented and legendary links between Templars, Freemasonry, Rosicrucians, Enlightenment, Paine and Ingersoll"></svg>
+      <div class="net-legend">
+        <span><svg viewBox="0 0 34 8"><line x1="0" y1="4" x2="34" y2="4" class="net-edge F"/></svg>Documented</span>
+        <span><svg viewBox="0 0 34 8"><line x1="0" y1="4" x2="34" y2="4" class="net-edge T"/></svg>Legend or claimed</span>
+        <span><svg viewBox="0 0 34 8"><line x1="0" y1="4" x2="34" y2="4" class="net-edge D"/></svg>Undocumented, debated</span>
+      </div>
+      <p class="net-caption" id="net-caption">Select a line to read the link.</p>
+    </section>
+
+    <!-- IX. Evidence -->
+    <section class="folio" id="evidence" data-title="The Evidence" data-num="IX">
+      <header class="folio-head"><span class="folio-num">IX</span><h2>The evidence</h2><p class="dek">What ancient sources and archaeology establish, the strongest arguments for faith, and the strongest arguments against it.</p></header>
+      <div class="two-col">
+        <div class="card"><h3>Jesus outside the New Testament</h3><ul class="claims" id="ev-sources"></ul></div>
+        <div class="card"><h3>From the ground</h3><ul class="claims" id="ev-digs"></ul></div>
+      </div>
+      <h3 class="sub-h">The steelman: for and against</h3>
+      <div class="two-col">
+        <div class="card"><h3>For faith</h3><ul class="claims" id="ev-for"></ul></div>
+        <div class="card"><h3>Against, with replies</h3><ul class="claims" id="ev-against"></ul></div>
+      </div>
+    </section>
+
+    <!-- X. Fruits & Shadows -->
+    <section class="folio" id="ledger" data-title="Fruits & Shadows" data-num="X">
+      <header class="folio-head"><span class="folio-num">X</span><h2>Fruits and shadows</h2><p class="dek">“By their fruits ye shall know them.” What the faith gave the world, and the harms done in its name, with the correction that came from within.</p></header>
+      <div class="ledger">
+        <div class="col-f"><h3>Fruits</h3><div id="fruits"></div></div>
+        <div class="col-s"><h3>Shadows</h3><div id="shadows"></div></div>
+      </div>
+    </section>
+
+    <!-- XI. Then & Now -->
+    <section class="folio" id="thennow" data-title="Then & Now" data-num="XI">
+      <header class="folio-head"><span class="folio-num">XI</span><h2>Then and now</h2><p class="dek">How the ancient writers meant their words, how modern readers hear them, and what is lost in between, in both directions.</p></header>
+      <div class="gaps" id="gaps"></div>
+    </section>
+
+    <!-- XII. The Way -->
+    <section class="folio" id="way" data-title="The Way" data-num="XII">
+      <header class="folio-head"><span class="folio-num">XII</span><h2>The Way</h2><p class="dek">What it means to be a good person and a faithful Christian when so much pulls the self out of alignment, and how to grow toward shalom: whole in spirit, mind, body, means, heart and bonds.</p></header>
+      <div class="summary-verses" id="way-summary"></div>
+      <h3 class="sub-h">The anatomy of temptation</h3>
+      <ul class="claims" id="tempt-notes"></ul>
+      <div class="table-scroll" style="margin-top:14px"><table class="triad-table" id="triad"></table></div>
+      <h3 class="sub-h">Seven roots and their remedies</h3>
+      <div class="vv" id="vices"></div>
+      <p class="small muted" id="vices-note" style="margin-top:10px"></p>
+      <h3 class="sub-h">Six pillars of shalom <span class="eyebrow">Your checks are saved in this browser only</span></h3>
+      <div class="pillars" id="pillars"></div>
+      <h3 class="sub-h">An evening examen</h3>
+      <div class="panel" style="padding:20px"><div class="examen" id="examen"></div></div>
+    </section>
+
+    <footer class="colophon" id="colophon">
+      <h2>Colophon</h2>
+      <p>Scripture is quoted exactly from public-domain and openly licensed editions: the King James Version (1769 Oxford text), Young’s Literal Translation (1862), the Douay–Rheims (Challoner revision), the American Standard Version (1901) and the Clementine Vulgate, through the scrollmapper Bible databases. The Hebrew is the Westminster Leningrad Codex with Strong’s tagging from the Open Scriptures Hebrew Bible (CC BY 4.0), with cantillation marks removed for legibility. The Greek is the SBL Greek New Testament (CC BY 4.0, Logos Bible Software). The map is drawn from Natural Earth (public domain).</p>
+      <p>Dates are approximate where marked “c.” Labels describe the state of the evidence as fairly as possible. Where scholars disagree, the page says so. Corrections are welcome.</p>
+    </footer>
+  </main>
+</div>
+
+<dialog class="verse-dlg" id="verse-dlg" aria-labelledby="vd-title">
+  <div class="vd-inner">
+    <div class="vd-head"><h3 id="vd-title"></h3><button class="btn icon-btn" type="button" id="vd-speak" aria-label="Read aloud" title="Read aloud"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg></button><button class="btn icon-btn" type="button" id="vd-close" aria-label="Close">✕</button></div>
+    <div class="vd-tabs chips" id="vd-tabs" role="tablist" aria-label="Versions"></div>
+    <div class="vd-body" id="vd-body"></div>
+  </div>
+</dialog>
+
+<div class="tour-bar" id="tour-bar" hidden>
+  <div class="tour-progress"><span id="tour-prog"></span></div>
+  <div class="tour-inner">
+    <div class="tour-step" id="tour-step"></div>
+    <div class="tour-caption" id="tour-caption" aria-live="polite"></div>
+    <div class="tour-ctrl">
+      <button class="btn icon-btn" type="button" id="tour-prev" aria-label="Previous step"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
+      <button class="btn icon-btn" type="button" id="tour-play" aria-label="Pause"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg></button>
+      <button class="btn icon-btn" type="button" id="tour-next" aria-label="Next step"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
+      <select id="tour-voice" aria-label="Voice"></select>
+      <label>Pace <input type="range" id="tour-rate" min="0.7" max="1.3" step="0.05" value="0.95" aria-label="Speech rate"></label>
+      <button class="btn icon-btn" type="button" id="tour-close" aria-label="End tour">✕</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/geo.js"></script>
+<script src="assets/js/scripture.js"></script>
+<script src="assets/js/atlas.js"></script>
+<script src="assets/js/canon.js"></script>
+<script src="assets/js/texts.js"></script>
+<script src="assets/js/lexicon.js"></script>
+<script src="assets/js/wisdom.js"></script>
+<script src="assets/js/orders.js"></script>
+<script src="assets/js/life.js"></script>
+<script src="assets/js/tour.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
