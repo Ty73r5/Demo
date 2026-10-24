@@ -14,7 +14,7 @@
     S: ['Synthesis', 'Interpretive synthesis: a reasoned reading or argument offered for your judgement'],
     B: ['Faith', 'Confession of faith: what the Church believes, beyond historical proof']
   };
-  const HUE = { gold: 'var(--gold)', lapis: 'var(--lapis)', vermilion: 'var(--vermilion)', verdigris: 'var(--verdigris)', ochre: 'var(--ochre)', murex: 'var(--murex)' };
+  const HUE = { gold: 'var(--gold)', lapis: 'var(--lapis)', vermilion: 'var(--vermilion)', verdigris: 'var(--verdigris)', ochre: 'var(--ochre)', murex: 'var(--murex)', ink: 'var(--ink-soft)' };
   const LEX_BY_S = {};
   LEXICON.forEach(l => l.s.split('/').forEach(k => { LEX_BY_S[k.trim()] = l; }));
   const VERSIONS = [['KJV', 'King James'], ['YLT', 'Young’s Literal'], ['DRC', 'Douay–Rheims'], ['ASV', 'ASV 1901'], ['VulgClementine', 'Vulgate']];
@@ -125,6 +125,8 @@
     if (text) speakOnce(`${e.label}. ${text}`, dlgTab === 'VulgClementine' ? 'la' : 'en');
   });
   document.addEventListener('click', e => { const b = e.target.closest('.vref'); if (b) { e.preventDefault(); openVerse(b.dataset.ref); } });
+
+  const LA = window.LA = { $, $$, esc, rich, tag, claims, vchip, kjv, yr, svg, tabs, store, S, TAGS, refLabel, acts: {}, VERSIONS };
 
   /* ── Atlas ──────────────────────────────────────────────── */
   const C38 = Math.cos(38 * Math.PI / 180);
@@ -529,7 +531,7 @@
   selectMM('knower');
 
   /* ── Iconoclasts & orders ───────────────────────────────── */
-  const ING_TABS = [['life', 'Life'], ['contributions', 'Contributions'], ['steel', 'His strongest case'], ['reply', 'A Christian reply'], ['links', 'The Masonic question']];
+  const ING_TABS = [['life', 'Life'], ['contributions', 'Contributions'], ['quotes', 'In his own words'], ['steel', 'His strongest case'], ['reply', 'A Christian reply'], ['links', 'The Masonic question']];
   const selectIng = tabs($('#ing-tabs'), ING_TABS, id => { $('#ing-body').innerHTML = claims(INGERSOLL[id]); }, 'life');
   $('#critics').innerHTML = CRITICS.map(c => `<li><details><summary><span class="cy">${yr(c.y)}</span><span><span class="cn">${esc(c.n)}</span> <span class="cw">${esc(c.w)}</span></span></summary>
     <div class="cbody"><p><b>Charge</b>${rich(c.crit)}</p><p><b>What it gave</b>${rich(c.gift)}</p><p><b>Answer</b>${rich(c.reply)}</p><p>${tag(c.t)}</p></div></details></li>`).join('');
@@ -643,6 +645,7 @@
   function runAct(act) {
     if (!act) return;
     const [k, v] = act.split(':');
+    if (LA.acts[k]) return LA.acts[k](v);
     if (k === 'year') { setYear(+v); selectPlace('giza', true); }
     if (k === 'place') { if (year < 2025 && placeById[v].events.every(e => e.y > year)) setYear(2025); selectPlace(v, true); }
     if (k === 'journeys') { showJourneys = true; $('#journeys').setAttribute('aria-pressed', 'true'); setYear(60); setView({ x: 150, y: 150, w: 280, h: 170 }); }

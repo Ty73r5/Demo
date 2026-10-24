@@ -33,7 +33,7 @@
         <div>
           <p class="eyebrow">An atlas of the Word</p>
           <h1>Where the <em>Logos</em> has walked</h1>
-          <p class="incipit">This is a map of Christianity drawn by a believer who holds that all truth is God’s truth. It shows the canon and what was left outside it, the original words behind the English, the Trinity alongside the Trivium, and the older traditions of Egypt, Mesopotamia, Persia, Greece, Rome, India and China. It also gives a fair hearing to the faith’s strongest critics and an honest account of its harms as well as its gifts.</p>
+          <p class="incipit">This is a map of Christianity drawn by a believer who holds that all truth is God’s truth. It shows the canon and what was left outside it, the original words behind the English, the Trinity alongside the Trivium, and the older traditions of Egypt, Mesopotamia, Persia, Greece, Rome, India and China. It also gives a fair hearing to the faith’s strongest critics and an honest account of its harms as well as its gifts. It shows how we know dates, from the length of a day to the age of the universe, and how the contemplative tradition tests experience and helps a life grow whole.</p>
           <div class="prologue-actions">
             <button class="btn btn-primary" type="button" data-action="tour"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Begin the guided tour, with voice</button>
             <a class="btn" href="#atlas">Open the atlas</a>
@@ -85,9 +85,27 @@
       </div>
     </section>
 
+
+    <!-- II. The Library -->
+    <section class="folio" id="library" data-title="The Library" data-num="II">
+      <header class="folio-head"><span class="folio-num">II</span><h2>The Library</h2><p class="dek">Every book of the Bible: who tradition says wrote it, what critical scholars think, when, what it is about, and one verse to carry away.</p></header>
+      <div class="lib-tools">
+        <input type="search" id="lib-q" placeholder="Search books, authors, themes" aria-label="Search the library">
+        <div class="chips" id="lib-canon" role="group" aria-label="Canon">
+          <button class="chip" type="button" data-canon="pro" aria-pressed="true">Protestant · 66</button>
+          <button class="chip" type="button" data-canon="cat" aria-pressed="false">Catholic · 73</button>
+        </div>
+      </div>
+      <div class="chips" id="lib-groups" role="group" aria-label="Sections of the Bible"></div>
+      <div class="lib">
+        <div class="lib-shelf" id="lib-shelf"></div>
+        <div class="panel lib-detail" id="lib-detail" aria-live="polite"></div>
+      </div>
+    </section>
+
     <!-- II. Canon -->
-    <section class="folio" id="canon" data-title="Canon & Beyond" data-num="II">
-      <header class="folio-head"><span class="folio-num">II</span><h2>Canon and beyond</h2><p class="dek">What is Scripture, who decided, and what was left outside. The dashed red line marks where each church draws the canon.</p></header>
+    <section class="folio" id="canon" data-title="Canon & Beyond" data-num="III">
+      <header class="folio-head"><span class="folio-num">III</span><h2>Canon and beyond</h2><p class="dek">What is Scripture, who decided, and what was left outside. The dashed red line marks where each church draws the canon.</p></header>
       <div class="chips" id="trad-chips" role="tablist" aria-label="Church traditions"></div>
       <p class="trad-note" id="trad-note"></p>
       <div class="canon-grid">
@@ -105,8 +123,8 @@
     </section>
 
     <!-- III. Texts -->
-    <section class="folio" id="texts" data-title="Text & Translation" data-num="III">
-      <header class="folio-head"><span class="folio-num">III</span><h2>Text and translation</h2><p class="dek">How the words reached us, what changed between versions, and why the King James reads differently from the oldest manuscripts.</p></header>
+    <section class="folio" id="texts" data-title="Text & Translation" data-num="IV">
+      <header class="folio-head"><span class="folio-num">IV</span><h2>Text and translation</h2><p class="dek">How the words reached us, what changed between versions, and why the King James reads differently from the oldest manuscripts.</p></header>
       <h3 class="sub-h">Lines of transmission <span class="eyebrow">Scale widens after 1400</span></h3>
       <div class="chart-scroll"><svg id="lineage" role="img" aria-label="Timeline of Hebrew, Greek, Latin and English Bible transmission"></svg></div>
       <div class="node-detail" id="lineage-detail" aria-live="polite"></div>
@@ -121,9 +139,21 @@
       <ul class="claims" id="kjv-rules"></ul>
     </section>
 
+
+    <!-- V. Gospels in Parallel -->
+    <section class="folio" id="gospels" data-title="Gospels in Parallel" data-num="V">
+      <header class="folio-head"><span class="folio-num">V</span><h2>The Gospels in parallel</h2><p class="dek">Four portraits of one life, side by side, word for word: where they agree, where they differ, and what scholars make of it.</p></header>
+      <div class="chips" id="syn-tabs" role="tablist" aria-label="Parallel passages"></div>
+      <label class="ui small syn-toggle"><input type="checkbox" id="syn-greek"> Show the Greek</label>
+      <div class="syn-cols" id="syn-cols" aria-live="polite"></div>
+      <ul class="claims" id="syn-notes" style="margin-top:16px"></ul>
+      <h3 class="sub-h">How the first three Gospels relate</h3>
+      <ul class="claims" id="syn-theories"></ul>
+    </section>
+
     <!-- IV. Concordance -->
-    <section class="folio" id="concordance" data-title="Concordance" data-num="IV">
-      <header class="folio-head"><span class="folio-num">IV</span><h2>A concordance of key words</h2><p class="dek">Twenty-nine Hebrew and Greek words, with Strong’s numbers, King James renderings, the verses that carry them, and what modern English loses.</p></header>
+    <section class="folio" id="concordance" data-title="Concordance" data-num="VI">
+      <header class="folio-head"><span class="folio-num">VI</span><h2>A concordance of key words</h2><p class="dek">Sixty-six Hebrew and Greek words, with Strong’s numbers, King James renderings, the verses that carry them, and what modern English loses.</p></header>
       <div class="lex-tools">
         <input type="search" id="lex-q" placeholder="Search a word, meaning or Strong’s number (e.g. love, H2617)" aria-label="Search the concordance">
         <div class="chips" role="group" aria-label="Language">
@@ -139,8 +169,8 @@
     </section>
 
     <!-- V. Trinity & Trivium -->
-    <section class="folio" id="triune" data-title="Trinity & Trivium" data-num="V">
-      <header class="folio-head"><span class="folio-num">V</span><h2>The Trinity and the Trivium</h2><p class="dek">Grammar, logic and rhetoric as an image of the Father, the Word and the Spirit: where the analogy comes from, what it shows, and where it breaks.</p></header>
+    <section class="folio" id="triune" data-title="Trinity & Trivium" data-num="VII">
+      <header class="folio-head"><span class="folio-num">VII</span><h2>The Trinity and the Trivium</h2><p class="dek">Grammar, logic and rhetoric as an image of the Father, the Word and the Spirit: where the analogy comes from, what it shows, and where it breaks.</p></header>
       <div class="triune">
         <div>
           <svg class="tri-svg" id="tri" viewBox="0 0 520 470" role="img" aria-label="Triangle of the Father, Son and Spirit with the arts of grammar, logic and rhetoric"></svg>
@@ -154,9 +184,74 @@
       </div>
     </section>
 
+
+    <!-- VIII. Doctrine & Heresy -->
+    <section class="folio" id="doctrine" data-title="Doctrine & Heresy" data-num="VIII">
+      <header class="folio-head"><span class="folio-num">VIII</span><h2>Doctrine and heresy</h2><p class="dek">What nine Christian traditions actually teach, side by side; how the creeds were hammered out; and the errors they were drawn to exclude.</p></header>
+      <h3 class="sub-h" style="margin-top:0">Compare the traditions <span class="eyebrow">Choose any you like</span></h3>
+      <div class="chips" id="doc-pick" role="group" aria-label="Traditions to compare"></div>
+      <div class="table-scroll" style="margin-top:12px"><table class="doc-table" id="doc-table"></table></div>
+      <h3 class="sub-h">How the creeds formed</h3>
+      <ol class="timeline" id="creeds"></ol>
+      <h3 class="sub-h">The two great questions, and the errors on either side</h3>
+      <div class="spectra" id="spectra"></div>
+      <div class="panel" style="padding:18px;margin-top:12px" id="heresy-detail" aria-live="polite"></div>
+      <h3 class="sub-h">Other early disputes</h3>
+      <div class="three-col" id="heresies-other"></div>
+      <p class="small" style="margin-top:14px" id="heresy-note"></p>
+    </section>
+
+    <!-- IX. Reading Scripture -->
+    <section class="folio" id="reading" data-title="Reading Scripture" data-num="IX">
+      <header class="folio-head"><span class="folio-num">IX</span><h2>Reading Scripture</h2><p class="dek">How the Church and the synagogue have read the same words: four senses, types and shadows, quotations that follow the Greek, and the messianic texts read two ways.</p></header>
+      <h3 class="sub-h" style="margin-top:0">The four senses <span class="eyebrow">And the Jewish PaRDeS</span></h3>
+      <div class="chips" id="sense-ex" role="tablist" aria-label="Example"><button type="button" class="chip" data-ex="jer" aria-selected="true">Jerusalem</button><button type="button" class="chip" data-ex="ex" aria-selected="false">The Exodus</button></div>
+      <div class="senses" id="senses"></div>
+      <ul class="claims" id="sense-notes" style="margin-top:14px"></ul>
+      <div class="two-col" style="margin-top:20px">
+        <div class="card"><h3>Rules for reading</h3><ul class="claims" id="sense-rules"></ul></div>
+        <div class="card"><h3>Modern methods</h3><div id="sense-modern" class="modern"></div></div>
+      </div>
+      <h3 class="sub-h">Types and shadows <span class="eyebrow">Old Testament pattern → New Testament fulfilment</span></h3>
+      <div class="typo" id="typology"></div>
+      <h3 class="sub-h">When the New Testament quotes the Greek</h3>
+      <p class="small" id="ntuse-note"></p>
+      <div class="typo" id="ntuse"></div>
+      <h3 class="sub-h">Messianic texts, read two ways</h3>
+      <div class="table-scroll"><table class="thread-table mess" id="messianic"></table></div>
+    </section>
+
+    <!-- X. Time & Deep Time -->
+    <section class="folio" id="time" data-title="Time & Deep Time" data-num="X">
+      <header class="folio-head"><span class="folio-num">X</span><h2>Days, dates and deep time</h2><p class="dek">How we know a day is a day, how the calendar was built, how historians and scientists date the past, what Genesis means by its days, and how to live wisely in time.</p></header>
+      <div class="two-col" id="time-day"></div>
+      <h3 class="sub-h">What we can know, and how surely</h3>
+      <ul class="claims" id="time-layers"></ul>
+      <h3 class="sub-h">How the past is dated</h3>
+      <ul class="critics" id="time-methods"></ul>
+      <h3 class="sub-h">Deep time <span class="eyebrow">Logarithmic scale: each step is ten times further back</span></h3>
+      <div class="deep-wrap" id="deep-wrap">
+        <div class="deep-legend" id="deep-legend"></div>
+        <div class="chart-scroll deep-scroll"><svg id="deep" role="img" aria-label="Logarithmic timeline from the Big Bang to the present, with biblical history and traditional creation dates"></svg></div>
+        <div class="deep-tip" id="deep-tip" hidden></div>
+      </div>
+      <p class="small" id="deep-note" style="margin-top:10px"></p>
+      <details class="deep-table"><summary class="ui">Show the timeline as a table</summary><div class="table-scroll"><table class="thread-table" id="deep-table"></table></div></details>
+      <h3 class="sub-h">What are the days of Genesis?</h3>
+      <div class="readings" id="readings"></div>
+      <ul class="claims" id="reading-notes" style="margin-top:16px"></ul>
+      <h3 class="sub-h">The Christian year</h3>
+      <div class="year">
+        <svg class="year-svg" id="year-wheel" viewBox="0 0 420 420" role="img" aria-label="The liturgical year as a wheel of seasons"></svg>
+        <div><div class="panel" style="padding:18px" id="year-detail" aria-live="polite"></div><ul class="claims" id="year-facts" style="margin-top:14px"></ul></div>
+      </div>
+      <h3 class="sub-h">Living wisely in time</h3>
+      <div class="three-col" id="rhythms"></div>
+    </section>
+
     <!-- VI. Traditions -->
-    <section class="folio" id="traditions" data-title="Ancient Traditions" data-num="VI">
-      <header class="folio-head"><span class="folio-num">VI</span><h2>Ancient traditions</h2><p class="dek">What Egypt, Mesopotamia, Persia, Greece, Rome, Israel, India and China gave to human culture, where the faith learned from them, and where it parted ways.</p></header>
+    <section class="folio" id="traditions" data-title="Ancient Traditions" data-num="XI">
+      <header class="folio-head"><span class="folio-num">XI</span><h2>Ancient traditions</h2><p class="dek">What Egypt, Mesopotamia, Persia, Greece, Rome, Israel, India and China gave to human culture, where the faith learned from them, and where it parted ways.</p></header>
       <div class="chips trad-tabs" id="trad-tabs" role="tablist" aria-label="Traditions"></div>
       <div class="panel" style="padding:20px"><div class="trad-body" id="trad-body" aria-live="polite"></div></div>
       <h3 class="sub-h">Threads across traditions</h3>
@@ -166,8 +261,8 @@
     </section>
 
     <!-- VII. Great Conversation -->
-    <section class="folio" id="conversation" data-title="The Great Conversation" data-num="VII">
-      <header class="folio-head"><span class="folio-num">VII</span><h2>The Great Conversation</h2><p class="dek">From Heraclitus to Jordan Peterson: who influenced whom, and what each added. Select a writer to light up their lines of influence.</p></header>
+    <section class="folio" id="conversation" data-title="The Great Conversation" data-num="XII">
+      <header class="folio-head"><span class="folio-num">XII</span><h2>The Great Conversation</h2><p class="dek">From Heraclitus to Jordan Peterson: who influenced whom, and what each added. Select a writer to light up their lines of influence.</p></header>
       <div class="chart-scroll"><svg class="thinker-svg" id="thinkers" role="img" aria-label="Timeline of thinkers and their influences"></svg></div>
       <div class="panel thinker-card" id="thinker-card" aria-live="polite"></div>
       <h3 class="sub-h" id="maps-of-meaning">Maps of Meaning <span class="eyebrow">Jordan B. Peterson, 1999</span></h3>
@@ -186,8 +281,8 @@
     </section>
 
     <!-- VIII. Iconoclasts & Orders -->
-    <section class="folio" id="iconoclasts" data-title="Iconoclasts & Orders" data-num="VIII">
-      <header class="folio-head"><span class="folio-num">VIII</span><h2>Iconoclasts and hidden orders</h2><p class="dek">Robert G. Ingersoll and the faith’s fiercest critics, then the Templars, Freemasons and Rosicrucians, with documented history kept separate from legend.</p></header>
+    <section class="folio" id="iconoclasts" data-title="Iconoclasts & Orders" data-num="XIII">
+      <header class="folio-head"><span class="folio-num">XIII</span><h2>Iconoclasts and hidden orders</h2><p class="dek">Robert G. Ingersoll and the faith’s fiercest critics, then the Templars, Freemasons and Rosicrucians, with documented history kept separate from legend.</p></header>
       <div class="profile">
         <div class="portrait" aria-hidden="true">
           <svg viewBox="0 0 300 400"><rect width="300" height="400" fill="var(--page-2)"/><g fill="none" stroke="var(--gold-leaf)" stroke-width="2"><rect x="14" y="14" width="272" height="372" rx="4"/><rect x="22" y="22" width="256" height="356" rx="2" stroke-width="0.8"/></g><text x="150" y="118" text-anchor="middle" font-family="var(--f-display)" font-size="82" fill="var(--vermilion)">R·G·I</text><text x="150" y="168" text-anchor="middle" font-family="var(--f-display-sc)" font-size="22" fill="var(--ink)">Robert Green Ingersoll</text><text x="150" y="196" text-anchor="middle" font-family="var(--f-ui)" font-size="14" fill="var(--ink-soft)">1833 – 1899</text><text x="150" y="250" text-anchor="middle" font-family="var(--f-display)" font-style="italic" font-size="17" fill="var(--ink)">“The Great Agnostic”</text><line x1="90" x2="210" y1="276" y2="276" stroke="var(--gold-leaf)"/><text x="150" y="312" text-anchor="middle" font-family="var(--f-body)" font-size="14" fill="var(--ink-soft)">Colonel · Attorney General</text><text x="150" y="332" text-anchor="middle" font-family="var(--f-body)" font-size="14" fill="var(--ink-soft)">Orator · Freethinker</text></svg>
@@ -210,11 +305,13 @@
         <span><svg viewBox="0 0 34 8"><line x1="0" y1="4" x2="34" y2="4" class="net-edge D"/></svg>Undocumented, debated</span>
       </div>
       <p class="net-caption" id="net-caption">Select a line to read the link.</p>
+      <h3 class="sub-h">Signs and symbols</h3>
+      <div class="symbols" id="symbols"></div>
     </section>
 
     <!-- IX. Evidence -->
-    <section class="folio" id="evidence" data-title="The Evidence" data-num="IX">
-      <header class="folio-head"><span class="folio-num">IX</span><h2>The evidence</h2><p class="dek">What ancient sources and archaeology establish, the strongest arguments for faith, and the strongest arguments against it.</p></header>
+    <section class="folio" id="evidence" data-title="The Evidence" data-num="XIV">
+      <header class="folio-head"><span class="folio-num">XIV</span><h2>The evidence</h2><p class="dek">What ancient sources and archaeology establish, the strongest arguments for faith, and the strongest arguments against it.</p></header>
       <div class="two-col">
         <div class="card"><h3>Jesus outside the New Testament</h3><ul class="claims" id="ev-sources"></ul></div>
         <div class="card"><h3>From the ground</h3><ul class="claims" id="ev-digs"></ul></div>
@@ -224,11 +321,15 @@
         <div class="card"><h3>For faith</h3><ul class="claims" id="ev-for"></ul></div>
         <div class="card"><h3>Against, with replies</h3><ul class="claims" id="ev-against"></ul></div>
       </div>
+      <h3 class="sub-h">Forgeries, hoaxes and open questions</h3>
+      <ul class="claims" id="frauds"></ul>
     </section>
 
     <!-- X. Fruits & Shadows -->
-    <section class="folio" id="ledger" data-title="Fruits & Shadows" data-num="X">
-      <header class="folio-head"><span class="folio-num">X</span><h2>Fruits and shadows</h2><p class="dek">“By their fruits ye shall know them.” What the faith gave the world, and the harms done in its name, with the correction that came from within.</p></header>
+    <section class="folio" id="ledger" data-title="Fruits & Shadows" data-num="XV">
+      <header class="folio-head"><span class="folio-num">XV</span><h2>Fruits and shadows</h2><p class="dek">“By their fruits ye shall know them.” What the faith gave the world, and the harms done in its name, with the correction that came from within.</p></header>
+      <div class="stat-row" id="global"></div>
+      <p class="small" id="global-note" style="margin:10px 0 24px"></p>
       <div class="ledger">
         <div class="col-f"><h3>Fruits</h3><div id="fruits"></div></div>
         <div class="col-s"><h3>Shadows</h3><div id="shadows"></div></div>
@@ -236,14 +337,35 @@
     </section>
 
     <!-- XI. Then & Now -->
-    <section class="folio" id="thennow" data-title="Then & Now" data-num="XI">
-      <header class="folio-head"><span class="folio-num">XI</span><h2>Then and now</h2><p class="dek">How the ancient writers meant their words, how modern readers hear them, and what is lost in between, in both directions.</p></header>
+    <section class="folio" id="thennow" data-title="Then & Now" data-num="XVI">
+      <header class="folio-head"><span class="folio-num">XVI</span><h2>Then and now</h2><p class="dek">How the ancient writers meant their words, how modern readers hear them, and what is lost in between, in both directions.</p></header>
       <div class="gaps" id="gaps"></div>
     </section>
 
+
+    <!-- XVII. The Inner Way -->
+    <section class="folio" id="inner" data-title="The Inner Way" data-num="XVII">
+      <header class="folio-head"><span class="folio-num">XVII</span><h2>The inner way</h2><p class="dek">The contemplative tradition: the stages of the soul, the practices that train attention and love, how Christians compare extraordinary experiences across traditions, and how to discern and integrate them.</p></header>
+      <div class="three-col" id="stages"></div>
+      <p class="small" id="stages-note" style="margin-top:10px"></p>
+      <h3 class="sub-h">Practices</h3>
+      <div class="three-col" id="practices"></div>
+      <h3 class="sub-h">The masters</h3>
+      <ol class="timeline" id="masters"></ol>
+      <h3 class="sub-h">Union, compared</h3>
+      <div class="table-scroll"><table class="thread-table" id="union"></table></div>
+      <p class="small" id="union-note" style="margin-top:10px"></p>
+      <h3 class="sub-h">Extraordinary experience: what research shows</h3>
+      <ul class="claims" id="experience"></ul>
+      <h3 class="sub-h">Discerning the spirits</h3>
+      <div class="three-col" id="discern"></div>
+      <h3 class="sub-h">Integration <span class="eyebrow">After something overwhelming</span></h3>
+      <ol class="cycle" id="integrate"></ol>
+    </section>
+
     <!-- XII. The Way -->
-    <section class="folio" id="way" data-title="The Way" data-num="XII">
-      <header class="folio-head"><span class="folio-num">XII</span><h2>The Way</h2><p class="dek">What it means to be a good person and a faithful Christian when so much pulls the self out of alignment, and how to grow toward shalom: whole in spirit, mind, body, means, heart and bonds.</p></header>
+    <section class="folio" id="way" data-title="The Way" data-num="XVIII">
+      <header class="folio-head"><span class="folio-num">XVIII</span><h2>The Way</h2><p class="dek">What it means to be a good person and a faithful Christian when so much pulls the self out of alignment, and how to grow toward shalom: whole in spirit, mind, body, means, heart and bonds.</p></header>
       <div class="summary-verses" id="way-summary"></div>
       <h3 class="sub-h">The anatomy of temptation</h3>
       <ul class="claims" id="tempt-notes"></ul>
@@ -298,7 +420,13 @@
 <script src="assets/js/wisdom.js"></script>
 <script src="assets/js/orders.js"></script>
 <script src="assets/js/life.js"></script>
+<script src="assets/js/library.js"></script>
+<script src="assets/js/compare.js"></script>
+<script src="assets/js/time.js"></script>
+<script src="assets/js/inner.js"></script>
+<script src="assets/js/extras.js"></script>
 <script src="assets/js/tour.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="assets/js/sections.js"></script>
 </body>
 </html>
