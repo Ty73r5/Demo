@@ -14,6 +14,16 @@ An interactive atlas of Christianity, written from faith and held to the evidenc
 
 A **voice-guided tour** (20 steps) uses the browser's built-in speech synthesis. Where no voice is available, it shows captions and advances at reading pace.
 
+## Try it
+
+- **Online, no install:** https://raw.githack.com/Ty73r5/Demo/main/index.html
+- **Download:** the [latest release](https://github.com/Ty73r5/Demo/releases/latest) has `logos-atlas.html`, a single file that opens in any browser, and `logos-atlas-site.zip` with the full site.
+- **Your own GitHub Pages address (optional):** in this repository go to Settings → Pages, set the source to *Deploy from a branch*, choose `main` and `/ (root)`, and save. The site then appears at https://ty73r5.github.io/Demo/ within a minute or two.
+
+Press **Guided tour** at the top of the page for the narrated walk-through.
+
+To publish a new version, open the Actions tab, choose **Release**, press **Run workflow** and enter a new tag such as `v1.0.1`.
+
 ## How claims are marked
 
 Every claim carries one label: **Fact** (documented), **Consensus** (most specialists agree), **Debated**, **Tradition** (handed down, unverified), **Synthesis** (an interpretive reading) or **Faith** (what the Church confesses).
