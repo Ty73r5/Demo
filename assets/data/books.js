@@ -99,7 +99,7 @@ window.LINEAGE = [
     { y: 350, n: 'Gothic', d: 'c. 350', x: 'Bishop Wulfila invented an alphabet to translate the Bible for the Goths.', url: L.wiki('Gothic_Bible') },
     { y: 420, n: 'Syriac Peshitta', d: 'c. 2nd–5th c.', x: 'The Bible of the Syriac churches, in a language close to Jesus’ Aramaic.', url: L.wiki('Peshitta') },
     { y: 435, n: 'Armenian', d: 'c. 405–435', x: 'Mesrop Mashtots created the Armenian alphabet to translate the Bible; it is called the “queen of the versions.”', url: L.wiki('Armenian_Bible') },
-    { y: 500, n: 'Ge’ez (Ethiopic)', d: 'c. 5th–6th c.', x: 'The Bible of the Ethiopian Church, which preserves 1 Enoch and Jubilees complete.', url: L.wiki('Ge%CA%BDez_Bible') },
+    { y: 500, n: 'Ge’ez (Ethiopic)', d: 'c. 5th–6th c.', x: 'The Bible of the Ethiopian Church, which preserves 1 Enoch and Jubilees complete.', url: L.wiki('Orthodox_Tewahedo_biblical_canon') },
     { y: 863, n: 'Old Church Slavonic', d: 'from 863', x: 'Cyril and Methodius created a Slavic alphabet to translate the liturgy and Scriptures.', url: L.wiki('Church_Slavonic_language') } ] },
   { lane: 'English', items: [
     { y: 1390, n: 'Wycliffe', d: '1382–95', x: 'The first complete English Bible, translated from the Vulgate by followers of John Wycliffe and banned by the Constitutions of Oxford (1409).', url: L.wiki('Wycliffe%27s_Bible') },
@@ -110,7 +110,7 @@ window.LINEAGE = [
     { y: 1885, n: 'Revised Version', d: '1881–85', x: 'The first official revision of the KJV, using older manuscripts; the American Standard Version (1901) followed.', url: L.wiki('Revised_Version') },
     { y: 1952, n: 'RSV', d: '1952', x: 'The Revised Standard Version, followed by the NRSV (1989) and ESV (2001).', url: L.wiki('Revised_Standard_Version') },
     { y: 1978, n: 'NIV', d: '1978', x: 'The New International Version, an evangelical translation balancing word-for-word and thought-for-thought; the best-selling modern English Bible.', url: L.wiki('New_International_Version') },
-    { y: 2016, n: 'Berean Standard', d: '2016–23', x: 'A modern translation released into the public domain in 2023, used in this atlas.', url: L.wiki('Berean_Bible') } ] }
+    { y: 2016, n: 'Berean Standard', d: '2016–23', x: 'A modern translation released into the public domain in 2023, used in this atlas.', url: 'https://berean.bible/' } ] }
 ];
 
 /* Passages offered in "the same words across six centuries of English". */
