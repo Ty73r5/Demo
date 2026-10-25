@@ -48,7 +48,8 @@
       <path d="M200,70 L90,260 L310,260 Z" fill="none" stroke="var(--rule)" stroke-width="2"/>
       <circle cx="200" cy="197" r="34" fill="var(--page-2)" stroke="var(--rule)"/><text x="200" y="194" text-anchor="middle" style="font-size:12px">One God</text><text x="200" y="210" text-anchor="middle" style="font-size:10px;fill:var(--ink-soft)">one essence</text>
       ${P.map((p, i) => `<g class="p" data-id="${p.id}" tabindex="0" role="button" aria-label="${esc(p.name)} and ${esc(p.art)}"><circle cx="${pts[i][0]}" cy="${pts[i][1]}" r="46" fill="color-mix(in srgb, ${C[i]} 22%, var(--page))"/><text x="${pts[i][0]}" y="${pts[i][1] - 4}" text-anchor="middle" style="font-size:12.5px;font-weight:700">${esc(p.name.replace('The Son, the Logos', 'The Son'))}</text><text x="${pts[i][0]}" y="${pts[i][1] + 14}" text-anchor="middle" style="font-size:11.5px;fill:var(--ink-soft)">${esc(p.art)}</text></g>`).join('')}
-    </svg><div class="panel" id="tr-card"></div></div>`;
+    </svg><div class="panel" id="tr-card"></div></div>
+    <p class="note" style="margin-top:8px">An analogy for reflection, not church teaching. The links to memory, understanding and will are Augustine’s; the arts of speech follow Bonaventure; pairing each person with one of the three Hebrew words of Proverbs 24:3–4 follows modern classical-education usage.</p>`;
     const show = id => {
       const i = P.findIndex(p => p.id === id), p = P[i];
       $$('.p', el).forEach(g => g.classList.toggle('sel', g.dataset.id === id));

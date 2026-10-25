@@ -55,7 +55,7 @@ UNITS.push({
   sections: [
     { h: 'Reason and faith in Christian thought', blocks: [
       { k: 'text', x: 'The New Testament presents faith as reasonable: Christians are told to be ready to give “a reason of the hope that is in you” {{1Pet.3.15}}, and Paul argues that God’s “eternal power and Godhead” can be understood from the things that are made {{Rom.1.20}}. The First Vatican Council (1870) taught that God can be known with certainty by natural reason.' },
-      { k: 'bel', who: 'Christian', x: 'Christian thinkers differ on how much the arguments can do. Aquinas held that reason can prove God exists but that the Trinity is known only by revelation. Pascal and Kierkegaard distrusted proofs and spoke of the heart and of a leap of faith. Reformed epistemologists such as Alvin Plantinga argue that belief in God can be rational without argument, as belief in other minds is.' },
+      { k: 'p', x: 'Christian thinkers differ on how much the arguments can do. Aquinas held that reason can prove God exists but that the Trinity is known only by revelation. Pascal and Kierkegaard distrusted proofs and spoke of the heart and of a leap of faith. Reformed epistemologists such as Alvin Plantinga argue that belief in God can be rational without argument, as belief in other minds is.' },
       { k: 'sch', x: 'Professional philosophers are divided. In the 2009 PhilPapers survey, about 73% of philosophers accepted or leaned towards atheism and 15% towards theism; among those specialising in philosophy of religion, the proportions were roughly reversed ([Bourget and Chalmers, 2014](' + L.doi('10.1007/s11098-013-0259-7') + ')).' } ] }
   ],
   questions: ['Which argument on each side do you find strongest, and why?', 'Can an argument for a first cause or a designer reach the God of a particular religion, or must something else, such as revelation or history, do that work?', 'What would change your mind on this question?'],
@@ -112,7 +112,7 @@ UNITS.push({
   widget: 'inner',
   sections: [
     { h: 'The threefold way', widget: 'stages', blocks: [
-      { k: 'text', x: 'Pseudo-Dionysius (c. 500) described the soul’s path in three stages, purgation, illumination and union, and Bonaventure’s The Threefold Way (13th century) made it a classic of Western spirituality. The stages are overlapping aspects of growth rather than strict steps.' } ] },
+      { k: 'p', x: 'Pseudo-Dionysius (c. 500) described the soul’s path in three stages, purgation, illumination and union, and Bonaventure’s The Threefold Way (13th century) made it a classic of Western spirituality. The stages are overlapping aspects of growth rather than strict steps.' } ] },
     { h: 'Testing experience', widget: 'discern', blocks: [] },
     { h: 'What research has found', widget: 'research', blocks: [] }
   ],
@@ -134,7 +134,7 @@ UNITS.push({
     { h: 'Why virtue?', blocks: [
       { k: 'p', x: 'A virtue (Latin *virtus*, “strength”; Greek *aretē*, “excellence”) is a settled disposition to act well, built by practice the way a skill is. Aristotle argued that we become just by doing just acts, as we become builders by building. Christian teaching agrees and adds that grace heals and raises nature: the virtues are given as well as acquired.' },
       { k: 'p', x: 'The case for the virtues does not rest on religion alone. They make cooperation, trust and self-government possible, and a growing body of research links several of them with health, longevity and well-being. The religious traditions add a further claim: that the virtues fit human nature because they reflect the character of its Maker {{Matt.5.48}}.' },
-      { k: 'text', x: 'Jesus summarised the Law in two commandments: to love God with all one’s heart, soul, mind and strength, and one’s neighbour as oneself {{Mark.12.30-31}}. The prophet Micah had put it as doing justly, loving mercy and walking humbly with God {{Mic.6.8}}.' } ] },
+      { k: 'text', x: 'In the Gospels, Jesus summarises the Law in two commandments: to love God with all one’s heart, soul, mind and strength, and one’s neighbour as oneself {{Mark.12.30-31}}. The prophet Micah had put it as doing justly, loving mercy and walking humbly with God {{Mic.6.8}}.' } ] },
     { h: 'The seven capital vices', widget: 'vices', blocks: [] },
     { h: 'Whole-life health', widget: 'pillars', blocks: [
       { k: 'p', x: 'This atlas was asked to serve spiritual, intellectual, physical, financial and emotional health. Each area below gives the scriptural teaching, a few practices drawn from Christian tradition, and a related research finding. The findings are associations and experiments in particular groups, not guarantees, and the Bible itself warns against treating faith as a technique for prosperity {{1Tim.6.5-6}}.' } ] },
@@ -158,9 +158,9 @@ UNITS.push({
   sections: [
     { h: 'Studying with AI', widget: 'ai', blocks: [] },
     { h: 'The data in this atlas', blocks: [
-      { k: 'record', x: 'Hebrew and Greek words, transliterations, glosses and Strong’s numbers come from STEP Bible’s Translators Amalgamated Hebrew Old Testament and Greek New Testament (TAHOT and TAGNT), and the lexicons TBESH and TBESG, by Tyndale House, Cambridge, licensed CC BY 4.0. The Hebrew is the Leningrad Codex; the Greek follows the Nestle-Aland text, with words found only in the Textus Receptus (the Greek behind the King James Version) marked.' },
-      { k: 'record', x: 'English translations are public domain: Wycliffe (c. 1395), Tyndale (1526–34), the Geneva Bible (1599), the King James Version (1611, with Apocrypha), Douay-Rheims (Challoner revision), Young’s Literal Translation (1862), the American Standard Version (1901), the Jewish Publication Society Tanakh (1917; the divine names are restored to their 1917 form), the Catholic Public Domain Version and the Berean Standard Bible (2023, dedicated to the public domain). The Latin is the Clementine Vulgate.' },
-      { k: 'record', x: 'The Qur’an is the Uthmani Arabic text (Hafs reading) with the English translation of Marmaduke Pickthall (1930), now in the public domain. Map coastlines are from Natural Earth.' } ] }
+      { k: 'p', x: 'Hebrew and Greek words, transliterations, glosses and Strong’s numbers come from STEP Bible’s Translators Amalgamated Hebrew Old Testament and Greek New Testament (TAHOT and TAGNT), and the lexicons TBESH and TBESG, by Tyndale House, Cambridge, licensed CC BY 4.0. The Hebrew is the Leningrad Codex; the Greek follows the Nestle-Aland text, with words found only in the Textus Receptus (the Greek behind the King James Version) marked.' },
+      { k: 'p', x: 'English translations are public domain: Wycliffe (c. 1395), Tyndale (1526–34), the Geneva Bible (1599), the King James Version (1611, with Apocrypha), Douay-Rheims (Challoner revision), Young’s Literal Translation (1862), the American Standard Version (1901), the Jewish Publication Society Tanakh (1917; the divine names are restored to their 1917 form), the Catholic Public Domain Version and the Berean Standard Bible (2023, dedicated to the public domain). The Latin is the Clementine Vulgate.' },
+      { k: 'p', x: 'The Qur’an is the Uthmani Arabic text (Hafs reading) with the English translation of Marmaduke Pickthall (1930), now in the public domain. Map coastlines are from Natural Earth.' } ] }
   ],
   questions: ['Choose one claim in this atlas that surprised you and trace it to a primary source. What did you find?'],
   sources: [

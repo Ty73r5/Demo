@@ -74,7 +74,7 @@
   };
   W.stages = el => { el.innerHTML = `<div class="grid-cards">${INNER.stages.map((s, i) => `<div class="card"><p class="eyebrow">Stage ${i + 1}</p><h3>${esc(s.n)}</h3><p>${rich(s.x)}</p><p>${refBtn(s.v)}</p></div>`).join('')}</div>`; };
   W.discern = el => { el.innerHTML = `<div class="blk-wrap">${INNER.discern.map(x => `<div class="blk" data-k="p"><p>${rich(x)}</p></div>`).join('')}</div>`; };
-  W.research = el => { el.innerHTML = `<div class="blk-wrap">${INNER.research.map(r => `<div class="blk" data-k="record"><span class="blk-k">Record</span><p>${rich(r.x)} ${link('Source', r.url)}</p></div>`).join('')}</div>`; };
+  W.research = el => { el.innerHTML = `<div class="blk-wrap">${INNER.research.map(r => `<div class="blk" data-k="sch"><span class="blk-k">Scholarship</span><p>${rich(r.x)} ${link('Source', r.url)}</p></div>`).join('')}</div>`; };
 
   W.virtues = el => {
     const G = [['all', 'All twelve'], ['cardinal', 'Cardinal'], ['theological', 'Theological'], ['other', 'Others Christianity stressed']];

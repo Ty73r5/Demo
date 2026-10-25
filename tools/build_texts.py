@@ -230,6 +230,10 @@ def main(src):
         if b in DEUTERO and 'KJV' not in e['tr'] and 'KJVA' in e['tr']:
             e['tr']['KJV'] = e['tr'].pop('KJVA')  # the 1611 Apocrypha
         e['tr'].pop('KJVA', None)
+        if b in ('Tob', 'Jdt'):
+            # The Vulgate's Tobit and Judith follow a different recension and numbering from the Greek behind the
+            # KJV Apocrypha, so the two families cannot be shown side by side; keep the Vulgate family.
+            e['tr'].pop('KJV', None)
         if b != 'John' or c != 1 or 1 not in vs:
             e['tr'].pop('ChiUn', None)
         words = []

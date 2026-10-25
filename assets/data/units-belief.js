@@ -79,7 +79,8 @@ UNITS.push({
       { k: 'bel', who: 'Christian', x: 'Aquinas permits “appropriation”: attributing power to the Father, wisdom to the Son and goodness to the Spirit, while holding that each attribute belongs to all three ([Summa I, q.39, a.7–8](' + L.summa('1039') + ')). The Trivium analogy works in the same way and is not doctrine.' },
       { k: 'bel', who: 'Christian', x: 'Pressed too far it becomes modalism, the teaching that God is one person playing three roles, rejected in the 3rd century. The Father also reasons, the Son also speaks, and the Spirit also knows.' },
       { k: 'sch', x: 'The tradition is divided on Wisdom: Paul calls Christ “the wisdom of God” {{1Cor.1.24}}, while Theophilus and Irenaeus identify Wisdom with the Spirit. Linking rhetoric to wisdom follows the second line and modern classical-education usage.' },
-      { k: 'bel', who: 'Jewish and Muslim', x: 'Both reject the Trinity as compromising the oneness of God {{Deut.6.4}} {{Q:4:171}}. Christians answer that the Trinity is a description of the one God, not a plurality of gods. The comparison unit sets out the arguments.' } ] }
+      { k: 'bel', who: 'Jewish and Muslim', x: 'Both reject the Trinity as compromising the oneness of God {{Deut.6.4}} {{Q:4:171}}.' },
+      { k: 'bel', who: 'Christian', x: 'Christians answer that the Trinity is a description of the one God, not a plurality of gods. The comparison unit sets out the arguments.' } ] }
   ],
   questions: ['Which lens (Psalm 33, Proverbs, Augustine, Genesis) makes the analogy clearest to you?', 'Why do Christian theologians insist that analogies for the Trinity always fall short?', 'How might studying grammar, logic and rhetoric help a person read Scripture well?'],
   sources: [
