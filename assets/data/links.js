@@ -2,8 +2,8 @@
    so that tools/check_links.js can collect and test them all. */
 window.L = {
   // Bible
-  bh: (slug, c, v) => `https://biblehub.com/${slug}/${c}-${v}.htm`,
-  bhInter: (slug, c, v) => `https://biblehub.com/interlinear/${slug}/${c}-${v}.htm`,
+  bh: (slug, c, v) => slug && slug !== '-' ? `https://biblehub.com/${slug}/${c}-${v}.htm` : null,
+  bhInter: (slug, c, v) => slug && slug !== '-' ? `https://biblehub.com/interlinear/${slug}/${c}-${v}.htm` : null,
   strongs: s => `https://biblehub.com/${s[0] === 'H' ? 'hebrew' : 'greek'}/${s.slice(1)}.htm`,
   blb: s => `https://www.blueletterbible.org/lexicon/${s.toLowerCase()}/kjv/`,
   bg: (q, v = 'DRA') => `https://www.biblegateway.com/passage/?search=${encodeURIComponent(q)}&version=${v}`,
@@ -19,7 +19,7 @@ window.L = {
   sacred: path => `https://sacred-texts.com/${path}`,
   ctext: path => `https://ctext.org/${path}`,
   gut: q => `https://www.gutenberg.org/ebooks/search/?query=${encodeURIComponent(q)}`,
-  wiki: t => `https://en.wikipedia.org/wiki/${t}`,
+  wiki: t => `https://en.wikipedia.org/wiki/${t.replace(/\(/g, '%28').replace(/\)/g, '%29')}`,
   sep: e => `https://plato.stanford.edu/entries/${e}/`,
   doi: d => `https://doi.org/${d}`,
   bm: id => `https://www.britishmuseum.org/collection/object/${id}`

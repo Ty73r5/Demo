@@ -71,8 +71,8 @@ UNITS.push({
         `**Epistle of Barnabas** (c. 100–132), an allegorical reading of the Law, also in Sinaiticus. [Read](${L.na('0124')})`,
         `**Protoevangelium of James** (c. 150), the birth and childhood of Mary, source of the names Joachim and Anne. [Read](${L.na('0847')})`,
         `**1 Enoch** (3rd–1st c. BC), canonical in the Ethiopian Church and quoted in Jude 14–15. [Read the R. H. Charles translation](${L.sacred('bib/boe/index.htm')})`,
-        `**Gospel of Thomas** (debated: c. 60–150), 114 sayings attributed to Jesus, found at Nag Hammadi. [Read](https://www.gnosis.org/naghamm/gthlamb.html)`,
-        `**Gospel of Judas, Gospel of Mary, Gospel of Truth and the rest of the Nag Hammadi library**: [the library online](https://www.gnosis.org/naghamm/nhl.html)` ] },
+        `**Gospel of Thomas** (debated: c. 60–150), 114 sayings attributed to Jesus, found at Nag Hammadi. [Read](https://www.earlychristianwritings.com/thomas.html)`,
+        `**Gospel of Judas, Gospel of Mary, Gospel of Truth and the rest of the Nag Hammadi library**: [about the library](https://en.wikipedia.org/wiki/Nag_Hammadi_library)` ] },
       { k: 'sch', x: 'Most specialists date the Gnostic gospels to the 2nd–3rd centuries, later than the four canonical Gospels. The Gospel of Thomas is debated: some scholars think parts preserve sayings as early as the canonical Gospels; most date it to the 2nd century.' } ] }
   ],
   questions: ['Why might a community read a book in worship for generations before anyone writes down a list?', 'The Protestant and Catholic Old Testaments differ by seven books. What is the strongest argument on each side?', 'How does the ending of the Hebrew Bible (2 Chronicles) differ in tone from the ending of the Christian Old Testament (Malachi)?'],
@@ -118,13 +118,13 @@ UNITS.push({
     { t: 'Bruce M. Metzger and Bart D. Ehrman, The Text of the New Testament (4th ed., 2005)', url: L.wiki('Textual_criticism_of_the_New_Testament') },
     { t: 'Codex Sinaiticus Project', url: 'https://codexsinaiticus.org/en/' },
     { t: 'The Leon Levy Dead Sea Scrolls Digital Library (Israel Antiquities Authority)', url: 'https://www.deadseascrolls.org.il/' },
-    { t: 'The Translators to the Reader (preface to the 1611 King James Bible)', url: L.wiki('The_Translators_to_the_Reader') }
+    { t: 'The King James Version and its 1611 preface, The Translators to the Reader', url: L.wiki('King_James_Version') }
   ]
 });
 
 UNITS.push({
   id: 'original', part: 'The Book', title: 'Reading the original',
-  kicker: 'Thirty-one passages where the Hebrew, the Greek, the manuscripts or the translations make a difference.',
+  kicker: 'Thirty-two passages where the Hebrew, the Greek, the manuscripts or the translations make a difference.',
   intro: 'Every passage below is shown word by word in Hebrew or Greek, with each word’s English gloss and Strong’s number, beside eleven translations. Words found only in the Textus Receptus, the Greek text behind the King James, are marked. The notes say what the text shows, what the manuscripts record, what scholars conclude, and how Jewish, Christian or Muslim readers understand the passage.',
   widget: 'lab',
   sections: [],

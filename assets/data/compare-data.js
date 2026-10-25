@@ -9,7 +9,7 @@ window.CHURCH_DOCS = {
   ref: ['Westminster Confession of Faith (1646)', 'https://opc.org/wcf.html'],
   ang: ['The Thirty-Nine Articles (1571)', 'https://en.wikipedia.org/wiki/Thirty-nine_Articles'],
   bap: ['The Baptist Faith and Message (2000)', 'https://bfm.sbc.net/bfm2000/'],
-  meth: ['Methodist Articles of Religion (1784)', 'https://en.wikipedia.org/wiki/Articles_of_Religion_(Methodist)'],
+  meth: ['Methodist Articles of Religion (1784)', 'https://en.wikipedia.org/wiki/Articles_of_Religion_%28Methodist%29'],
   pent: ['Assemblies of God, Statement of Fundamental Truths', 'https://ag.org/Beliefs/Statement-of-Fundamental-Truths']
 };
 

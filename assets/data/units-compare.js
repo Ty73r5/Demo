@@ -154,6 +154,6 @@ UNITS.push({
     { t: 'Ancient Egyptian religion: overview', url: L.wiki('Ancient_Egyptian_religion') },
     { t: 'Ausar Auset Society', url: L.wiki('Ausar_Auset_Society') },
     { t: 'Kemetism: modern Egyptian religious movements', url: L.wiki('Kemetism') },
-    { t: 'Mary Lefkowitz, Not Out of Africa (1996)', url: L.wiki('Not_Out_of_Africa') }
+    { t: 'Mary Lefkowitz, Not Out of Africa (1996)', url: L.wiki('Mary_Lefkowitz') }
   ]
 });

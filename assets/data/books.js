@@ -71,3 +71,47 @@ window.BOOKS = [
   // Apocalypse
   { g: 'apoc', n: 1, name: 'Revelation', trad: 'John, exiled on Patmos', sch: 'Dated under Domitian (c. 95, per Irenaeus) or after Nero (68–69). Its author is debated.', date: 'c. 68–96', theme: 'The Lamb who was slain on the throne, Babylon fallen, and a new heaven and earth with no more tears.', key: 'Rev.21.4' }
 ];
+
+/* How the text reached us: lanes of transmission, oldest to newest. y = approximate year (negative = BC). */
+window.LINEAGE = [
+  { lane: 'Hebrew', items: [
+    { y: -125, n: 'Dead Sea Scrolls', d: 'c. 250 BC – AD 68', x: 'About 950 manuscripts from Qumran, including the complete Great Isaiah Scroll (c. 125 BC). See the unit on the scrolls.', url: 'https://www.deadseascrolls.org.il/' },
+    { y: 930, n: 'Aleppo Codex', d: 'c. 930', x: 'The model codex of the Masoretes of Tiberias, who added vowels, accents and notes. Partly lost in 1947; the surviving leaves are in Jerusalem.', url: L.wiki('Aleppo_Codex') },
+    { y: 1008, n: 'Leningrad Codex', d: '1008', x: 'The oldest complete Hebrew Bible, and the basis of modern printed editions and of the Hebrew in this atlas.', url: L.wiki('Leningrad_Codex') },
+    { y: 1525, n: 'Rabbinic Bible', d: '1524–25', x: 'Daniel Bomberg’s second Rabbinic Bible in Venice, edited by Jacob ben Hayyim: the standard printed Hebrew text for four centuries.', url: L.wiki('Mikraot_Gedolot') },
+    { y: 1977, n: 'Biblia Hebraica Stuttgartensia', d: '1977', x: 'The standard scholarly edition of the Leningrad Codex, with variants in the margin. Its successor, Biblia Hebraica Quinta, is in progress.', url: L.wiki('Biblia_Hebraica_Stuttgartensia') } ] },
+  { lane: 'Greek', items: [
+    { y: -250, n: 'Septuagint', d: '3rd–1st c. BC', x: 'Greek translation of the Hebrew Scriptures made in Alexandria, the Bible most quoted in the New Testament and still the Old Testament of the Orthodox Church.', url: L.wiki('Septuagint') },
+    { y: 150, n: 'Papyrus 52', d: 'c. 125–175', x: 'A scrap of John 18, often cited as the earliest surviving New Testament fragment; its date is debated.', url: L.wiki('Rylands_Library_Papyrus_P52') },
+    { y: 200, n: 'Papyri 66 and 75', d: 'c. 200', x: 'Early papyrus books containing most of John (P66) and much of Luke and John (P75), which agrees closely with Codex Vaticanus.', url: L.wiki('Papyrus_66') },
+    { y: 340, n: 'Sinaiticus and Vaticanus', d: 'c. 325–360', x: 'The oldest complete (Sinaiticus) and near-complete (Vaticanus) Greek Bibles, the main witnesses of modern critical editions.', url: 'https://codexsinaiticus.org/' },
+    { y: 1516, n: 'Erasmus’s New Testament', d: '1516', x: 'The first published Greek New Testament, based on a handful of late manuscripts; its revisions became the Textus Receptus, the Greek behind the KJV.', url: L.wiki('Textus_Receptus') },
+    { y: 1881, n: 'Westcott and Hort', d: '1881', x: 'A critical Greek text built mainly on the oldest manuscripts, behind the Revised Version and most modern translations.', url: L.wiki('Westcott_and_Hort') },
+    { y: 2012, n: 'Nestle–Aland 28', d: '2012', x: 'The standard critical edition today, with an apparatus of variant readings. The Greek in this atlas follows it, marking words found only in the Textus Receptus.', url: L.wiki('Novum_Testamentum_Graece') } ] },
+  { lane: 'Latin', items: [
+    { y: 200, n: 'Old Latin', d: 'from c. 200', x: 'Early, varied translations from the Greek, used in North Africa and Italy.', url: L.wiki('Vetus_Latina') },
+    { y: 400, n: 'Jerome’s Vulgate', d: '382–405', x: 'Jerome revised the Gospels and translated most of the Old Testament from the Hebrew. It became the Bible of the Western Church for a thousand years.', url: L.wiki('Vulgate') },
+    { y: 1455, n: 'Gutenberg Bible', d: 'c. 1455', x: 'The first major book printed with movable type in Europe: the Latin Vulgate.', url: L.wiki('Gutenberg_Bible') },
+    { y: 1592, n: 'Clementine Vulgate', d: '1592', x: 'The official Catholic Latin Bible after the Council of Trent, used in this atlas.', url: L.wiki('Sixto-Clementine_Vulgate') },
+    { y: 1979, n: 'Nova Vulgata', d: '1979', x: 'The revised Latin Bible of the Catholic Church, corrected against the Hebrew and Greek.', url: L.wiki('Nova_Vulgata') } ] },
+  { lane: 'Other early', items: [
+    { y: 300, n: 'Coptic', d: 'c. 3rd–4th c.', x: 'Translations into the Egyptian language, in Sahidic and Bohairic dialects.', url: L.wiki('Coptic_versions_of_the_Bible') },
+    { y: 350, n: 'Gothic', d: 'c. 350', x: 'Bishop Wulfila invented an alphabet to translate the Bible for the Goths.', url: L.wiki('Gothic_Bible') },
+    { y: 420, n: 'Syriac Peshitta', d: 'c. 2nd–5th c.', x: 'The Bible of the Syriac churches, in a language close to Jesus’ Aramaic.', url: L.wiki('Peshitta') },
+    { y: 435, n: 'Armenian', d: 'c. 405–435', x: 'Mesrop Mashtots created the Armenian alphabet to translate the Bible; it is called the “queen of the versions.”', url: L.wiki('Armenian_Bible') },
+    { y: 500, n: 'Ge’ez (Ethiopic)', d: 'c. 5th–6th c.', x: 'The Bible of the Ethiopian Church, which preserves 1 Enoch and Jubilees complete.', url: L.wiki('Ge%CA%BDez_Bible') },
+    { y: 863, n: 'Old Church Slavonic', d: 'from 863', x: 'Cyril and Methodius created a Slavic alphabet to translate the liturgy and Scriptures.', url: L.wiki('Church_Slavonic_language') } ] },
+  { lane: 'English', items: [
+    { y: 1390, n: 'Wycliffe', d: '1382–95', x: 'The first complete English Bible, translated from the Vulgate by followers of John Wycliffe and banned by the Constitutions of Oxford (1409).', url: L.wiki('Wycliffe%27s_Bible') },
+    { y: 1526, n: 'Tyndale', d: '1526', x: 'The first English New Testament from the Greek, printed abroad and smuggled in. Tyndale was executed in 1536; much of his wording survives in the KJV.', url: L.wiki('Tyndale_Bible') },
+    { y: 1560, n: 'Geneva', d: '1560', x: 'Made by Protestant exiles in Geneva, with verse numbers and study notes: the Bible of Shakespeare and the Pilgrims.', url: L.wiki('Geneva_Bible') },
+    { y: 1582, n: 'Douay–Rheims', d: '1582–1610', x: 'The Catholic English Bible, from the Vulgate, revised by Bishop Challoner (1749–52).', url: L.wiki('Douay%E2%80%93Rheims_Bible') },
+    { y: 1611, n: 'King James', d: '1611', x: 'Commissioned at Hampton Court (1604), made by 47 scholars working from the Hebrew and Greek with earlier English versions. The most influential book in the English language.', url: L.wiki('King_James_Version') },
+    { y: 1885, n: 'Revised Version', d: '1881–85', x: 'The first official revision of the KJV, using older manuscripts; the American Standard Version (1901) followed.', url: L.wiki('Revised_Version') },
+    { y: 1952, n: 'RSV', d: '1952', x: 'The Revised Standard Version, followed by the NRSV (1989) and ESV (2001).', url: L.wiki('Revised_Standard_Version') },
+    { y: 1978, n: 'NIV', d: '1978', x: 'The New International Version, an evangelical translation balancing word-for-word and thought-for-thought; the best-selling modern English Bible.', url: L.wiki('New_International_Version') },
+    { y: 2016, n: 'Berean Standard', d: '2016–23', x: 'A modern translation released into the public domain in 2023, used in this atlas.', url: L.wiki('Berean_Bible') } ] }
+];
+
+/* Passages offered in "the same words across six centuries of English". */
+window.VERSION_PASSAGES = ['John.3.16', 'Ps.23.1-4', 'Gen.1.1-2', 'Matt.6.9-13', '1Cor.13.13', 'Luke.2.14', 'Isa.7.14', 'Rom.3.28', 'John.1.1', 'Mic.6.8', '1John.5.7-8', 'Luke.23.34'];

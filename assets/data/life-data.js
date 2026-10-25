@@ -9,7 +9,7 @@ window.ARGS = [
   { side: 'for', id: 'design', n: 'Design and fine-tuning', who: 'Cicero, Paley; today Robin Collins, Luke Barnes',
     x: 'Several physical constants and initial conditions, such as the strength of gravity relative to electromagnetism and the cosmological constant, appear to lie in narrow ranges that permit stars, chemistry and life. A universe made by a mind would be expected to look like this; a universe without one would not, unless there is an explanation still unknown.',
     obj: 'A multiverse with varied constants, combined with the fact that observers can only find themselves in a life-permitting universe, could explain the appearance. Others question whether probabilities can be meaningfully assigned to constants at all. Darwin’s theory removed Paley’s biological examples, though not the cosmological ones.',
-    url: L.sep('teleological-arguments'), read: ['Geraint Lewis and Luke Barnes, A Fortunate Universe (2016)', L.doi('10.1017/9781316661413')] },
+    url: L.sep('teleological-arguments'), read: ['Geraint Lewis and Luke Barnes, A Fortunate Universe (2016)', L.wiki('Fine-tuned_universe')] },
   { side: 'for', id: 'onto', n: 'The ontological argument', who: 'Anselm, Descartes; today Alvin Plantinga',
     x: 'Anselm defined God as “that than which nothing greater can be conceived” and argued that such a being must exist in reality, not only in the mind, since existing in reality is greater. Plantinga’s modern version argues that if a maximally great being is even possible, it exists necessarily.',
     obj: 'Gaunilo, a monk of Anselm’s own day, replied that the same reasoning would prove a perfect island. Kant argued that existence is not a property that adds to a concept. Critics of Plantinga note that the argument’s key premise, that such a being is possible, is what is in dispute.',
@@ -45,7 +45,7 @@ window.ARGS = [
   { side: 'against', id: 'csr', n: 'Debunking explanations', who: 'Freud, Daniel Dennett, Pascal Boyer',
     x: 'The cognitive science of religion finds that human minds are prone to detect agents behind events and purpose in nature, tendencies that may have aided survival. If belief in gods can be explained by such tendencies, it may not need to be explained by gods.',
     obj: 'An account of how a belief arises does not settle whether it is true; the same faculties produce belief in other minds. Some researchers in this field, such as Justin Barrett, are themselves Christians and see these tendencies as compatible with a Creator who made minds able to know him.',
-    url: L.sep('cognitive-science-religion'), read: ['Pascal Boyer, Religion Explained (2001)', L.wiki('Pascal_Boyer')] }
+    url: L.wiki('Cognitive_science_of_religion'), read: ['Pascal Boyer, Religion Explained (2001)', L.wiki('Pascal_Boyer')] }
 ];
 
 /* How ancient and modern readers use the same words. */

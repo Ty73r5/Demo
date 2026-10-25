@@ -51,7 +51,6 @@ UNITS.push({
   sources: [
     { t: 'The Works of Robert G. Ingersoll (Project Gutenberg)', url: L.gut('Ingersoll') },
     { t: 'Susan Jacoby, The Great Agnostic: Robert Ingersoll and American Freethought (2013)', url: L.wiki('Robert_G._Ingersoll') },
-    { t: 'Robert Green Ingersoll Birthplace Museum', url: L.wiki('Robert_Green_Ingersoll_Birthplace') },
     { t: 'Louis A. Lambert, Notes on Ingersoll (1883)', url: L.gut('Notes on Ingersoll') }
   ]
 });
@@ -90,7 +89,7 @@ UNITS.push({
   questions: ['Why do the Templars attract so many legends?', 'What does the Templars’ trial show about the relationship between church and state in the 14th century?'],
   sources: [
     { t: 'Malcolm Barber, The New Knighthood (1994) and The Trial of the Templars (1978)', url: L.wiki('Knights_Templar') },
-    { t: 'Bernard of Clairvaux, In Praise of the New Knighthood', url: L.wiki('De_laude_novae_militiae') },
+    { t: 'Bernard of Clairvaux, In Praise of the New Knighthood', url: L.wiki('Bernard_of_Clairvaux') },
     { t: 'The Chinon Parchment', url: L.wiki('Chinon_Parchment') },
     { t: 'Trials of the Knights Templar', url: L.wiki('Trials_of_the_Knights_Templar') }
   ]
@@ -120,7 +119,7 @@ UNITS.push({
   sources: [
     { t: 'United Grand Lodge of England', url: 'https://www.ugle.org.uk/' },
     { t: 'Freemasonry: overview with sources', url: L.wiki('Freemasonry') },
-    { t: 'David Stevenson, The Origins of Freemasonry: Scotland’s Century, 1590–1710 (1988)', url: L.wiki('Schaw_Statutes') },
+    { t: 'David Stevenson, The Origins of Freemasonry: Scotland’s Century, 1590–1710 (1988)', url: L.wiki('William_Schaw') },
     { t: 'The Taxil hoax', url: L.wiki('Taxil_hoax') },
     { t: 'Prince Hall Freemasonry', url: L.wiki('Prince_Hall_Freemasonry') }
   ]

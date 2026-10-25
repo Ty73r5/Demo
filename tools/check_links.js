@@ -21,8 +21,8 @@ const generated = new Map();
 const firstVerse = r => { const m = r.match(/^(.+)\.(\d+)\.(\d+)/); return [+m[2], +m[3]]; };
 for (const r of sample(Object.keys(BIBLE), 60)) {
   const [c, v] = firstVerse(r), slug = BIBLE[r].slug;
-  generated.set(L.bh(slug, c, v), `BIBLE ${r}`);
-  if (BIBLE[r].words.length) generated.set(L.bhInter(slug, c, v), `BIBLE ${r} interlinear`);
+  if (L.bh(slug, c, v)) generated.set(L.bh(slug, c, v), `BIBLE ${r}`);
+  if (L.bhInter(slug, c, v) && BIBLE[r].words.length) generated.set(L.bhInter(slug, c, v), `BIBLE ${r} interlinear`);
 }
 for (const s of sample(Object.keys(LEX), 40)) { generated.set(L.strongs(s), `LEX ${s}`); generated.set(L.blb(s), `LEX ${s}`); }
 for (const q of sample(Object.keys(QURAN), 10)) { const [s, v] = q.split(/[:-]/); generated.set(L.quran(s, v), `QURAN ${q}`); }
