@@ -140,7 +140,7 @@
     const show = id => {
       const s = SYNOPTIC.find(x => x.id === id);
       $('#gs-out', el).innerHTML = `<div class="grid-cards">${s.refs.map(r => { const e = BIBLE[r]; return `<div class="card"><p class="meta">${refBtn(r)}</p><p>${esc(e ? (e.tr.KJV || '') : '')}</p>${e && e.tr.BSB ? `<p class="note">BSB: ${esc(e.tr.BSB)}</p>` : ''}</div>`; }).join('')}</div>
-        <div class="blk-wrap" style="margin-top:14px">${s.notes.map(([, x]) => `<div class="blk" data-k="p"><p>${rich(x)}</p></div>`).join('')}</div>`;
+        <div class="blk-wrap" style="margin-top:14px">${s.notes.map(x => `<div class="blk" data-k="p"><p>${rich(x)}</p></div>`).join('')}</div>`;
     };
     bindChips($('#gs-pick', el), show); show(SYNOPTIC[0].id);
   };
@@ -164,7 +164,7 @@
       ${cats.map((c, i) => `<text x="${left - 12}" y="${top + i * laneH + laneH / 2 + 4}" text-anchor="end">${esc(DEEP_CATS[c])}</text>`).join('')}
       ${DEEP_TIME.map((d, k) => { const i = cats.indexOf(d.cat); return `<g class="pt" data-k="${k}" tabindex="0" role="button" aria-label="${esc(d.n)}"><circle cx="${x(d.ya)}" cy="${top + i * laneH + laneH / 2}" r="7" fill="${C[d.cat]}"/></g>`; }).join('')}
     </svg></div><p class="note" style="margin-top:6px">Years before the present, on a logarithmic scale: each step left is ten times further back.</p>
-    <div class="panel" id="dp-card" style="margin-top:10px"></div><p class="note" style="margin-top:8px">${rich(DEEP_NOTE[1])}</p>`;
+    <div class="panel" id="dp-card" style="margin-top:10px"></div><p class="note" style="margin-top:8px">${rich(DEEP_NOTE)}</p>`;
     const show = k => {
       const d = DEEP_TIME[k];
       $$('.pt', el).forEach(p => p.classList.toggle('sel', +p.dataset.k === k));
@@ -202,7 +202,7 @@
       ${inYear ? `<circle cx="${tx}" cy="${ty}" r="6" fill="var(--ink)"/><text x="${tx}" y="${ty - 10}" text-anchor="middle" style="font-size:11px">today</text>` : ''}
       <text x="200" y="196" text-anchor="middle" style="font-family:var(--f-display);font-size:20px">The Christian year</text><text x="200" y="216" text-anchor="middle" style="font-size:11px;fill:var(--ink-soft)">${esc(LY.label.replace('Western Christian year ', ''))}</text></svg>
       <div class="panel" id="yr-card"></div></div>
-      <div class="blk-wrap" style="margin-top:14px">${LY.facts.map(([, x]) => `<div class="blk" data-k="p"><p>${rich(x)}</p></div>`).join('')}</div>`;
+      <div class="blk-wrap" style="margin-top:14px">${LY.facts.map(x => `<div class="blk" data-k="p"><p>${rich(x)}</p></div>`).join('')}</div>`;
     const fmt = d => new Date(d + 'T12:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
     const show = i => {
       const s = S[i];
@@ -219,7 +219,7 @@
     el.innerHTML = `<div class="chips" id="rh-pick">${chips(RHYTHMS.map((r, i) => [String(i), esc(r.n)]), '0')}</div><div class="panel" id="rh-card" style="margin-top:12px"></div>`;
     const show = i => {
       const r = RHYTHMS[+i];
-      $('#rh-card', el).innerHTML = `<h3>${esc(r.n)} ${r.v ? refBtn(r.v) : ''}</h3><p>${rich(r.x)}</p><h4>A practice</h4><p>${rich(r.practice)}</p>${r.evidence ? `<h4>What research and history add</h4><p>${rich(r.evidence[1])}</p>` : ''}`;
+      $('#rh-card', el).innerHTML = `<h3>${esc(r.n)} ${r.v ? refBtn(r.v) : ''}</h3><p>${rich(r.x)}</p><h4>A practice</h4><p>${rich(r.practice)}</p>${r.evidence ? `<h4>What research and history add</h4><p>${rich(r.evidence)}</p>` : ''}`;
     };
     bindChips($('#rh-pick', el), show); show('0');
   };

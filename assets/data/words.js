@@ -15,7 +15,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Plural in form. With singular verbs it means the one God of Israel; with plural verbs, “gods.” Psalm 82 uses it of a divine council, and Jesus cites that psalm in John 10:34."
    },
    {
@@ -38,7 +38,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "About 6,800 occurrences. Reverence led to reading Adonai (“my Lord”) aloud. The Septuagint renders it Kyrios, and the New Testament applies Kyrios to Jesus, as in {{Phil.2.11}}."
    },
    {
@@ -61,7 +61,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Hebrew uses one noun for “word” and “thing that happens.” God’s word does what it says {{Isa.55.11}}."
    },
    {
@@ -84,11 +84,11 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "One word for wind, breath and spirit. Ezekiel’s valley of dry bones plays on all three senses at once {{Ezek.37.9}}."
    },
    {
-    "k": "text",
+    "k": "p",
     "x": "Greek pneuma (G4151) carries the same triple sense. Jesus puns on it in {{John.3.8}}: the wind (pneuma) blows … so is everyone born of the Spirit (pneuma)."
    }
   ]
@@ -107,7 +107,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Gen 2:7 calls the human a “living nep̄eš,” the same phrase used of animals in Gen 1:24 (KJV “living creature”). The human is a soul; Genesis does not say he has one."
    },
    {
@@ -130,7 +130,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "In Hebrew one thinks with the heart. Solomon asks for a “hearing heart” (lēḇ šōmēaʿ, 1 Kings 3:9) to judge."
    },
    {
@@ -153,7 +153,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Coverdale coined “lovingkindness” to carry it. Its core is loyalty that acts beyond obligation within a bond."
    },
    {
@@ -176,12 +176,12 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "From šālēm, “complete, sound.” It covers health, prosperity, right relationship and the absence of war."
    },
    {
     "k": "p",
-    "x": "Shalom is wider than the absence of conflict: soundness of body, mind, relationships, livelihood and relationship with God together. The final unit, on virtues and the good life, uses it as its frame."
+    "x": "Shalom is wider than the absence of conflict: soundness of body, mind, relationships, livelihood and relationship with God together."
    }
   ]
  },
@@ -199,7 +199,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "The 700 left-handed slingers of Benjamin could hit a hair “and not miss” (lōʾ yaḥăṭīʾ) {{Judg.20.16}}. It is the same verb as “sin.”"
    },
    {
@@ -222,7 +222,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "The prophets’ word for repentance is physical: turn around and come home."
    },
    {
@@ -246,7 +246,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "“Amen” comes from this root: firm, so be it. Moses’ hands were ʾĕmûnāh, “steady,” in Exodus 17:12."
    },
    {
@@ -269,11 +269,11 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Used of the craftsman Bezalel’s skill {{Exod.31.3}}. Wisdom is the know-how of good living as well as an idea."
    },
    {
-    "k": "text",
+    "k": "p",
     "x": "In Proverbs 8 Wisdom is personified as present at creation. Christians read it of Christ {{1Cor.1.24}}. Theophilus and Irenaeus read it of the Spirit."
    }
   ]
@@ -292,7 +292,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "From bîn, “to discern, distinguish between.” The Logic stage of the Trivium names the same act."
    }
   ]
@@ -311,12 +311,12 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "From yāḏaʿ, the verb of “Adam knew Eve” (Gen 4:1). It means knowledge by acquaintance, not information only."
    },
    {
-    "k": "text",
-    "x": "“My people are destroyed for lack of knowledge” {{Hos.4.6}} refers to the knowledge of God, not lack of data."
+    "k": "p",
+    "x": "“My people are destroyed for lack of knowledge” {{Hos.4.6}} refers to the knowledge of God and his ways, not information alone."
    }
   ]
  },
@@ -334,8 +334,8 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
-    "x": "See the Verse Lab on Isaiah 7:14."
+    "k": "p",
+    "x": "See Isaiah 7:14 in the unit Reading the original."
    }
   ]
  },
@@ -353,11 +353,11 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "The KJV renders the same word “grave” and “hell” in roughly equal numbers. Jacob expects to go to šəʾôl mourning Joseph {{Gen.37.35}}, which is not a place of punishment."
    },
    {
-    "k": "text",
+    "k": "p",
     "x": "Four different words lie behind “hell” in the KJV: šəʾôl, hadēs (G86), geenna (G1067) and tartaroō (G5020). Modern translations distinguish them."
    }
   ]
@@ -376,11 +376,11 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Heraclitus used it for the rational order of the cosmos, the Stoics for reason pervading all, and Philo for God’s mediating Word. John adds that this Logos “was made flesh” {{John.1.14}}, which no Greek philosophy had said."
    },
    {
-    "k": "text",
+    "k": "p",
     "x": "It is the root of logic, -logy and dialogue. Justin Martyr’s logos spermatikos holds that seeds of the Logos are scattered in all people, so “whatever things were rightly said among all men are the property of us Christians” (2 Apology 13)."
    }
   ]
@@ -422,7 +422,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "meta (after, change) + nous (mind). “Fruits meet for repentance” {{Matt.3.8}} means a change that shows up in conduct."
    },
    {
@@ -445,7 +445,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Aristotle (Poetics 13) uses hamartia for the tragic hero’s fatal error."
    },
    {
@@ -468,7 +468,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "In Greek rhetoric pisteis are the proofs that persuade (Aristotle, Rhetoric 1.2). In everyday Greek it means loyalty or good faith."
    },
    {
@@ -495,7 +495,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "In the Greco-Roman patronage world charis named the gift, the giver’s goodwill, and the recipient’s gratitude, a circle of reciprocity."
    },
    {
@@ -518,7 +518,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "A real valley south of Jerusalem where children had been burned to Molech {{Jer.7.31}}. Jeremiah renames it the Valley of Slaughter."
    },
    {
@@ -541,7 +541,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "It means the reign of God, his kingship in action, more than a territory. YLT renders it “reign.”"
    },
    {
@@ -564,7 +564,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "From telos, end or purpose. Hebrews uses it for adults who are “of full age” {{Heb.5.14}}."
    },
    {
@@ -587,11 +587,11 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "In Athens the ekklēsia was the citizens’ assembly. Acts 19:39 uses it of a civic assembly in Ephesus."
    },
    {
-    "k": "text",
+    "k": "p",
     "x": "Tyndale translated it “congregation.” King James’ Rule 3 required the translators to keep “church.” The choice of word was political as well as linguistic."
    }
   ]
@@ -610,11 +610,11 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "A legal term for one who stands beside you. John uses it both for the Spirit {{John.14.16}} and for Christ {{1John.2.1}}."
    },
    {
-    "k": "text",
+    "k": "p",
     "x": "“Comforter” comes from Latin con-fortis, “with strength.” Wycliffe and Tyndale meant one who strengthens, not one who soothes."
    }
   ]
@@ -633,7 +633,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "“Unto the end of the world” {{Matt.28.20}} is literally “the completion of the age.” Modern translations read “the end of the age.”"
    },
    {
@@ -657,7 +657,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Aristotle (Nicomachean Ethics 4.5) uses praotēs for the mean between irascibility and spinelessness: anger at the right things, in the right way, for the right time."
    },
    {
@@ -684,7 +684,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "The Septuagint uses it for the Hebrew ʾašrê, “how fortunate” {{Ps.1.1}}."
    },
    {
@@ -707,7 +707,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "From kāḇēḏ, “heavy.” Glory is weight: the substance and gravity of a person. “Honour thy father” uses the same root, to give weight to."
    }
   ]
@@ -726,7 +726,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Holiness is first otherness: set apart for God. The threefold “holy, holy, holy” is Hebrew’s superlative."
    },
    {
@@ -749,7 +749,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Righteousness is faithfulness to a relationship, not abstract perfection. In later Hebrew tsedaqah means charity, so giving to the poor counts as justice, not optional kindness."
    }
   ]
@@ -768,7 +768,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Paired with tsedaqah throughout the prophets: just structures and right relationships. “Let judgment run down as waters.”"
    }
   ]
@@ -787,7 +787,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "From the same root as ʾāman, “firm.” Truth is what holds. Rabbinic tradition notes its letters run first, middle and last of the alphabet: truth stands on the whole."
    },
    {
@@ -810,7 +810,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "From yārāh, “to throw, to point”: instruction that shows the way. “Law” is too narrow, because Torah includes story, poetry and promise."
    }
   ]
@@ -829,11 +829,11 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Covenants were “cut” (kārat bərît), because animals were divided and the parties passed between them, as God alone does in Genesis 15."
    },
    {
-    "k": "text",
+    "k": "p",
     "x": "“Testament” comes from the Latin testamentum, which renders the Greek diathēkē, used for this word. The “New Testament” is the new covenant."
    }
   ]
@@ -852,8 +852,8 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
-    "x": "Yom Kippur is the Day of Atonement. Tyndale coined “atonement” (at-one-ment) to render it."
+    "k": "p",
+    "x": "Yom Kippur is the Day of Atonement. Tyndale popularised the English word “atonement” (at-one-ment) to render it."
    },
    {
     "k": "sch",
@@ -875,7 +875,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "The relative bound to buy back land, free a family member from slavery, or marry a widow to preserve the line, as Boaz does for Ruth."
    },
    {
@@ -898,7 +898,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "In Numbers the angel of the LORD himself stands as a śāṭān, an obstacle, to Balaam. In Job it is “the satan,” a title: the accuser in the heavenly court."
    },
    {
@@ -921,7 +921,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Kings, priests and even the Persian Cyrus are “anointed.” Greek Christos translates it. “Jesus Christ” means “Jesus the Messiah.”"
    }
   ]
@@ -940,7 +940,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "The name Yēšûaʿ (Joshua, Jesus) shares this root: “YHWH saves.” Hence “thou shalt call his name Jesus: for he shall save his people.”"
    }
   ]
@@ -959,7 +959,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Not “meaningless” but “vapour”: real but fleeting, impossible to grasp. Abel’s name is the same word."
    }
   ]
@@ -978,7 +978,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "The refrain of creation. The world is “very good,” fit for its purpose and beautiful, not divine and not evil."
    }
   ]
@@ -997,8 +997,8 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
-    "x": "See the Time folio: one word, three senses, within two chapters."
+    "k": "p",
+    "x": "See the unit Days, dates and deep time: one word, three senses, within two chapters."
    }
   ]
  },
@@ -1016,7 +1016,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "God “hath set the world (ʿôlām) in their heart”: a longing for eternity built into humanity."
    }
   ]
@@ -1035,7 +1035,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "In classical Greek doxa meant “opinion,” whence orthodoxy, right opinion. The Septuagint used it for kāḇôḏ, so the word came to mean God’s radiant weight."
    }
   ]
@@ -1054,7 +1054,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Paul calls whole congregations “saints,” the set-apart ones, not a moral elite."
    }
   ]
@@ -1073,7 +1073,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "“Thy faith hath made thee whole” uses the verb for “saved.” In the Gospels salvation and healing are one word."
    }
   ]
@@ -1092,11 +1092,11 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "The Priene calendar inscription (9 BC) calls Augustus’ birthday the beginning of “good news” (euangelia) for the world. Mark’s first line makes the same claim for Jesus."
    },
    {
-    "k": "text",
+    "k": "p",
     "x": "English “gospel” is Old English gōd spel, “good tidings.”"
    }
   ]
@@ -1115,8 +1115,8 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
-    "x": "“Jesus is Lord” (Kyrios Iēsous) was the first creed. In a world where “Caesar is lord” was the loyalty test, it was dangerous, and it applied to Jesus the Septuagint’s word for YHWH."
+    "k": "p",
+    "x": "“Jesus is Lord” (Kyrios Iēsous) is among the earliest Christian confessions {{Rom.10.9}}. In a world where “Caesar is lord” was the loyalty test, it was dangerous, and it applied to Jesus the Septuagint’s word for YHWH."
    }
   ]
  },
@@ -1134,7 +1134,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Used for an emperor’s state visit, when the city went out to meet him and escort him in. That image shapes {{1Thess.4.17}}."
    }
   ]
@@ -1153,7 +1153,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Not “catastrophe” but disclosure: the curtain pulled back on what is truly going on."
    }
   ]
@@ -1191,7 +1191,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "The root of meta-noia. For the Greek Fathers the nous is the eye of the soul, which prayer cleanses."
    }
   ]
@@ -1209,7 +1209,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "The KJV says Christ “made himself of no reputation.” Literally he “emptied himself,” whence kenosis."
    },
    {
@@ -1232,7 +1232,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Also used for a business partnership and for a collection of money (Romans 15:26). Fellowship had economic weight."
    }
   ]
@@ -1251,7 +1251,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Used for washing hands and dipping cups as well as for the rite. The debate between immersion and pouring is as old as the Didache, which allows pouring when water is scarce (7.3)."
    }
   ]
@@ -1270,7 +1270,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "A legal witness. So many witnesses died for their testimony that the word came to mean “martyr.”"
    }
   ]
@@ -1289,7 +1289,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "From diaballō, “to throw across,” to slander or divide. The same word describes human slanderers in 1 Timothy 3:11."
    }
   ]
@@ -1308,7 +1308,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "A Greek actor who wore a mask. Sepphoris, a few miles from Nazareth, had a theatre, though its date is debated."
    }
   ]
@@ -1327,7 +1327,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "The crucified Messiah is the skandalon to Jews and foolishness to Greeks."
    }
   ]
@@ -1346,7 +1346,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "In the Septuagint it is the lid of the Ark, sprinkled on the Day of Atonement. Paul says God set forth Christ as the hilastērion: the mercy seat in person."
    },
    {
@@ -1369,7 +1369,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "Distinct from chronos, measured time. Both appear in {{Acts.1.7}}: “times (chronous) or the seasons (kairous).”"
    }
   ]
@@ -1388,7 +1388,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "“When the fulness of the time (chronou) was come, God sent forth his Son”: history as a vessel filling up."
    }
   ]
@@ -1407,7 +1407,7 @@ window.WORDS = [
   ],
   "notes": [
    {
-    "k": "text",
+    "k": "p",
     "x": "“I am come that they might have life (zōē), and … more abundantly.” Bios is the life you earn and spend; zōē is the life you are given."
    }
   ]

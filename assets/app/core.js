@@ -40,8 +40,11 @@
   /* ── Blocks ─────────────────────────────────────────────── */
   const KLABEL = { text: 'The text', record: 'Record', sch: 'Scholarship', open: 'Open question' };
   const belLabel = who => /’s$/.test(who) ? `${who} belief` : `${who} belief`;
-  A.block = b => {
-    const label = b.k === 'bel' ? belLabel(b.who) : KLABEL[b.k];
+  A.block = (b, i, list) => {
+    // A run of statements of the same kind carries its label once, on the first of the run.
+    const prev = list && i > 0 ? list[i - 1] : null;
+    const repeat = prev && prev.k === b.k && prev.who === b.who;
+    const label = repeat ? '' : b.k === 'bel' ? belLabel(b.who) : KLABEL[b.k];
     const k = label ? `<span class="blk-k">${esc(label)}</span>` : '';
     let body;
     if (b.k === 'quote') body = `<blockquote>“${A.rich(b.q)}”<footer>${A.link(b.cite, b.url)}</footer></blockquote>`;

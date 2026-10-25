@@ -26,7 +26,7 @@ window.LAB = [
       { k: 'bel', who: 'Christian', x: 'Jesus’ words “Before Abraham was, I am” {{John.8.58}} are read as a claim to the divine name; his hearers take up stones.' } ] },
   { ref: 'Deut.6.4-5', title: 'The Shema', why: 'The confession of the one God, prayed by Jews morning and evening and quoted by Jesus as the first commandment.',
     blocks: [
-      { k: 'text', x: '*Šəmaʿ* means both “hear” and “obey.” *ʾEḥād* (“one”) is the word used for husband and wife becoming “one flesh” in Genesis 2:24. In the Leningrad Codex the last letters of *šəmaʿ* and *ʾeḥād* are written large; together they spell *ʿēd*, “witness.”' },
+      { k: 'text', x: '*Šəmaʿ* means both “hear” and “obey.” *ʾEḥād* (“one”) is the word used for husband and wife becoming “one flesh” in Genesis 2:24. In Torah scrolls and printed Hebrew Bibles the last letters of *šəmaʿ* and *ʾeḥād* are written large; together they spell *ʿēd*, “witness.”' },
       { k: 'record', x: 'The divine name YHWH is written with vowels that remind the reader to say *Adonai*, “my Lord.” The KJV prints it LORD in small capitals; “Jehovah” (ASV, YLT) combines the consonants of one word with the vowels of the other.' },
       { k: 'bel', who: 'Jewish', x: 'The heart of Jewish prayer, recited twice daily and at death ([Mishnah Berakhot 1](' + L.sefaria('Mishnah_Berakhot.1.1') + ')).' },
       { k: 'bel', who: 'Christian', x: 'Jesus calls it the first commandment {{Mark.12.29-30}}. Christians hold that the Trinity is a confession of this one God, not an addition to him.' },
@@ -61,7 +61,7 @@ window.LAB = [
   { ref: 'Mic.6.8', title: 'What doth the LORD require?', why: 'The prophets’ summary of religion.',
     blocks: [
       { k: 'text', x: 'Three demands: *mišpāṭ* (justice), *ḥesed* (steadfast, loyal love; KJV “mercy”), and walking *haṣnēaʿ* (humbly, attentively) with God.' },
-      { k: 'p', x: 'Jews, Christians and Muslims all cite verses like this one when they summarise what God asks: justice toward others, faithful love, and humility.' } ] },
+      { k: 'p', x: 'Jews and Christians both cite this verse as a summary of what God asks: justice toward others, faithful love, and humility. The Qur’an gives its own summary of righteousness in similar terms {{Q:2:177}}.' } ] },
   { ref: 'Matt.4.17', title: 'Repent, or do penance?', why: 'A Latin translation that helped start the Reformation.',
     blocks: [
       { k: 'text', x: '*Metanoeite* combines *meta* (change) and *nous* (mind): turn your whole outlook around. It gathers up the Hebrew prophets’ word *šûḇ*, “turn back.”' },
@@ -143,7 +143,7 @@ window.LAB = [
       { k: 'bel', who: 'Christian', x: 'The pattern for Christian life: “Let this mind be in you” {{Phil.2.5}}. Power is shown in self-giving.' } ] },
   { ref: '1John.5.7-8', title: 'The three that bear record in heaven', why: 'The Johannine Comma: a Trinitarian verse added in the Middle Ages.',
     blocks: [
-      { k: 'record', x: 'The words about “the Father, the Word, and the Holy Ghost” appear in no Greek manuscript before the 14th century except as late margin notes. They surface first in Latin around 380 (Priscillian). In the interlinear they are flagged as found only in the Textus Receptus tradition.' },
+      { k: 'record', x: 'The words about “the Father, the Word, and the Holy Ghost” appear in only a handful of Greek manuscripts, none earlier than the 14th century, some of them only as margin notes. They surface first in Latin around 380 (Priscillian). In the interlinear they are flagged as found only in the Textus Receptus tradition.' },
       { k: 'record', x: 'Erasmus omitted them in 1516 and 1519 and included them in 1522. They passed into the KJV. Critical texts and most modern translations omit them.' },
       { k: 'sch', x: 'The doctrine of the Trinity was defined at Nicaea (325) and Constantinople (381) without reference to this verse.' } ] },
   { ref: 'Rev.13.18', title: '666 or 616?', why: 'The number of the beast, and Hebrew gematria.',
