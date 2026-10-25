@@ -15,9 +15,9 @@ def read(rel):
 
 def bundle(fragment=False):
     html = read('index.html')
-    html = re.sub(r'<link rel="stylesheet" href="assets/css/style.css">',
-                  lambda m: '<style>\n' + read('assets/css/style.css') + '\n</style>', html)
-    html = re.sub(r'<script src="(assets/js/[\w.-]+)"></script>',
+    html = re.sub(r'<link rel="stylesheet" href="(assets/app/[\w.-]+\.css)">',
+                  lambda m: '<style>\n' + read(m.group(1)) + '\n</style>', html)
+    html = re.sub(r'<script src="(assets/(?:data|app)/[\w.-]+)"></script>',
                   lambda m: '<script>\n' + read(m.group(1)).replace('</script', '<\\/script') + '\n</script>', html)
     if fragment:
         head = re.search(r'<head>(.*?)</head>', html, re.S).group(1)

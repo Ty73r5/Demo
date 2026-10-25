@@ -1,32 +1,4 @@
-/* Time: what a day is, how dates are known, readings of the creation days, deep time, sacred rhythm.
-   Tags: F documented or measured · C consensus · D debated · T tradition · S synthesis · B faith. */
-
-window.TIME_DAY = [
-  { k: 'What Genesis means by “day”', items: [
-    ['F', 'The Hebrew yôm (H3117) has three senses within the first two chapters: the daylight hours (“God called the light Day”), a full evening-and-morning day, and an indefinite time (“in the day that the LORD God made the earth and the heavens,” covering the whole creation week) {{Gen.2.4}}.'],
-    ['F', '“The evening and the morning were the first day” {{Gen.1.5}}. This is why the Jewish day, and the Sabbath, begins at sunset, and why the Church keeps vigils on the eve of feasts.'],
-    ['F', 'The sun, moon and stars appear only on the fourth day {{Gen.1.16}}. Origen already asked (On First Principles 4.3.1, c. 230) who could suppose there were a first, second and third day, with evening and morning, without sun, moon and stars.'],
-    ['F', 'Scripture itself relativises human time: “a thousand years in thy sight are but as yesterday” {{Ps.90.4}}, repeated in {{2Pet.3.8}}.'] ] },
-  { k: 'What science means by “day”', items: [
-    ['F', 'The solar day (noon to noon) averages 24 hours. The sidereal day, one rotation measured against the stars, is 23 hours 56 minutes 4 seconds. The difference is the Earth’s motion around the Sun.'],
-    ['F', 'Since 1967 the second has been defined by atoms, not by the Earth: 9,192,631,770 oscillations of a caesium-133 atom. Leap seconds have kept clock time in step with the slowing Earth since 1972. In 2022 the world’s timekeepers voted to stop adding them by 2035.'],
-    ['C', 'The day is getting longer. Tidal friction from the Moon slows the Earth by roughly 1.8 milliseconds per century, measured from ancient Babylonian, Chinese and Arab eclipse records. Layered tidal sediments suggest a day of about 22 hours some 620 million years ago.'],
-    ['F', 'Your body keeps the day too. The 2017 Nobel Prize in Medicine (Hall, Rosbash and Young) went for the genes of the circadian clock that tune nearly every cell to a roughly 24-hour cycle.'] ] },
-  { k: 'Hours in the Gospels', items: [
-    ['F', 'Jews and Romans counted twelve hours of daylight from sunrise, so “the third hour” is about 9 a.m. and “the ninth hour” about 3 p.m. An hour was longer in summer than in winter.'],
-    ['F', 'Mark says Jesus was crucified at the third hour {{Mark.15.25}}. John says Pilate’s judgement came “about the sixth hour” {{John.19.14}}.'],
-    ['D', 'Proposed harmonies: John counts hours from midnight, Roman-style; ancient time-telling was approximate, in three-hour blocks; or John aligns the hour with the slaughter of the Passover lambs. None is certain.'] ] },
-  { k: 'Weeks, months and years', items: [
-    ['F', 'The seven-day week is rooted in the Sabbath {{Exod.20.11}}. Its planetary day names (Saturn’s day, Sun’s day, Moon’s day) are Roman, 1st century. Constantine made Sunday a day of rest in 321.'],
-    ['F', 'The Hebrew calendar is lunisolar: twelve lunar months, with a thirteenth added seven times in every nineteen years (the Metonic cycle) to stay in step with the seasons. Passover falls on 14 Nisan, at a full moon in spring.'],
-    ['F', 'Julius Caesar’s calendar (45 BC) assumed a year of 365¼ days, about 11 minutes too long. By 1582 it had drifted ten days, so Pope Gregory XIII’s reform skipped from 4 to 15 October. Britain and its colonies followed in 1752, dropping eleven days.'],
-    ['F', 'Many Orthodox churches still keep the Julian calendar for feasts, so their Christmas falls on 7 January in the civil calendar. Their Easter is computed differently too, and coincided with the Western date in 2025, the 1,700th anniversary of Nicaea.'] ] },
-  { k: 'How AD and BC were invented', items: [
-    ['F', 'In 525 the monk Dionysius Exiguus, building Easter tables, numbered years “from the incarnation of our Lord Jesus Christ” in place of years from the persecuting emperor Diocletian.'],
-    ['F', 'Bede’s Ecclesiastical History (731) made AD dating common in Europe, and Bede also counted years before the incarnation. There is no year zero: 1 BC is followed by AD 1.'],
-    ['C', 'Dionysius was a few years off. Herod the Great died in 4 BC (Josephus links his death to a lunar eclipse and a Passover), and Jesus was born before Herod’s death, probably 6–4 BC {{Matt.2.1}}.'],
-    ['F', 'BCE and CE (“Common Era”) keep exactly the same numbers. The calendar still counts from the estimated birth of Christ.'] ] }
-];
+/* Time data: dating methods, readings of the creation days, deep-time events, the Christian year, rhythms. */
 
 window.TIME_METHODS = [
   { n: 'King lists and synchronisms', range: 'c. 2500 BC onward', prec: 'To the year where lists overlap', t: 'F',
@@ -50,13 +22,6 @@ window.TIME_METHODS = [
   { n: 'Layers and pottery (stratigraphy)', range: 'Archaeological sites', prec: 'Relative, then tied to absolute dates', t: 'C',
     x: 'Lower layers are older, and pottery styles change in known sequences. These relative orders are then anchored by radiocarbon, coins and inscriptions.' }
 ];
-window.TIME_LAYERS = [
-  ['F', 'Measured now: radioactive decay rates, tree rings, ice layers, starlight, and the cosmic background radiation.'],
-  ['C', 'Reconstructed from the measurements: the age of the Earth, the dates of eclipses, and calibrated radiocarbon dates. These are well supported and still open to revision.'],
-  ['D', 'Contested reconstructions: the date of the Exodus, the years of the patriarchs, the exact year of the Crucifixion.'],
-  ['B', 'Not measurable: why there is something rather than nothing, and what time is for. Science can date the universe. It cannot say whether it is a gift.']
-];
-
 window.CREATION_READINGS = [
   { n: 'Young-earth, 24-hour days', who: 'Ussher (1650); Whitcomb and Morris, The Genesis Flood (1961); Answers in Genesis', t: 'S',
     pro: 'The plainest reading: numbered days with “evening and morning,” and the Sabbath commandment rests on them {{Exod.20.11}}. Genealogies give a chain of years.',
@@ -83,14 +48,6 @@ window.CREATION_READINGS = [
     pro: 'A Priestly text, probably shaped in the exile, that answers Babylon’s creation myth: no battle, no rival gods, the sun and moon mere lamps, every human the image of God. It is theology addressed to its own world, not natural science.',
     con: 'If pressed to say the text is “only” polemic, it can lose its claim to tell the truth about God and the world.' }
 ];
-window.CREATION_NOTES = [
-  ['F', 'Augustine’s warning (The Literal Meaning of Genesis 1.19.39): it is disgraceful when non-believers hear a Christian talking nonsense about the natural world while claiming Scripture’s support, because they will then reject Scripture on matters they cannot check.'],
-  ['F', 'Galileo, in his Letter to the Grand Duchess Christina (1615), quotes Cardinal Baronius: the Holy Spirit intends to teach us how one goes to heaven, not how the heavens go.'],
-  ['F', 'Pius XII (Humani Generis, 1950) allowed Catholics to study evolution while holding that God creates each human soul. John Paul II (1996) called evolution “more than a hypothesis.” Francis Collins, who led the Human Genome Project, founded BioLogos (2007) for evolutionary creation.'],
-  ['S', 'What Genesis 1 is certainly saying, on every reading: the world is not divine, not an accident, and not a battlefield of gods. It is good, ordered, and spoken into being by one God, who made man and woman alike in his image and gave a rhythm of work and rest.']
-];
-
-/* Deep time. ya = years before 2026. cat: cosmos | earth | human | bible | chrono */
 window.DEEP_CATS = { cosmos: 'Cosmos', earth: 'Earth & life', human: 'Humankind', bible: 'Biblical history', chrono: 'Traditional creation dates' };
 window.DEEP_TIME = [
   { cat: 'cosmos', ya: 13.8e9, n: 'Big Bang', how: 'Cosmic microwave background, expansion rate', found: 'Lemaître 1927; Hubble 1929; Penzias & Wilson 1965; Planck 2018', t: 'C' },

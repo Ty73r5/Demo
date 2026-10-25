@@ -1,0 +1,26 @@
+name: Check links
+
+# Tests every external link in the atlas content and a sample of the generated Bible Hub, Blue Letter Bible
+# and Quran.com links. Runs when the content changes, or on demand with --all from the Actions tab.
+on:
+  push:
+    paths: ['assets/data/**', 'tools/check_links.js', '.github/workflows/links.yml']
+  workflow_dispatch:
+    inputs:
+      all:
+        description: Check every generated link, not a sample
+        type: boolean
+        default: false
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check data consistency
+        run: node tools/check_data.js
+      - name: Check links
+        run: node tools/check_links.js ${{ github.event.inputs.all == 'true' && '--all' || '' }}

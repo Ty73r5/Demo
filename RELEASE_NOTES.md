@@ -1,21 +1,22 @@
-An interactive atlas of Christianity with a voice-guided tour. Version 2 roughly doubles the depth of the atlas.
+A study atlas of Christianity in history, Scripture and thought. Version 3 is a complete rewrite.
 
 ## Try it
 
 - **Online:** https://raw.githack.com/Ty73r5/Demo/main/index.html
-- **Offline:** download `logos-atlas.html` below and double-click it. It is one file with everything inside; an internet connection only improves the fonts.
+- **Offline:** download `logos-atlas.html` below and open it. It is one file with everything inside.
 - **Full site:** download `logos-atlas-site.zip`, unzip it and open `index.html`.
 
-Press **Guided tour** at the top for the narrated walk-through (27 steps). Chrome, Edge and Safari have the best voices.
+Press **Guided tour** for the 22-step spoken walk-through.
 
-## New in this version
+## What changed
 
-- **Days, dates and deep time:** how a day is defined (Genesis, astronomy, atomic clocks, the hours in the Gospels); how calendars and AD dating were invented; ten methods for dating the past, from eclipses to radiocarbon; a logarithmic chart from the Big Bang to today showing how and when each date was learned; eight readings of the creation days; the Christian year; and practical rhythms for living.
-- **The Library:** all 73 books, with traditional and critical authorship side by side.
-- **The Gospels in parallel:** eight passages word for word, and the Synoptic problem.
-- **Doctrine and heresy:** nine traditions compared on 14 questions, the creeds, and the heresies drawn on two spectra.
-- **Reading Scripture:** the four senses and PaRDeS, typology, New Testament quotations of the Greek Old Testament, and messianic texts read the Jewish and the Christian way.
-- **The inner way:** contemplative practice, the mystics, comparison with other traditions, research on mystical experience, and the discernment of spirits.
-- **Deeper existing sections:** 28 Verse Lab passages, 66 concordance words (every Hebrew Strong's number machine-checked), about 100 map places, Islam, Hermeticism and the Norse world, about 60 writers, Ingersoll's own words, the Taxil hoax and Prince Hall Freemasonry, symbols, forgeries, and the global church in numbers.
+- **Study units.** Twenty-eight units in seven parts, each written as study material, with an introduction, sections, an interactive, questions for study, and sources. Movements and people are treated one at a time: Ingersoll, the Templars, Freemasonry and the Rosicrucians each have their own unit, with the record separated from legend.
+- **Fair labelling.** The old six-tag system is gone. A quiet margin label now says what kind of statement a passage makes: what a text says, what the record shows, what scholars conclude, or what a named tradition believes. Belief is labelled the same way for Christians, Jews, Muslims and every other tradition.
+- **Every word in English.** Every Hebrew and Greek word in the atlas has its transliteration, English gloss and Strong’s number. Tapping a word shows its dictionary entry, how often it occurs and how it is usually translated, with links to Bible Hub and Blue Letter Bible. Passages open in up to eleven translations from Wycliffe to the Berean Standard Bible.
+- **New units:** the Dead Sea Scrolls; Arguments about God (six for, five against, each with its strongest reply); the ancient mind and the modern; contributions and harms; virtues and the good life, with the research behind them; and sources and study tools, including advice on studying the Bible with AI.
+- **Islam compared** with Judaism and Christianity on 17 topics, with Qur’an passages in Arabic and English.
+- **One passage across twelve translations**, with the words that changed from one translation to the next highlighted.
+- **Verifiable.** Hundreds of source links (Bible Hub, Sefaria, Quran.com, New Advent, the Stanford Encyclopedia of Philosophy, the Dead Sea Scrolls Digital Library, DOIs for research), checked automatically in GitHub Actions.
+- **Search** across all units and key words, a new reader layout, and light and dark themes.
 
-Every claim is labelled as fact, consensus, debated, tradition, synthesis or faith. Every one of the 449 quoted passages comes directly from public-domain and openly licensed texts.
+Hebrew and Greek data: STEP Bible, Tyndale House, Cambridge (CC BY 4.0). Translations and the Qur’an translation are public domain.

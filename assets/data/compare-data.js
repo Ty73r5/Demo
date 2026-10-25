@@ -1,5 +1,17 @@
-/* Comparisons: doctrines across traditions, creeds, heresies, Gospel parallels, typology,
-   the New Testament's use of the Old, and messianic texts. Tags: F C D T S B. */
+/* Doctrines across traditions, creeds, heresies, Gospel parallels, typology, the New Testament's use of the Old,
+   messianic texts and ways of reading. (Any 't' fields are legacy and unused.) */
+
+window.CHURCH_DOCS = {
+  cat: ['Catechism of the Catholic Church', 'https://www.vatican.va/archive/ENG0015/_INDEX.HTM'],
+  ort: ['The Orthodox Faith (Orthodox Church in America)', 'https://www.oca.org/orthodoxy/the-orthodox-faith'],
+  oo: ['Oriental Orthodox Churches: overview', 'https://en.wikipedia.org/wiki/Oriental_Orthodox_Churches'],
+  luth: ['The Book of Concord (1580)', 'https://bookofconcord.org/'],
+  ref: ['Westminster Confession of Faith (1646)', 'https://opc.org/wcf.html'],
+  ang: ['The Thirty-Nine Articles (1571)', 'https://en.wikipedia.org/wiki/Thirty-nine_Articles'],
+  bap: ['The Baptist Faith and Message (2000)', 'https://bfm.sbc.net/bfm2000/'],
+  meth: ['Methodist Articles of Religion (1784)', 'https://en.wikipedia.org/wiki/Articles_of_Religion_%28Methodist%29'],
+  pent: ['Assemblies of God, Statement of Fundamental Truths', 'https://ag.org/Beliefs/Statement-of-Fundamental-Truths']
+};
 
 window.CHURCHES = [
   ['cat', 'Catholic'], ['ort', 'Eastern Orthodox'], ['oo', 'Oriental Orthodox'], ['luth', 'Lutheran'], ['ref', 'Reformed'],
@@ -177,7 +189,7 @@ window.HERESIES_OTHER = [
   { n: 'Donatism', y: 311, t: 'F', x: 'Sacraments given by clergy who lapsed under persecution are invalid.', a: 'Augustine: the sacraments belong to Christ, not the minister. Their validity does not depend on his holiness.' },
   { n: 'Pelagianism', y: 411, t: 'F', x: 'Humans can obey God without inner grace, and Adam’s sin harmed only by bad example.', a: 'Carthage (418), Ephesus (431), Orange (529): grace goes before every good act {{John.15.5}}.' }
 ];
-window.HERESY_NOTE = ['S', 'Many heresies are simplifications that resolve a paradox by dropping one term: Christ only human or only divine, God only one or only three. Orthodoxy is the refusal to drop either term. Grammar holds the words, logic keeps them distinct, and the councils’ rhetoric guards both.'];
+
 
 /* Gospel parallels. */
 window.SYNOPTIC = [
@@ -206,14 +218,6 @@ window.SYNOPTIC = [
     notes: [['F', 'Matthew: two Marys. Mark: two Marys and Salome. Luke: several women, naming Joanna. John: Mary Magdalene alone, then Peter and the Beloved Disciple.'],
             ['S', 'Every account puts women first at the tomb. In a culture that discounted women’s testimony that is an unlikely invention, an argument from embarrassment that is widely granted.']] }
 ];
-window.SYNOPTIC_THEORIES = [
-  ['C', 'Markan priority: Matthew and Luke both used Mark. Over 90% of Mark’s material reappears in Matthew.'],
-  ['C', 'The “Q” hypothesis: a lost sayings source behind the roughly 230 verses Matthew and Luke share but Mark lacks. The Gospel of Thomas shows such collections existed.'],
-  ['D', 'Farrer–Goodacre: no Q is needed, because Luke used Matthew as well as Mark.'],
-  ['D', 'Augustinian and Griesbach views: Matthew first, as the Fathers held. This is a minority position today.'],
-  ['S', 'Steelman for reliability: the Gospels are ancient biographies (bioi), as Richard Burridge argues, and their differences follow accepted conventions of paraphrase, compression and reordering, as Michael Licona (2017) compares with Plutarch. Four independent-minded accounts that agree on the core but differ in detail are what honest testimony looks like.']
-];
-
 /* Typology: type and antitype. */
 window.TYPOLOGY = [
   { n: 'The first and last Adam', ot: 'Gen.2.7', nt: '1Cor.15.45', t: 'F', x: 'Paul calls Christ “the last Adam”: the first brought death, the second life.' },
@@ -240,7 +244,7 @@ window.NT_USE = [
   { n: 'Out of Egypt', ot: 'Hos.11.1', nt: 'Matt.2.15', t: 'F', x: 'Here Matthew follows the Hebrew (“my son”) and not the Septuagint (“his children”). New Testament writers used several text forms.' },
   { n: 'A virgin', ot: 'Isa.7.14', nt: 'Matt.1.23', t: 'F', x: 'Matthew quotes the Septuagint’s parthenos (see the Verse Lab).' }
 ];
-window.NT_USE_NOTE = ['C', 'Most Old Testament quotations in the New Testament are closer to the Septuagint than to the later Masoretic text. The Dead Sea Scrolls show that in the 1st century several Hebrew text forms circulated, some matching the Greek. The apostles were quoting real Bibles of their day, not inventing readings.'];
+
 
 /* Messianic texts, Jewish and Christian readings. */
 window.MESSIANIC = [

@@ -1,4 +1,4 @@
-/* Canon data. Tags: F fact · C consensus · D debated · T tradition · S synthesis · B faith. */
+/* Canons by tradition: rings from the shared core outward, and the books whose status differs. */
 window.CANON_TRADITIONS = [
   { id: 'jew', name: 'Jewish Tanakh', count: '24 books', note: 'The same content as the Protestant Old Testament, counted differently (the Twelve Prophets are one book, Samuel, Kings and Chronicles one each, Ezra–Nehemiah one). Order: Torah, Nevi’im (Prophets), Ketuvim (Writings).' },
   { id: 'pro', name: 'Protestant', count: '66 books', note: '39 + 27. Follows the Hebrew canon for the Old Testament, on Jerome’s principle of “Hebrew verity.” The Apocrypha may be read “for example of life” but not to establish doctrine (Anglican Article VI). Lutheran and Anglican lectionaries still use some of them.' },
@@ -75,47 +75,3 @@ window.CANON_RINGS = [
       { n: 'Temple Scroll, Copper Scroll, Damascus Document', d: '2nd–1st c. BC', t: 'F', x: 'Ideal temple law, a list of hidden treasure engraved on copper, and a sectarian rule that was first found in the Cairo Genizah in 1896.' } ] }
 ];
 
-window.CANON_TIMELINE = [
-  { y: -132, t: 'F', x: 'The prologue to Sirach mentions “the law, the prophets, and the other books,” the threefold canon taking shape.' },
-  { y: 90,   t: 'C', x: 'The “Council of Jamnia” closing the Hebrew canon is a 19th-century hypothesis that most scholars have now abandoned. Rabbinic debate over books like Ecclesiastes continued.' },
-  { y: 95,   t: 'F', x: 'Josephus (Against Apion 1.38–41) counts 22 sacred books “justly believed.”' },
-  { y: 140,  t: 'F', x: 'Marcion’s truncated canon forces the Church to say what it reads.' },
-  { y: 155,  t: 'F', x: 'Justin Martyr (1 Apology 67): on Sundays “the memoirs of the apostles or the writings of the prophets are read.”' },
-  { y: 180,  t: 'F', x: 'Irenaeus defends four Gospels and the Old Testament against Gnostic and Marcionite alternatives.' },
-  { y: 200,  t: 'D', x: 'The Muratorian Fragment lists most of the New Testament. It is usually dated late 2nd century, though some argue for the 4th.' },
-  { y: 325,  t: 'F', x: 'Eusebius sorts books into accepted, disputed and spurious.' },
-  { y: 367,  t: 'F', x: 'Athanasius lists the 27 books: “Let no one add to these, nor take anything from them.”' },
-  { y: 397,  t: 'F', x: 'Hippo (393) and Carthage (397, 419) fix the Western canon, deuterocanon included.' },
-  { y: 405,  t: 'F', x: 'Jerome’s Prologus Galeatus: books outside the Hebrew canon are “apocrypha.” He still translates several of them.' },
-  { y: 1442, t: 'F', x: 'The Council of Florence (bull Cantate Domino) repeats the Carthage list.' },
-  { y: 1522, t: 'F', x: 'Luther ranks books by how clearly they “promote Christ” (was Christum treibet).' },
-  { y: 1546, t: 'F', x: 'Trent defines the canon under anathema, the first dogmatic, binding list in the West.' },
-  { y: 1563, t: 'F', x: 'Article VI of the Thirty-Nine Articles: read the Apocrypha “for example of life,” not for doctrine.' },
-  { y: 1611, t: 'F', x: 'The KJV prints the Apocrypha as a separate section between the testaments, and its calendar of readings still uses them.' },
-  { y: 1672, t: 'F', x: 'The Orthodox Synod of Jerusalem affirms Tobit, Judith, Wisdom, Sirach, Maccabees and the additions to Daniel as Scripture.' },
-  { y: 1826, t: 'F', x: 'Bible societies stop printing the Apocrypha. English Protestant Bibles shrink to 66 books.' }
-];
-
-window.CANON_STEELMAN = [
-  { side: 'For the shorter (Hebrew) Old Testament', t: 'S', pts: [
-    'It is the canon of the Jewish community to whom “were committed the oracles of God” {{Rom.3.2}}.',
-    'The New Testament never cites a deuterocanonical book with “it is written.”',
-    'Jerome, the greatest biblical scholar of the early Church, held the same view.',
-    'The threefold shape is attested by Jesus himself {{Luke.24.44}}.' ] },
-  { side: 'For the longer (Septuagint) Old Testament', t: 'S', pts: [
-    'Most New Testament quotations of the Old Testament follow the Septuagint, the Greek Bible of the apostolic Church.',
-    'The New Testament alludes to deuterocanonical books, for example {{Heb.11.35}} and 2 Maccabees 7.',
-    'Augustine and the African councils received them, and the Church read them liturgically for 1,100 years before the Reformation.',
-    'Qumran shows the boundaries of Scripture were still fluid in Jesus’ day.' ] },
-  { side: 'For the widest (Ethiopian) canon', t: 'S', pts: [
-    'Jude quotes 1 Enoch as prophecy {{Jude.1.14}}.',
-    'Enoch and Jubilees were among the most-copied books at Qumran.',
-    'The Ethiopian Church kept a continuous tradition from the 4th century, untouched by later Western debates.' ] }
-];
-
-window.CANON_CRITERIA = [
-  { n: 'Apostolicity', x: 'Written by an apostle or a close companion (Mark with Peter, Luke with Paul).' },
-  { n: 'Rule of faith', x: 'Consistent with the faith handed down: one Creator, the true incarnation, the bodily resurrection.' },
-  { n: 'Catholicity', x: 'Received and read widely across the churches, not in one sect or region alone.' },
-  { n: 'Antiquity', x: 'Belongs to the apostolic age. Hermas failed this test because it was “written very recently, in our times.”' }
-];
