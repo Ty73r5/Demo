@@ -16,8 +16,10 @@ UNITS.push({
   ],
   questions: ['Choose a story where the hero fails. What does the narrator do with the failure?', 'Which virtue appears most often across the stories? Which failing?', 'Pick one of the hard stories. Is it describing or prescribing, and how can you tell?'],
   sources: [
-    { t: 'Robert Alter, The Art of Biblical Narrative (1981)', url: L.wiki('Robert_Alter') },
-    { t: 'Phyllis Trible, Texts of Terror (1984)', url: L.wiki('Phyllis_Trible') },
+    { t: 'Robert Alter, The Art of Biblical Narrative (1981)' },
+    { t: 'Robert Alter: background on the author', url: L.wiki('Robert_Alter') },
+    { t: 'Phyllis Trible, Texts of Terror (1984)' },
+    { t: 'Phyllis Trible: background on the author', url: L.wiki('Phyllis_Trible') },
     { t: 'Sefaria: the stories with Jewish commentary', url: 'https://www.sefaria.org/' },
     { t: 'Bible Hub: every passage in parallel translations', url: 'https://biblehub.com/' }
   ]
@@ -44,7 +46,7 @@ UNITS.push({
       { k: 'bel', who: 'Eternal punishment (the majority view)', x: 'Those who finally reject God are separated from him forever in conscious punishment {{Matt.25.46}}. Augustine (City of God 21), Aquinas and the Reformers taught this; it is in the Westminster Confession (33) and is the official teaching of the Catholic Church, which describes hell as “the state of definitive self-exclusion from communion with God” chosen by unrepentant mortal sin ([Catechism 1033–1037](https://www.vatican.va/archive/ENG0015/__P2N.HTM)). C. S. Lewis: the doors of hell “are locked on the inside” (The Problem of Pain, 1940).' },
       { k: 'bel', who: 'Conditional immortality', x: 'Only God is immortal {{1Tim.6.16}}; the unrepentant are finally destroyed, not kept alive in torment, and “everlasting punishment” is a punishment whose result is everlasting. Held by Seventh-day Adventists and Jehovah’s Witnesses, argued by Edward Fudge (The Fire That Consumes, 1982), and tentatively by the Anglican evangelical John Stott (1988).' },
       { k: 'bel', who: 'Universal restoration', x: 'God will finally reconcile all, and punishment is remedial {{1Cor.15.28}} {{1Tim.2.4}}. Origen and Gregory of Nyssa taught versions of this; a form attributed to Origen was condemned in 553. Modern defenders include David Bentley Hart (That All Shall Be Saved, 2019). Hans Urs von Balthasar argued that Christians may hope, though not assert, that all will be saved (Dare We Hope, 1986).' },
-      { k: 'bel', who: 'Catholic and Orthodox', x: 'Purgatory, defined at Florence (1439) and Trent, is not a third destination but the purification of those who die in God’s grace; Catholics pray for the dead {{2Macc.12.46}}. The Orthodox reject purgatory as Rome defines it but also pray for the dead. The Apostles’ Creed’s “he descended into hell” refers to Christ among the dead, the “harrowing of hell” {{1Pet.3.19}}.' } ] },
+      { k: 'bel', who: 'Catholic and Orthodox', x: 'Purgatory, defined at Florence (1439) and Trent, is not a third destination but the purification of those who die in God’s grace; Catholics pray for the dead {{2Macc.12.46}}. The Orthodox reject purgatory as Rome defines it but also pray for the dead. The Apostles’ Creed’s “he descended into hell” refers to Christ among the dead (the “harrowing of hell”), a tradition drawn from {{1Pet.3.19}}.' } ] },
     { h: 'Other traditions', blocks: [
       { k: 'bel', who: 'Jewish', x: 'Gehinnom is mainly purgative: “the judgement of the wicked in Gehinnom lasts twelve months” ([Mishnah Eduyot 2:10](https://www.sefaria.org/Mishnah_Eduyot.2.10)); mourners say Kaddish for eleven months for that reason. Judaism places its emphasis on this life rather than on describing the next.' },
       { k: 'bel', who: 'Muslim', x: 'Jahannam is a place of fire with seven gates {{Q:15:44}}, and paradise and the fire are described vividly. Most Muslims hold that believers who are punished will eventually leave it; whether the punishment of unbelievers is eternal has been discussed by some classical scholars, such as Ibn Qayyim al-Jawziyya.' },
@@ -66,8 +68,10 @@ UNITS.push({
     { t: 'Plague of Justinian', url: L.wiki('Plague_of_Justinian') },
     { t: 'Black Death', url: L.wiki('Black_Death') },
     { t: 'Gehenna', url: L.wiki('Gehenna') },
-    { t: 'Edward Fudge, The Fire That Consumes (1982)', url: L.wiki('Annihilationism') },
-    { t: 'David Bentley Hart, That All Shall Be Saved (2019)', url: L.wiki('Universal_reconciliation') }
+    { t: 'Edward Fudge, The Fire That Consumes (1982)' },
+    { t: 'Annihilationism: an overview', url: L.wiki('Annihilationism') },
+    { t: 'David Bentley Hart, That All Shall Be Saved (2019)' },
+    { t: 'Universal reconciliation: an overview', url: L.wiki('Universal_reconciliation') }
   ]
 });
 
@@ -85,8 +89,8 @@ window.PARALLELS = [
   { g: 'betrayal', n: 'Osiris betrayed by his brother Set', v: 'found', x: 'Plutarch (On Isis and Osiris 13) tells how Set and seventy-two conspirators trick Osiris into a chest and kill him. The shared theme is a good king destroyed through treachery by one close to him; the differences are large: a brother not a disciple, a cosmic myth not a dated event, and Osiris rules the dead rather than returning to life.' },
   { g: 'betrayal', n: 'Baldr and Loki', v: 'partial', x: 'In the Prose Edda (Snorri Sturluson, c. 1220) Loki tricks the blind god Höd into killing the beloved Baldr with mistletoe. The story was written down more than two centuries after Iceland became Christian, so influence may run in either direction.' },
   { g: 'betrayal', n: 'Devadatta and the Buddha', v: 'found', x: 'In the Pali Vinaya (Cullavagga 7), the Buddha’s cousin and disciple Devadatta tries to kill him and split the community out of ambition. The pattern of a jealous insider is close; the texts are independent of the Gospels, and the outcome differs (the Buddha is unharmed).' },
-  { g: 'betrayal', n: 'Krishna or Mithras crucified and betrayed', v: 'unsupported', x: 'No Hindu or Mithraic source describes Krishna or Mithras being betrayed by a disciple or crucified. The claims come from Kersey Graves, The World’s Sixteen Crucified Saviors (1875), a book historians of every persuasion regard as unreliable.' },
-  { g: 'betrayal', n: 'Judas in later tradition', v: 'found', x: 'The Gospel of Judas (2nd century; a Coptic copy published 2006) recasts Judas as the disciple who understood Jesus. Some Muslim commentators on Qur’an 4:157 taught that Judas was made to resemble Jesus and crucified in his place, a view also found in the late Gospel of Barnabas.' }
+  { g: 'betrayal', n: 'Krishna or Mithras crucified and betrayed', v: 'unsupported', x: 'No Hindu or Mithraic source describes Krishna or Mithras being betrayed by a disciple or crucified. The claims come from Kersey Graves, The World’s Sixteen Crucified Saviors (1875), a book that historians, including sceptical ones such as Richard Carrier, regard as unreliable.' },
+  { g: 'betrayal', n: 'Judas in later tradition', v: 'found', x: 'The Gospel of Judas (composed in the 2nd century; known from one Coptic copy in Codex Tchacos, radiocarbon dated c. AD 220–340 and published in 2006 [[tchacos]]) presents Judas as the disciple who understood Jesus, though how heroic its Judas is remains disputed. Some Muslim commentators on Qur’an 4:157 taught that Judas was made to resemble Jesus and crucified in his place, a view also found in the late Gospel of Barnabas.' }
 ];
 
 UNITS.push({
@@ -115,7 +119,8 @@ UNITS.push({
   ],
   questions: ['Which parallel in the table is closest to the Gospel story, and what are the differences?', 'Why does the criterion of embarrassment make most historians think Judas was real?', 'What would you need to show to prove that one story borrowed from another?'],
   sources: [
-    { t: 'E. P. Sanders, Jesus and Judaism (1985)', url: L.wiki('E._P._Sanders') },
+    { t: 'E. P. Sanders, Jesus and Judaism (1985)' },
+    { t: 'E. P. Sanders: background on the author', url: L.wiki('E._P._Sanders') },
     { t: 'Judas Iscariot: sources and interpretations', url: L.wiki('Judas_Iscariot') },
     { t: 'Plutarch, On Isis and Osiris', url: L.wiki('De_Iside_et_Osiride') },
     { t: 'Gospel of Judas', url: L.wiki('Gospel_of_Judas') },
@@ -125,15 +130,15 @@ UNITS.push({
 
 UNITS.push({
   id: 'miracles', part: 'Christian Belief', title: 'Miracles and the laws of nature',
-  kicker: 'Thirty events in the Bible that go beyond physics and biology as now understood, with what they would require and what has been proposed.',
-  intro: 'The Bible describes events that, if they happened as told, are not explained by the laws of nature as science now knows them: the sun standing still, water becoming wine, the dead raised. This unit lists them, states plainly what each would require physically, and notes any natural explanation that has been proposed, with its source. It also sets out how believers and sceptics have thought about miracles, and what science can and cannot settle.',
+  kicker: 'Thirty reported events in the Bible: what each passage says, what ordinary nature would not produce on a stated reading, and what has been proposed.',
+  intro: 'The Bible reports events that, read as physical events, ordinary natural processes do not explain: the sun standing still, water becoming wine, the dead raised. For each, this unit separates what the passage reports; its wording, genre and context; the difficulty under a stated reading; the explanations that have been proposed and how well supported they are; how Jews and Christians have read it; and what remains unknown. The narratives rarely say how anything happened, and the atlas does not invent a mechanism for them. It also sets out how believers and sceptics have thought about miracles, and what science can and cannot settle.',
   widget: 'miracles',
   sections: [
     { h: 'What is a miracle?', blocks: [
       { k: 'p', x: 'Hume defined a miracle as “a violation of the laws of nature” (Enquiry 10). Christian thinkers have usually put it differently. Augustine wrote that a wonder happens “not contrary to nature, but contrary to what is known of nature” (City of God 21.8). Aquinas defined a miracle as something done by God beyond the order of nature as we know it (Summa Contra Gentiles 3.101). On this view the laws of nature describe how things normally go, and a miracle is God acting in a way that is not normal, not a contradiction of reason.' },
       { k: 'p', x: 'The Bible itself uses three words: *signs* (pointing beyond themselves), *wonders* (provoking awe) and *powers* (acts of strength) {{Acts.2.22}}. Many of its miracles are not described as breaking nature at all but as perfect timing: a wind that blows all night {{Exod.14.21}}, a storm that drops. Others, such as the resurrection, are presented as entirely beyond nature.' } ] },
     { h: 'What science can and cannot say', blocks: [
-      { k: 'p', x: 'Science can test natural explanations, date objects, model events and examine claimed healings; for instance, the Lourdes Medical Bureau has examined claimed cures since 1883. It cannot, by its own method, show that God could not act, since its method studies the regular behaviour of nature. Whether such acts happen is a question about God and about historical evidence, which is why the arguments are philosophical and historical as well as scientific.' },
+      { k: 'p', x: 'Science can test natural explanations, date objects, model events and examine claimed healings; for instance, the Lourdes Medical Bureau has examined claimed cures since 1883. Its physicians can conclude only that a cure is unexplained by current medical knowledge; whether it is a miracle is a further judgement, made by the Church [[lourdes2025]]. It cannot, by its own method, show that God could not act, since its method studies the regular behaviour of nature. Whether such acts happen is a question about God and about historical evidence, which is why the arguments are philosophical and historical as well as scientific.' },
       { k: 'p', x: 'As the atlas’s opening unit notes, knowledge changes. Scientists once doubted that stones fell from the sky; meteorites were accepted only around 1803. Other things once accepted have been overturned. Both believers and sceptics have reason for humility about what future evidence will show.' } ] },
     { h: 'How traditions have read them', blocks: [
       { k: 'bel', who: 'Christian', x: 'Christians believe God acts in history and that the miracles, above all the resurrection, are real signs of his kingdom. C. S. Lewis (Miracles, 1947) argued that if God exists, nature is not a closed system and miracles are possible; the question is one of evidence. Many Christians also read some miracle stories symbolically; others, such as Rudolf Bultmann (1941), argued for “demythologising” them altogether.' },
@@ -141,11 +146,12 @@ UNITS.push({
       { k: 'bel', who: 'Muslim', x: 'The Qur’an affirms the miracles of earlier prophets, including Jesus {{Q:3:49}}, and presents the Qur’an itself as Muhammad’s chief sign. The theologian al-Ghazali argued that the regular connection of cause and effect is God’s habit, which he may set aside.' },
       { k: 'sch', x: 'Critical scholars approach the miracle stories in several ways: as embellished memories of real events, as theological narratives (D. F. Strauss, The Life of Jesus, 1835), or as reports of experiences whose cause is left open. Most historians agree that Jesus was known in his lifetime as a healer and exorcist, since even his opponents attributed his power to Beelzebub {{Mark.3.22}}.' } ] }
   ],
-  questions: ['Which miracle in the list depends most on timing, and which most clearly on breaking a law of nature?', 'Is Augustine’s definition of a miracle more or less convincing than Hume’s? Why?', 'What kind of evidence could count for or against a miracle that happened two thousand years ago?'],
+  questions: ['Which miracle in the list depends most on timing, and which most clearly on breaking a law of nature? Does the answer change with how you read the passage?', 'Is Augustine’s definition of a miracle more or less convincing than Hume’s? Why?', 'What kind of evidence could count for or against a miracle that happened two thousand years ago?'],
   sources: [
     { t: 'Stanford Encyclopedia of Philosophy: Miracles', url: L.sep('miracles') },
     { t: 'David Hume, An Enquiry Concerning Human Understanding, section 10 (1748)', url: 'https://www.gutenberg.org/ebooks/9662' },
-    { t: 'C. S. Lewis, Miracles (1947)', url: L.wiki('Miracles_(book)') },
+    { t: 'C. S. Lewis, Miracles (1947)' },
+    { t: 'Miracles (book): an overview', url: L.wiki('Miracles_(book)') },
     { t: 'Augustine, City of God 21.8', url: L.na('120121') },
     { t: 'Lourdes Medical Bureau', url: L.wiki('Lourdes_Medical_Bureau') }
   ]

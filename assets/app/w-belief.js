@@ -49,7 +49,7 @@
       <circle cx="200" cy="197" r="34" fill="var(--page-2)" stroke="var(--rule)"/><text x="200" y="194" text-anchor="middle" style="font-size:12px">One God</text><text x="200" y="210" text-anchor="middle" style="font-size:10px;fill:var(--ink-soft)">one essence</text>
       ${P.map((p, i) => `<g class="p" data-id="${p.id}" tabindex="0" role="button" aria-label="${esc(p.name)} and ${esc(p.art)}"><circle cx="${pts[i][0]}" cy="${pts[i][1]}" r="46" fill="color-mix(in srgb, ${C[i]} 22%, var(--page))"/><text x="${pts[i][0]}" y="${pts[i][1] - 4}" text-anchor="middle" style="font-size:12.5px;font-weight:700">${esc(p.name.replace('The Son, the Logos', 'The Son'))}</text><text x="${pts[i][0]}" y="${pts[i][1] + 14}" text-anchor="middle" style="font-size:11.5px;fill:var(--ink-soft)">${esc(p.art)}</text></g>`).join('')}
     </svg><div class="panel" id="tr-card"></div></div>
-    <p class="note" style="margin-top:8px">An analogy for reflection, not church teaching. The links to memory, understanding and will are Augustine’s; the arts of speech follow Bonaventure; pairing each person with one of the three Hebrew words of Proverbs 24:3–4 follows modern classical-education usage.</p>`;
+    <p class="note" style="margin-top:8px">Editorial analogy, offered for reflection; not church teaching and not a historical system. Memory, understanding and will are Augustine’s image; the three arts of speech are Bonaventure’s, though he does not assign them to the persons; the pairing of arts and persons and of the Hebrew words of Proverbs 3:19–20 is the atlas’s own. Each person is wholly God: the three are not parts or faculties.</p>`;
     const show = id => {
       const i = P.findIndex(p => p.id === id), p = P[i];
       $$('.p', el).forEach(g => g.classList.toggle('sel', g.dataset.id === id));
@@ -86,10 +86,10 @@
     bindChips($('#ms-pick', el), show); show(0);
   };
 
-  W.args = el => {
+  W.args = (el, u, params) => {
     el.innerHTML = `<div class="chips" id="ag-side">${chips([['for', 'Arguments for God'], ['against', 'Arguments against'], ['all', 'All eleven']], 'all')}</div>
       <div class="split" style="margin-top:12px"><div class="picklist" id="ag-pick"></div><div class="panel" id="ag-card"></div></div>`;
-    let side = 'all', sel = ARGS[0].id;
+    let side = 'all', sel = params && ARGS.some(a => a.id === params.get('a')) ? params.get('a') : ARGS[0].id;
     const list = () => { $('#ag-pick', el).innerHTML = ARGS.filter(a => side === 'all' || a.side === side).map(a => `<button type="button" data-id="${a.id}" aria-selected="${a.id === sel}">${esc(a.n)}<span class="sub">${a.side === 'for' ? 'For' : 'Against'}</span></button>`).join(''); };
     const show = id => {
       const a = ARGS.find(x => x.id === id); sel = id;
@@ -103,15 +103,17 @@
     list(); show(sel);
   };
 
-  W.abrahamic = el => {
+  W.abrahamic = (el, u, params) => {
     el.innerHTML = `<div class="chips scroll" id="ab-topic">${chips(ABRAHAMIC.map((a, i) => [String(i), esc(a.k)]), '0')}</div>
       <div class="grid-cards" id="ab-out" style="margin-top:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))"></div>
-      <p class="note" style="margin-top:8px">Each column states what that tradition holds, in its own terms and sources. Within each tradition there is further variety (for example Orthodox, Conservative and Reform Judaism; Sunni and Shi‘a Islam; the Christian churches compared in the Creeds unit).</p>`;
+      <p class="note" style="margin-top:8px">Each column states what that tradition holds, in its own terms and sources, and names the school or movement where a position is not shared across the tradition. Within each there is further variety (Orthodox, Conservative and Reform Judaism; Sunni and Shiʿa Islam and their schools; the Christian churches compared in the Creeds unit).</p>`;
     const show = i => {
       const a = ABRAHAMIC[+i];
       $('#ab-out', el).innerHTML = [['j', 'Judaism', 'var(--gold)'], ['c', 'Christianity', 'var(--vermilion)'], ['i', 'Islam', 'var(--verdigris)']].map(([k, n, c]) => `<div class="card" style="border-top:3px solid ${c}"><p class="eyebrow" style="color:${c}">${n}</p><p>${rich(a[k])}</p></div>`).join('');
     };
-    bindChips($('#ab-topic', el), show); show('0');
+    const t0 = params && ABRAHAMIC[+params.get('t')] ? params.get('t') : '0';
+    $$('#ab-topic [data-id]', el).forEach(b => b.setAttribute('aria-selected', String(b.dataset.id === t0)));
+    bindChips($('#ab-topic', el), show); show(t0);
   };
 
   W.traditions = el => {

@@ -16,11 +16,11 @@ window.WORDS = [
   "notes": [
    {
     "k": "p",
-    "x": "Plural in form. With singular verbs it means the one God of Israel; with plural verbs, “gods.” Psalm 82 uses it of a divine council, and Jesus cites that psalm in John 10:34."
+    "x": "Plural in form. With singular verbs it usually means the one God of Israel; with plural verbs, “gods.” It can also be used of a single foreign god, and Psalm 82 uses it of a divine council, which Jesus cites in John 10:34. Context decides which is meant."
    },
    {
     "k": "sch",
-    "x": "Explained as a plural of majesty (most grammarians) or as a hint of plurality within God (many Fathers)."
+    "x": "Hebrew grammarians commonly explain it as a plural of majesty or abstraction. Many Church Fathers saw in it a hint of plurality within God; that is a later Christian reading, not something the grammar settles."
    }
   ]
  },
@@ -108,11 +108,11 @@ window.WORDS = [
   "notes": [
    {
     "k": "p",
-    "x": "Gen 2:7 calls the human a “living nep̄eš,” the same phrase used of animals in Gen 1:24 (KJV “living creature”). The human is a soul; Genesis does not say he has one."
+    "x": "Gen 2:7 calls the human a “living nep̄eš,” the same phrase used of animals in Gen 1:24 (KJV “living creature”). In this verse the word names the whole living being rather than a part within it."
    },
    {
     "k": "p",
-    "x": "Modern readers hear “soul” as an inner ghost. Hebrew means the whole living, breathing, desiring person, so “love God with all your nep̄eš” means with your whole life."
+    "x": "Its range runs from “throat” and “appetite” to “life,” “person” and “self”; which applies depends on the verse. Modern readers often hear “soul” as an immaterial inner part, a sense shaped by later Greek and Christian thought, so “with all thy soul” (nep̄eš) {{Deut.6.5}} is better heard as “with your whole life.” Whether any Old Testament text implies a soul that survives the body is debated."
    }
   ]
  },
@@ -274,7 +274,7 @@ window.WORDS = [
    },
    {
     "k": "p",
-    "x": "In Proverbs 8 Wisdom is personified as present at creation. Christians read it of Christ {{1Cor.1.24}}. Theophilus and Irenaeus read it of the Spirit."
+    "x": "In Proverbs 8 Wisdom is personified as present at creation. Most Christian writers identify Wisdom with Christ, following Paul {{1Cor.1.24}}; Theophilus and Irenaeus (2nd century) identified it with the Spirit. Jewish tradition identified Wisdom with the Torah."
    }
   ]
  },
@@ -293,7 +293,11 @@ window.WORDS = [
   "notes": [
    {
     "k": "p",
-    "x": "From bîn, “to discern, distinguish between.” The Logic stage of the Trivium names the same act."
+    "x": "From bîn, “to discern, understand.” Proverbs pairs it with wisdom and knowledge, as the means by which God founded the world {{Prov.3.19-20}}."
+   },
+   {
+    "k": "p",
+    "x": "Modern analogy: classical-education writers compare it to the logic stage of the Trivium. The comparison is the atlas’s and theirs, not the Hebrew word’s."
    }
   ]
  },
@@ -303,7 +307,7 @@ window.WORDS = [
   "lang": "heb",
   "w": "דַּעַת",
   "tr": "daʿat",
-  "gloss": "knowledge (intimate, experiential)",
+  "gloss": "knowledge, understanding, skill",
   "kjv": "knowledge, know",
   "refs": [
    "Prov.1.7",
@@ -312,11 +316,11 @@ window.WORDS = [
   "notes": [
    {
     "k": "p",
-    "x": "From yāḏaʿ, the verb of “Adam knew Eve” (Gen 4:1). It means knowledge by acquaintance, not information only."
+    "x": "From yāḏaʿ, “to know,” a verb with a wide range: to perceive, to learn, to be acquainted with, to be skilled in, to acknowledge, and (in Gen 4:1, “Adam knew Eve”) sexual union. The sexual use does not make every kind of knowing “intimate”; each verse’s context decides."
    },
    {
     "k": "p",
-    "x": "“My people are destroyed for lack of knowledge” {{Hos.4.6}} refers to the knowledge of God and his ways, not information alone."
+    "x": "In Hosea, “my people are destroyed for lack of knowledge” {{Hos.4.6}} stands beside forgetting God’s law, so the knowledge meant there is knowledge of God and his ways, not information alone."
    }
   ]
  },
@@ -377,11 +381,19 @@ window.WORDS = [
   "notes": [
    {
     "k": "p",
-    "x": "Heraclitus used it for the rational order of the cosmos, the Stoics for reason pervading all, and Philo for God’s mediating Word. John adds that this Logos “was made flesh” {{John.1.14}}, which no Greek philosophy had said."
+    "x": "Ordinary Greek: word, saying, speech, message, account, reckoning, reason. Most New Testament uses are ordinary: “the word of God” as a message, or an account to be given."
+   },
+   {
+    "k": "sch",
+    "x": "Philosophical uses: Heraclitus spoke of the logos as the order of the changing world, the Stoics of reason pervading all things, and Philo of Alexandria of God’s Logos through whom he made and governs the world. Jewish scriptural background: God creates by speaking {{Ps.33.6}}, and Wisdom is with God at creation (Proverbs 8). Scholars debate how much of this John draws on."
+   },
+   {
+    "k": "text",
+    "x": "John’s own context: the prologue echoes Genesis (“In the beginning”), says all things were made through the Logos {{John.1.3}}, and adds that this Logos “was made flesh” {{John.1.14}}, which no earlier philosophy had said."
    },
    {
     "k": "p",
-    "x": "It is the root of logic, -logy and dialogue. Justin Martyr’s logos spermatikos holds that seeds of the Logos are scattered in all people, so “whatever things were rightly said among all men are the property of us Christians” (2 Apology 13)."
+    "x": "Later theology: Justin Martyr (c. 155) taught that seeds of the Logos are scattered in all people, so “whatever things were rightly said among all men are the property of us Christians” (2 Apology 13), and the Nicene Creed confesses the Son “of one substance with the Father.” Modern phrases such as “God’s logic” or “divine reason” can help a reader feel the word’s range, but they are interpretive aids, not a full translation of John 1:1. It is also the root of English logic, -logy and dialogue."
    }
   ]
  },
@@ -400,11 +412,16 @@ window.WORDS = [
   "notes": [
    {
     "k": "sch",
-    "x": "Rare in classical Greek, which preferred eros (desire) and philia (friendship). The Septuagint and the New Testament fill agapē with the meaning of the cross {{Rom.5.8}}."
+    "x": "The noun agapē is rare before the Septuagint, though the verb agapaō, “to love, to value,” is common in classical Greek. Other words for love include erōs (desire) and philia (friendship)."
+   },
+   {
+    "k": "bel",
+    "who": "Christian",
+    "x": "Christian writers read agapē in the light of the cross: “God commendeth his love toward us, in that, while we were yet sinners, Christ died for us” {{Rom.5.8}}."
    },
    {
     "k": "sch",
-    "x": "The sharp agapē/eros contrast popularised by Anders Nygren (1930s) is now considered overdrawn. The verbs overlap in usage."
+    "x": "The sharp contrast between agapē and erōs popularised by Anders Nygren (Agape and Eros, 1930–36) is now widely regarded as overdrawn. The verbs agapaō and phileō overlap in usage; John 21:15–17 alternates them, and whether the change of verb carries meaning there is debated."
    }
   ]
  },
@@ -423,11 +440,11 @@ window.WORDS = [
   "notes": [
    {
     "k": "p",
-    "x": "meta (after, change) + nous (mind). “Fruits meet for repentance” {{Matt.3.8}} means a change that shows up in conduct."
+    "x": "Formed from meta (after, change) and nous (mind), but usage, not etymology, gives its meaning: in the New Testament it is repentance, a turning from sin to God, shaped by the Hebrew šûḇ, “turn.” “Fruits meet for repentance” {{Matt.3.8}} shows that it is expected to appear in conduct."
    },
    {
     "k": "p",
-    "x": "Neither guilt-feeling nor ritual alone, but a re-mapping of how one sees and lives, close to what Jordan Peterson calls revising one’s map of meaning."
+    "x": "Modern analogy: Jordan Peterson’s idea of revising one’s “map of meaning” (Maps of Meaning, 1999) resembles the change of outlook involved. It is a modern comparison, not what the word meant to its first readers, for whom repentance was directed toward God."
    }
   ]
  },
@@ -473,11 +490,11 @@ window.WORDS = [
    },
    {
     "k": "sch",
-    "x": "pistis Christou {{Gal.2.16}}: “faith in Christ” (most translations) or “the faithfulness of Christ” (KJV “faith of Jesus Christ,” and a large current scholarly view)."
+    "x": "pistis Christou {{Gal.2.16}}: “faith in Christ” (most translations) or “the faithfulness of Christ” (one possible reading of the KJV “faith of Jesus Christ”). Both views have substantial scholarly support; the grammar allows either."
    },
    {
     "k": "p",
-    "x": "English “believe” comes from Old English ge-lēfan, related to lief, “dear”: to believe once meant to hold dear and give allegiance. Modern usage often treats faith as accepting claims without evidence; biblical usage centres on trust and loyalty toward a person."
+    "x": "English “believe” comes from Old English ge-lēfan, related to lief, “dear”; that is the history of the English word, not evidence for the Greek. New Testament usage includes believing that something is true, but centres on trust and loyalty toward a person, and the modern sense of “belief without evidence” is not its meaning."
    }
   ]
  },
@@ -615,7 +632,7 @@ window.WORDS = [
    },
    {
     "k": "p",
-    "x": "“Comforter” comes from Latin con-fortis, “with strength.” Wycliffe and Tyndale meant one who strengthens, not one who soothes."
+    "x": "“Comforter” comes through Latin confortare, “to strengthen.” In late medieval English “comfort” still often meant to strengthen or support, which is part of what Wycliffe and Tyndale’s word conveyed."
    }
   ]
  },
@@ -685,7 +702,7 @@ window.WORDS = [
   "notes": [
    {
     "k": "p",
-    "x": "The Septuagint uses it for the Hebrew ʾašrê, “how fortunate” {{Ps.1.1}}."
+    "x": "The Septuagint uses it for the Hebrew ʾašrê, roughly “how fortunate,” as in “Blessed is the man” {{Ps.1.1}}."
    },
    {
     "k": "p",
@@ -708,7 +725,7 @@ window.WORDS = [
   "notes": [
    {
     "k": "p",
-    "x": "From kāḇēḏ, “heavy.” Glory is weight: the substance and gravity of a person. “Honour thy father” uses the same root, to give weight to."
+    "x": "From the root kbd, “to be heavy.” In use it means honour, abundance and, of God, his visible glory {{Isa.6.3}}. “Honour thy father” uses the same root. The image of glory as “weight” is a reflection on the root, not a sense the word must carry in every verse."
    }
   ]
  },
@@ -788,7 +805,7 @@ window.WORDS = [
   "notes": [
    {
     "k": "p",
-    "x": "From the same root as ʾāman, “firm.” Truth is what holds. Rabbinic tradition notes its letters run first, middle and last of the alphabet: truth stands on the whole."
+    "x": "From the same root as ʾāman, “firm.” Truth is what holds. A rabbinic teaching notes that its letters are the first, a middle and the last of the alphabet (Jerusalem Talmud, Sanhedrin 1:1): a homily, not an etymology."
    },
    {
     "k": "p",
@@ -811,7 +828,7 @@ window.WORDS = [
   "notes": [
    {
     "k": "p",
-    "x": "From yārāh, “to throw, to point”: instruction that shows the way. “Law” is too narrow, because Torah includes story, poetry and promise."
+    "x": "Usually connected with yārāh, “to point out, to teach”: instruction that shows the way. “Law” is too narrow for the Torah as a book, because it includes story, poetry and promise, though in some verses “law” is the right sense."
    }
   ]
  },
@@ -830,7 +847,7 @@ window.WORDS = [
   "notes": [
    {
     "k": "p",
-    "x": "Covenants were “cut” (kārat bərît), because animals were divided and the parties passed between them, as God alone does in Genesis 15."
+    "x": "Covenants were “cut” (kārat bərît). Genesis 15 and Jeremiah 34:18 describe a rite in which animals were divided and the parties passed between them; many scholars connect the idiom with that rite, though how widely it was practised is uncertain."
    },
    {
     "k": "p",

@@ -1,38 +1,39 @@
 /* Part V: Comparisons. */
 window.UNITS = window.UNITS || [];
 
-/* Judaism, Christianity and Islam, topic by topic. Each cell summarises the tradition's own sources. */
+/* Judaism, Christianity and Islam, topic by topic. Each cell summarises the tradition's own sources and names the school,
+   body or text when a position is not shared across the whole tradition. */
 window.ABRAHAMIC = [
-  { k: 'God', j: 'One God, without parts or body: “Hear, O Israel” {{Deut.6.4}}. Maimonides’ Thirteen Principles affirm that God is one and incorporeal.',
-    c: 'One God in three persons, Father, Son and Holy Spirit, sharing one divine nature. “God is love” {{1John.4.8}}.',
+  { k: 'God', j: 'One God: “Hear, O Israel” {{Deut.6.4}}. Maimonides’ Thirteen Principles (12th century), widely used in Orthodox Judaism, add that God is incorporeal; earlier and later Jewish thinkers have described God in other terms.',
+    c: 'In the Nicene faith of Catholic, Orthodox and most Protestant churches: one God in three persons, Father, Son and Holy Spirit, sharing one divine nature. Some groups (Unitarians, Jehovah’s Witnesses, Oneness Pentecostals) reject this. “God is love” {{1John.4.8}}.',
     i: 'Tawḥīd, God’s absolute oneness: “He begetteth not nor was begotten. And there is none comparable unto Him” {{Q:112:1-4}}. God is known by his Most Beautiful Names, traditionally ninety-nine.' },
-  { k: 'Revelation', j: 'The Written Torah given at Sinai, with the Oral Torah handed down beside it and later written in the Mishnah (c. 200) and Talmud (c. 500).',
+  { k: 'Revelation', j: 'In rabbinic Judaism: the Written Torah given at Sinai, with the Oral Torah handed down beside it and later written in the Mishnah (c. 200) and Talmud (c. 500). Karaite Jews reject the Oral Torah; Reform and Conservative Judaism understand revelation in more historical terms.',
     c: 'God spoke through the prophets and finally through his Son {{Heb.1.1-2}}. Scripture is “given by inspiration of God” {{2Tim.3.16}}, and Christ himself is the Word.',
-    i: 'The Qur’an is God’s own speech, revealed to Muhammad through the angel Gabriel {{Q:2:97}} over about 23 years (610–632), in Arabic. The Sunnah (the Prophet’s example, recorded in hadith) is the second source.' },
-  { k: 'Prophets', j: 'Moses is the greatest prophet {{Deut.34.10}}. Prophecy ceased after Haggai, Zechariah and Malachi.',
+    i: 'The Qur’an is God’s own speech, revealed to Muhammad through the angel Gabriel {{Q:2:97}} over about 23 years (610–632), in Arabic. For Sunni and Shiʿa Muslims the Sunnah (the Prophet’s example, recorded in hadith) is the second source; they differ over which hadith collections and authorities to accept.' },
+  { k: 'Prophets', j: 'Moses is the greatest prophet {{Deut.34.10}}. Rabbinic tradition holds that prophecy ceased after Haggai, Zechariah and Malachi.',
     c: 'The prophets point forward to Christ; John the Baptist is the last of them {{Matt.11.13}}. The New Testament also recognises a gift of prophecy in the Church.',
     i: 'God sent many prophets, among them Adam, Noah, Abraham, Moses, David and Jesus. Twenty-five are named in the Qur’an. Muhammad is “the Seal of the Prophets” {{Q:33:40}}.' },
   { k: 'Abraham', j: 'Father of the Jewish people, with whom God made an everlasting covenant {{Gen.17.7}}.',
     c: 'Father of all who believe, Jew and Gentile {{Rom.4.16}}.',
-    i: 'Ibrāhīm, “neither a Jew nor a Christian, but he was an upright man who had surrendered” {{Q:3:67}}, who with Ishmael raised the foundations of the Kaaba {{Q:2:127}}. Genesis names Isaac as the son nearly sacrificed {{Gen.22.2}}; the Qur’an does not name the son {{Q:37:102}}, and most Muslim tradition holds it was Ishmael.' },
-  { k: 'Jesus', j: 'A Jewish teacher of the 1st century, not the Messiah, since the messianic age has not come.',
+    i: 'Ibrāhīm, who “was not a Jew, nor yet a Christian; but he was an upright man who had surrendered” {{Q:3:67}}, who with Ishmael raised the foundations of the Kaaba {{Q:2:127}}. Genesis names Isaac as the son nearly sacrificed {{Gen.22.2}}; the Qur’an does not name the son {{Q:37:102}}, and most Muslim tradition holds it was Ishmael.' },
+  { k: 'Jesus', j: 'Jewish tradition across its movements does not accept Jesus as the Messiah, since the messianic age has not come; modern Jewish scholars have studied him as a 1st-century Jewish teacher. Messianic Jews, who accept him, are generally not counted within Judaism by Jewish bodies.',
     c: 'The Messiah and eternal Son of God, crucified and risen, who will return.',
-    i: 'ʿĪsā, a prophet and the Messiah, born of the virgin Mary, a Word from God and a spirit from Him {{Q:4:171}}; not divine and not crucified {{Q:4:157}}; he will return.' },
-  { k: 'Mary', j: 'Not a figure in Jewish tradition.',
+    i: 'ʿĪsā, a prophet and the Messiah, born of the virgin Mary, a Word from God and a spirit from Him {{Q:4:171}}; not divine {{Q:5:75}}. Most Muslims read {{Q:4:157}} as denying that he was crucified, and expect his return.' },
+  { k: 'Mary', j: 'Has no religious role in Jewish tradition.',
     c: 'Mother of the Lord. Catholic and Orthodox Christians venerate her as Theotokos, “God-bearer”; Protestants honour her as a model of faith {{Luke.1.38}}.',
-    i: 'Maryam, chosen and purified “above all the women of creation” {{Q:3:42}}. Sura 19 bears her name, and she is named more often in the Qur’an than in the New Testament.' },
-  { k: 'Human nature and sin', j: 'Each person has a good and an evil inclination (*yetzer tov*, *yetzer hara*). There is no inherited guilt; repentance (*teshuvah*) restores.',
-    c: 'Humanity shares in Adam’s fall {{Rom.5.12}}. Western churches teach original sin (Augustine); the Orthodox speak of inherited mortality and weakness rather than guilt.',
-    i: 'Adam and Eve repented and were forgiven {{Q:2:37}}. Every person is born in *fiṭrah*, a natural disposition toward God {{Q:30:30}}. There is no original sin.' },
-  { k: 'Salvation', j: 'Faithfulness to the covenant, repentance, prayer and charity. “The righteous of all nations have a share in the world to come” (Tosefta Sanhedrin 13:2).',
+    i: 'Maryam, chosen, made pure and preferred “above (all) the women of creation” {{Q:3:42}}. Sura 19 bears her name, and she is named more often in the Qur’an than in the New Testament.' },
+  { k: 'Human nature and sin', j: 'In rabbinic teaching each person has a good and an evil inclination (*yetzer tov*, *yetzer hara*). Mainstream Judaism has no doctrine of inherited guilt; repentance (*teshuvah*) restores.',
+    c: 'Humanity shares in Adam’s fall {{Rom.5.12}}. Catholic and classical Protestant teaching, following Augustine, speaks of original sin, though they define it differently; Orthodox theology speaks of inherited mortality and weakness rather than inherited guilt.',
+    i: 'Adam and Eve repented and were forgiven {{Q:2:37}}. Every person is born in *fiṭrah*, a natural disposition toward God {{Q:30:30}}. Sunni and Shiʿa theology have no doctrine of original sin.' },
+  { k: 'Salvation', j: 'Faithfulness to the covenant, repentance, prayer and charity. A rabbinic teaching holds that “the righteous of all nations have a share in the world to come” (Tosefta Sanhedrin 13:2).',
     c: 'By grace through faith in Christ {{Eph.2.8}}. Traditions differ on how faith, works and sacraments relate.',
-    i: 'Faith and righteous deeds, under God’s mercy. Deeds are weighed on the Day of Judgement: “whoso doeth good an atom’s weight will see it then” {{Q:99:7-8}}.' },
-  { k: 'Law', j: '613 commandments (Talmud, Makkot 23b), interpreted in *halakhah*, the way of life of the Jewish community.',
-    c: 'The Law is fulfilled in Christ {{Matt.5.17}}; love is “the fulfilling of the law” {{Rom.13.10}}. The moral law stands; ritual and food laws are not binding on Gentile Christians {{Acts.15.28-29}}.',
+    i: 'Faith and righteous deeds, under God’s mercy. Deeds are weighed on the Day of Judgement: “whoso doeth good an atom’s weight will see it then” {{Q:99:7-8}}. Theological schools differ on how faith, deeds and mercy relate.' },
+  { k: 'Law', j: '613 commandments (Talmud, Makkot 23b), interpreted in *halakhah*. Orthodox Judaism holds halakhah binding; Conservative Judaism holds it binding but developing; Reform Judaism treats it as guidance.',
+    c: 'The Law is fulfilled in Christ {{Matt.5.17}}; love is “the fulfilling of the law” {{Rom.13.10}}. Most churches hold that the moral law stands while ritual and food laws are not binding on Gentile Christians {{Acts.15.28-29}}; how to divide them is itself debated.',
     i: 'The Sharīʿah, derived from the Qur’an and Sunnah and developed by jurists (fiqh) in several schools.' },
-  { k: 'Prayer', j: 'Three daily services (morning, afternoon, evening); the Amidah and the Shema.',
+  { k: 'Prayer', j: 'Three daily services (morning, afternoon, evening) in traditional practice; the Amidah and the Shema.',
     c: 'The Lord’s Prayer {{Matt.6.9}}, the Eucharist, the daily office, personal prayer.',
-    i: 'Five daily prayers (*ṣalāh*) facing Mecca, including the Fātiḥah {{Q:1:1-7}}.' },
+    i: 'Five daily prayers (*ṣalāh*) facing Mecca, including the Fātiḥah {{Q:1:1-7}}; many Shiʿa Muslims combine them into three sessions.' },
   { k: 'Fasting', j: 'Yom Kippur, the Day of Atonement {{Lev.16.29}}, and other fast days.',
     c: 'Lent, Fridays and personal fasting {{Matt.6.16-18}}; customs vary widely.',
     i: 'The month of Ramadan, from dawn to sunset {{Q:2:183}}.' },
@@ -45,21 +46,21 @@ window.ABRAHAMIC = [
   { k: 'Angels and the adversary', j: 'Angels are God’s messengers. The *satan* is the accuser in God’s court {{Job.1.6}}.',
     c: 'Angels serve God; Satan is a fallen adversary, “that old serpent” {{Rev.12.9}}.',
     i: 'Angels such as Jibrīl (Gabriel); also the jinn. Iblīs refused to bow to Adam and became the tempter {{Q:2:34}}.' },
-  { k: 'Food', j: 'Kashrut: no pork or shellfish, meat and milk kept separate {{Lev.11.7}}.',
+  { k: 'Food', j: 'Kashrut: no pork or shellfish, meat and milk kept separate {{Lev.11.7}}; observance varies widely between movements and individuals.',
     c: 'All foods are clean {{Mark.7.19}}; some churches keep fasting rules.',
     i: 'Halal: pork, blood and carrion are forbidden {{Q:5:3}}, and so are intoxicants {{Q:5:90}}.' },
   { k: 'The end', j: 'A messiah of David’s line will gather the exiles and rebuild the Temple; the dead will rise {{Dan.12.2}}.',
     c: 'Christ will return, the dead will rise, and God will make all things new {{Rev.21.5}}.',
-    i: 'The Day of Judgement and the resurrection of bodies {{Q:75:3-4}}; Jesus will return; many traditions also expect the Mahdi.' },
-  { k: 'Other faiths', j: 'Gentiles are righteous by keeping the seven Noahide laws (Talmud, Sanhedrin 56a).',
-    c: 'Christ is the way {{John.14.6}}. Since Vatican II the Catholic Church “rejects nothing that is true and holy” in other religions (Nostra Aetate 2).',
-    i: 'Jews and Christians are “People of the Scripture”: “our God and your God is One” {{Q:29:46}}. “There is no compulsion in religion” {{Q:2:256}}.' }
+    i: 'The Day of Judgement and the resurrection of bodies {{Q:75:3-4}}; in hadith-based tradition Jesus will return. Sunni and Shiʿa Muslims both expect the Mahdi, though Twelver Shiʿa identify him with the hidden twelfth imam.' },
+  { k: 'Other faiths', j: 'In rabbinic teaching Gentiles are righteous by keeping the seven Noahide laws (Talmud, Sanhedrin 56a).',
+    c: 'Christ is the way {{John.14.6}}; churches differ on what this means for those who do not know him. Since Vatican II the Catholic Church “rejects nothing that is true and holy” in other religions (Nostra Aetate 2).',
+    i: 'Jews and Christians are “People of the Scripture”: “our Allah and your Allah is One” {{Q:29:46}}. “There is no compulsion in religion” {{Q:2:256}}.' }
 ];
 
 UNITS.push({
   id: 'abrahamic', part: 'Comparisons', title: 'Judaism, Christianity and Islam',
   kicker: 'Three faiths that trace themselves to Abraham: what they share and where they part.',
-  intro: 'More than half of humanity belongs to a faith that traces itself to Abraham. Judaism, Christianity and Islam share one God, the prophets, a moral law, prayer, fasting and charity, and the hope of a final judgement. They differ decisively over Jesus, over the nature of God’s oneness, and over which scripture is final. This unit compares them topic by topic, in each tradition’s own terms, and then looks more closely at Islam and Judaism and at how the three have related through history.',
+  intro: 'More than half of humanity belongs to a faith that traces itself to Abraham. Judaism, Christianity and Islam each contain several movements and schools, and where a position belongs to one of them the table below says so. Broadly, they share one God, the prophets, a moral law, prayer, fasting and charity, and the hope of a final judgement. They differ decisively over Jesus, over the nature of God’s oneness, and over which scripture is final. This unit compares them topic by topic, in each tradition’s own terms, and then looks more closely at Islam and Judaism and at how the three have related through history.',
   widget: 'abrahamic',
   sections: [
     { h: 'Islam: the record', blocks: [
@@ -70,16 +71,17 @@ UNITS.push({
     { h: 'Jesus and Mary in the Qur’an', blocks: [
       { k: 'text', x: 'The Qur’an calls Jesus the Messiah, “illustrious in the world and the Hereafter” {{Q:3:45}}. It tells of the annunciation to Mary {{Q:19:16-21}} and of the infant Jesus speaking from the cradle {{Q:19:29-33}}. It credits him with healing the blind and the leper, raising the dead and giving life to clay birds “by Allah’s leave” {{Q:3:49}}.' },
       { k: 'text', x: 'It denies three things Christians affirm: that God is three {{Q:4:171}} {{Q:5:73}}, that God has a son {{Q:19:35}}, and that Jesus was crucified {{Q:4:157}}. In one passage God asks Jesus whether he told people to worship him and his mother, and Jesus denies it {{Q:5:116}}.' },
-      { k: 'sch', x: 'Scholars note that the Qur’an’s critique of a Trinity of God, Jesus and Mary (5:116) does not match the creeds, which name Father, Son and Spirit; it may respond to popular practice among Christians of 7th-century Arabia. Its infancy stories have parallels in the Protoevangelium of James and the Infancy Gospel of Thomas.' },
+      { k: 'sch', x: 'How 5:116 relates to the Christian Trinity is disputed. The verse rejects taking Jesus and his mother “for two gods beside Allah”; it does not itself list the members of a Trinity, and the verses that reject “three” {{Q:4:171}} {{Q:5:73}} do not name them. Some Christian critics, and some Muslim readers, take the verses together as describing a Trinity of God, Jesus and Mary that the creeds do not teach. Others read 5:116 as a rebuke of Christian devotion to Jesus and Mary in practice, or of a sect such as the Collyridians, whom the 4th-century bishop Epiphanius says offered worship to Mary; Mohsen Goudarzi argues that the Qur’an’s target is worship rather than doctrinal definition [[goudarzi]]. The question is actively debated.', ev: 'deb' },
+      { k: 'sch', x: 'The Qur’an’s stories of Jesus’ infancy have parallels in the Protoevangelium of James and the Infancy Gospel of Thomas.' },
       { k: 'text', x: 'The Qur’an speaks warmly of Christians: “thou wilt find the nearest of them in affection to those who believe … those who say: Lo! We are Christians” {{Q:5:82}}. Muslims read {{Q:61:6}}, where Jesus announces a messenger named Aḥmad, as a prophecy of Muhammad, and some connect it with the Paraclete of {{John.14.16}}.' } ] },
     { h: 'The decisive differences', blocks: [
       { k: 'bel', who: 'Muslim', x: 'To call Jesus God’s son, or God three, compromises God’s oneness; God forgives directly and needs no sacrifice; the Qur’an corrects what earlier communities altered.' },
-      { k: 'bel', who: 'Christian', x: 'The Trinity is one God, not three. The cross is attested by the earliest Christian, Jewish and Roman sources, so to deny it is to deny the historical record. Forgiveness at the cross is God’s own costly act of love {{Rom.5.8}}.' },
-      { k: 'sch', x: 'Historians of every background regard the crucifixion of Jesus as one of the best-attested facts about him. Muslim scholars have read Qur’an 4:157 in several ways: that another was crucified in his likeness (the majority view), that Jesus was crucified but not killed, or that the Jews did not achieve his death because God raised him.' } ] },
+      { k: 'bel', who: 'Christian', x: 'The Trinity is one God, not three. Christians point out that the crucifixion is reported by the earliest Christian sources and by the Roman historian Tacitus (Annals 15.44), and argue that denying it goes against the historical record. Forgiveness at the cross is God’s own costly act of love {{Rom.5.8}}.' },
+      { k: 'sch', x: 'Most historians of antiquity, including Jewish, agnostic and atheist scholars such as Paula Fredriksen, Bart Ehrman and Gerd Lüdemann, regard the crucifixion of Jesus under Pilate as among the most secure facts about him. Muslim scholars have read Qur’an 4:157 in several ways: that another was crucified in his likeness (the majority view in classical commentary), that Jesus was crucified but did not die, or that it was God, not his enemies, who determined his end.', ev: 'pred' } ] },
     { h: 'Judaism after the Temple', blocks: [
       { k: 'record', x: 'After Rome destroyed the Temple in AD 70, the rabbis rebuilt Jewish life around Torah study, prayer and the synagogue. The Mishnah (c. 200) and the Babylonian Talmud (c. 500) became the foundation of Jewish law and thought. Today’s main movements (Orthodox, Conservative and Reform) took shape in the 19th century.' },
-      { k: 'record', x: 'Christianity began as a Jewish movement; the “parting of the ways” was gradual over the first centuries. Centuries of Christian hostility followed: the charge of deicide, forced disputations, ghettos, expulsions and massacres. The Holocaust forced a reckoning. Vatican II’s Nostra Aetate (1965) rejected the deicide charge, and many Protestant churches issued similar statements. In 2000, Jewish scholars published [Dabru Emet](' + L.wiki('Dabru_Emet') + '), affirming that Jews and Christians worship the same God.' },
-      { k: 'bel', who: 'Jewish', x: 'God’s covenant with Israel is eternal; Jews are called to sanctify the world through the commandments. The Messiah will come and the world will be redeemed.' } ] },
+      { k: 'record', x: 'Christianity began as a Jewish movement; the “parting of the ways” was gradual over the first centuries. Centuries of Christian hostility followed: the charge of deicide, forced disputations, ghettos, expulsions and massacres. The Holocaust forced a reckoning. Vatican II’s Nostra Aetate (1965) rejected the deicide charge, and many Protestant churches issued similar statements. In 2000, a group of Jewish scholars and rabbis issued [Dabru Emet](' + L.wiki('Dabru_Emet') + '), affirming that Jews and Christians worship the same God; other Jewish thinkers criticised parts of it.' },
+      { k: 'bel', who: 'Jewish', x: 'God’s covenant with Israel is eternal; Jews are called to sanctify the world through the commandments. Traditional Judaism awaits a personal Messiah; Reform Judaism has generally spoken instead of a messianic age of justice and peace.' } ] },
     { h: 'How the three have met', blocks: [
       { k: 'record', x: 'John of Damascus (c. 730), living under the caliphate, wrote about Islam as a Christian heresy. In 9th-century Baghdad, Christian scholars translated Aristotle and Galen into Arabic; through Arabic and Latin, Aristotle reached medieval Europe, and Aquinas engaged closely with Averroes and Maimonides. The Crusades (1095–1291) and the Reconquista were wars of faith on both sides. In 1219 Francis of Assisi crossed the lines to visit Sultan al-Kāmil.' },
       { k: 'record', x: 'Nostra Aetate (1965) says the Catholic Church “regards with esteem also the Moslems. They adore the one God.” In 2007, 138 Muslim scholars addressed Christian leaders in [A Common Word Between Us and You](' + L.wiki('A_Common_Word_Between_Us_and_You') + '), built on the shared commandments to love God and neighbour. In 2019 Pope Francis and the Grand Imam of al-Azhar signed the Document on Human Fraternity in Abu Dhabi.' } ] }
@@ -110,7 +112,8 @@ UNITS.push({
   ],
   questions: ['Choose one thread. Is the similarity best explained by contact, by shared human nature, or by something else?', 'What did the early Church accept from Greek philosophy, and what did it refuse?', 'Justin Martyr and Augustine both welcomed truth from pagan sources. What limits did each set?'],
   sources: [
-    { t: 'C. S. Lewis, The Abolition of Man (1943), appendix “Illustrations of the Tao”', url: L.wiki('The_Abolition_of_Man') },
+    { t: 'C. S. Lewis, The Abolition of Man (1943), appendix “Illustrations of the Tao”' },
+    { t: 'The Abolition of Man: an overview', url: L.wiki('The_Abolition_of_Man') },
     { t: 'James B. Pritchard, Ancient Near Eastern Texts Relating to the Old Testament', url: L.wiki('Ancient_Near_Eastern_Texts_Relating_to_the_Old_Testament') },
     { t: 'Internet Sacred Text Archive', url: 'https://sacred-texts.com/' },
     { t: 'Chinese Text Project', url: 'https://ctext.org/' }
@@ -135,7 +138,7 @@ UNITS.push({
     { h: 'The Metu Neter system', blocks: [
       { k: 'record', x: 'Ra Un Nefer Amen founded the Ausar Auset Society in New York in 1973. His books Metu Neter, Vol. 1: The Great Oracle of Tehuti and the Egyptian System of Spiritual Cultivation (1990) and later volumes set out a system of meditation, chant (*hekau*), trance, ethical discipline based on Maʿat, and an oracle. It arranges divine principles named for Egyptian deities (Ausar, Tehuti, Maat, Heru, Het-Heru, Auset, Geb and others) on a Tree of Life, as stages of the spirit’s cultivation.' },
       { k: 'bel', who: 'Metu Neter', x: 'The system teaches that the human spirit can be cultivated, through knowledge, meditation and right living, until the indwelling divine (Ausar) is realised. It presents this as the restoration of an ancient African spiritual science, and holds that the Kabbalistic Tree of Life derives from Kemetic sources.' },
-      { k: 'sch', x: 'Egyptologists have found no ancient Egyptian evidence for a Tree of Life diagram of spheres. The ten *sefirot* derive from Jewish mysticism (the Sefer Yetzirah, c. 3rd–6th century, the Bahir and the Zohar, 12th–13th centuries), and the familiar tree diagram is later still. Early modern writers such as Athanasius Kircher (Oedipus Aegyptiacus, 1652) already linked Kabbalah to Egypt, so the association itself has a long history.' },
+      { k: 'sch', x: 'Egyptologists have found no ancient Egyptian evidence for a Tree of Life diagram of spheres. The ten *sefirot* derive from Jewish mysticism (the Sefer Yetzirah, c. 3rd–6th century, the Bahir and the Zohar, 12th–13th centuries), and the familiar tree diagram is later still. Early modern writers such as Athanasius Kircher (Oedipus Aegyptiacus, 1652) already linked Kabbalah to Egypt, so the association itself has a long history. A claim of unbroken descent from ancient Egyptian practice to a modern system is a historical claim, and no evidence for such a lineage has been presented; the system is best understood as a modern reconstruction drawing on Egyptian sources.', ev: 'ins' },
       { k: 'sch', x: 'The system belongs to a wider 20th-century movement of African and African-diaspora reclamation. Related claims, such as George G. M. James’s Stolen Legacy (1954), Cheikh Anta Diop’s work, and Martin Bernal’s Black Athena (1987), argued that Greek philosophy owed much to Egypt. Critics, notably Mary Lefkowitz (Not Out of Africa, 1996), rejected the stronger claims. Greek writers themselves (Herodotus, Plato) admired Egypt’s antiquity, and that admiration is well documented.' } ] },
     { h: 'Compared with Christian faith', blocks: [
       { k: 'table', head: ['Theme', 'Ancient Egypt (sources)', 'Metu Neter (modern system)', 'Christianity'], rows: [
@@ -150,10 +153,12 @@ UNITS.push({
   questions: ['What can be known about ancient Egyptian religion from its own sources, and where do later systems add to it?', 'Compare the 42 declarations of Book of the Dead 125 with the Ten Commandments. What is similar, and what is different in form and spirit?', 'Why might a modern movement look to ancient Egypt for spiritual identity, and how should a historian and a believer each respond?'],
   sources: [
     { t: 'The Egyptian Book of the Dead, trans. E. A. Wallis Budge (1895)', url: L.sacred('egy/ebod/index.htm') },
-    { t: 'Miriam Lichtheim, Ancient Egyptian Literature (1973–80)', url: L.wiki('Miriam_Lichtheim') },
+    { t: 'Miriam Lichtheim, Ancient Egyptian Literature (1973–80)' },
+    { t: 'Miriam Lichtheim: background on the author', url: L.wiki('Miriam_Lichtheim') },
     { t: 'Ancient Egyptian religion: overview', url: L.wiki('Ancient_Egyptian_religion') },
     { t: 'Ausar Auset Society', url: L.wiki('Ausar_Auset_Society') },
     { t: 'Kemetism: modern Egyptian religious movements', url: L.wiki('Kemetism') },
-    { t: 'Mary Lefkowitz, Not Out of Africa (1996)', url: L.wiki('Mary_Lefkowitz') }
+    { t: 'Mary Lefkowitz, Not Out of Africa (1996)' },
+    { t: 'Mary Lefkowitz: background on the author', url: L.wiki('Mary_Lefkowitz') }
   ]
 });

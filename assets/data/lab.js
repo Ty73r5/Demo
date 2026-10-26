@@ -1,5 +1,5 @@
 /* Reading the original: passages where the Hebrew or Greek, the manuscripts, or the translations matter.
-   The interlinear (every word glossed) and eleven translations are generated from source for each ref. */
+   The interlinear (every word glossed) and the translations available for each ref are generated from source. */
 window.LAB = [
   { ref: 'Gen.1.1-2', title: 'In the beginning', why: 'The first words of the Bible: how “beginning,” “created,” “God” and “spirit” work in Hebrew.',
     blocks: [
