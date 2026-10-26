@@ -53,3 +53,17 @@
     bindChips($('#pl-g', el), show); show('all');
   };
 })();
+
+(() => {
+  'use strict';
+  const { W, $, esc, rich, link, refBtn, chips, bindChips } = A;
+  W.miracles = el => {
+    el.innerHTML = `<div class="chips" id="mr-cat">${chips([['all', 'All']].concat(MIRACLE_CATS.map(([k, n]) => [k, esc(n)])), 'all')}</div><div class="grid-cards" id="mr-out" style="margin-top:12px"></div>
+      <p class="note" style="margin-top:8px">“What it would require” states the physics or biology plainly; it is not a judgement on whether the event happened. Proposed natural explanations are listed with their sources where they exist, and most are debated.</p>`;
+    const show = c => {
+      $('#mr-out', el).innerHTML = MIRACLES.filter(m => c === 'all' || m.cat === c).map(m => `<div class="card"><p class="meta">${refBtn(m.v)}</p><h3>${esc(m.n)}</h3><p>${rich(m.x)}</p>
+        <p class="note"><b>What it would require:</b> ${rich(m.req)}</p><p class="note"><b>Proposed explanations:</b> ${rich(m.nat)}${m.src ? ' ' + link('Study', m.src) : ''}</p></div>`).join('');
+    };
+    bindChips($('#mr-cat', el), show); show('all');
+  };
+})();

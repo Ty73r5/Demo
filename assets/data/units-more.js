@@ -122,3 +122,31 @@ UNITS.push({
     { t: 'Jesus in comparative mythology', url: L.wiki('Jesus_in_comparative_mythology') }
   ]
 });
+
+UNITS.push({
+  id: 'miracles', part: 'Christian Belief', title: 'Miracles and the laws of nature',
+  kicker: 'Thirty events in the Bible that go beyond physics and biology as now understood, with what they would require and what has been proposed.',
+  intro: 'The Bible describes events that, if they happened as told, are not explained by the laws of nature as science now knows them: the sun standing still, water becoming wine, the dead raised. This unit lists them, states plainly what each would require physically, and notes any natural explanation that has been proposed, with its source. It also sets out how believers and sceptics have thought about miracles, and what science can and cannot settle.',
+  widget: 'miracles',
+  sections: [
+    { h: 'What is a miracle?', blocks: [
+      { k: 'p', x: 'Hume defined a miracle as “a violation of the laws of nature” (Enquiry 10). Christian thinkers have usually put it differently. Augustine wrote that a wonder happens “not contrary to nature, but contrary to what is known of nature” (City of God 21.8). Aquinas defined a miracle as something done by God beyond the order of nature as we know it (Summa Contra Gentiles 3.101). On this view the laws of nature describe how things normally go, and a miracle is God acting in a way that is not normal, not a contradiction of reason.' },
+      { k: 'p', x: 'The Bible itself uses three words: *signs* (pointing beyond themselves), *wonders* (provoking awe) and *powers* (acts of strength) {{Acts.2.22}}. Many of its miracles are not described as breaking nature at all but as perfect timing: a wind that blows all night {{Exod.14.21}}, a storm that drops. Others, such as the resurrection, are presented as entirely beyond nature.' } ] },
+    { h: 'What science can and cannot say', blocks: [
+      { k: 'p', x: 'Science can test natural explanations, date objects, model events and examine claimed healings; for instance, the Lourdes Medical Bureau has examined claimed cures since 1883. It cannot, by its own method, show that God could not act, since its method studies the regular behaviour of nature. Whether such acts happen is a question about God and about historical evidence, which is why the arguments are philosophical and historical as well as scientific.' },
+      { k: 'p', x: 'As the atlas’s opening unit notes, knowledge changes. Scientists once doubted that stones fell from the sky; meteorites were accepted only around 1803. Other things once accepted have been overturned. Both believers and sceptics have reason for humility about what future evidence will show.' } ] },
+    { h: 'How traditions have read them', blocks: [
+      { k: 'bel', who: 'Christian', x: 'Christians believe God acts in history and that the miracles, above all the resurrection, are real signs of his kingdom. C. S. Lewis (Miracles, 1947) argued that if God exists, nature is not a closed system and miracles are possible; the question is one of evidence. Many Christians also read some miracle stories symbolically; others, such as Rudolf Bultmann (1941), argued for “demythologising” them altogether.' },
+      { k: 'bel', who: 'Jewish', x: 'The Mishnah lists ten things created at twilight on the eve of the first Sabbath, among them the mouth of Balaam’s donkey and the manna ([Avot 5:6](https://www.sefaria.org/Pirkei_Avot.5.6)): miracles built into creation from the start. Maimonides held a similar view.' },
+      { k: 'bel', who: 'Muslim', x: 'The Qur’an affirms the miracles of earlier prophets, including Jesus {{Q:3:49}}, and presents the Qur’an itself as Muhammad’s chief sign. The theologian al-Ghazali argued that the regular connection of cause and effect is God’s habit, which he may set aside.' },
+      { k: 'sch', x: 'Critical scholars approach the miracle stories in several ways: as embellished memories of real events, as theological narratives (D. F. Strauss, The Life of Jesus, 1835), or as reports of experiences whose cause is left open. Most historians agree that Jesus was known in his lifetime as a healer and exorcist, since even his opponents attributed his power to Beelzebub {{Mark.3.22}}.' } ] }
+  ],
+  questions: ['Which miracle in the list depends most on timing, and which most clearly on breaking a law of nature?', 'Is Augustine’s definition of a miracle more or less convincing than Hume’s? Why?', 'What kind of evidence could count for or against a miracle that happened two thousand years ago?'],
+  sources: [
+    { t: 'Stanford Encyclopedia of Philosophy: Miracles', url: L.sep('miracles') },
+    { t: 'David Hume, An Enquiry Concerning Human Understanding, section 10 (1748)', url: 'https://www.gutenberg.org/ebooks/9662' },
+    { t: 'C. S. Lewis, Miracles (1947)', url: L.wiki('Miracles_(book)') },
+    { t: 'Augustine, City of God 21.8', url: L.na('120121') },
+    { t: 'Lourdes Medical Bureau', url: L.wiki('Lourdes_Medical_Bureau') }
+  ]
+});
