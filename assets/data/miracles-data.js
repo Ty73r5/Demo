@@ -22,7 +22,7 @@ window.MIRACLES = [
     nat: 'Landslides near Damiya (the ancient Adam) have blocked the Jordan several times, notably for about 21 hours after the earthquake of 1927.' },
   { cat: 'water', n: 'Walking on water', v: 'Matt.14.25', x: 'Jesus comes to the disciples walking on the sea in the night, and Peter briefly walks toward him.',
     req: 'A human body is denser than water and cannot be supported on its surface.',
-    nat: 'Doron Nof and colleagues (2006) suggested, speculatively, that rare cold spells could form floating ice near springs on the Sea of Galilee. Most interpreters read the story as either a miracle or a theological narrative of Jesus’ power over chaos (Job 9:8).', src: L.doi('10.1007/s10933-005-1757-2') },
+    nat: 'Doron Nof and colleagues (Journal of Paleolimnology, 2006) suggested that rare cold spells could have formed floating “springs ice” near salty springs on the Sea of Galilee; Prange, Arz and Lamy (2007) replied that the climate record shows no such cold events in the region. Most interpreters read the story as either a miracle or a theological narrative of Jesus’ power over chaos (Job 9:8).', src: 'https://www.sciencedaily.com/releases/2006/04/060417105522.htm' },
   { cat: 'water', n: 'Calming the storm', v: 'Mark.4.39', x: 'Jesus rebukes the wind, and there is “a great calm.”',
     req: 'Weather controlled by command.',
     nat: 'Sudden storms that drop as fast as they rise are common on the Sea of Galilee; the miracle claimed is the timing and the command.' },
