@@ -1,31 +1,33 @@
 A study atlas of Christianity in history, Scripture and thought.
 
-## New in 3.1
+## New in 3.2: accuracy, sources and learning
 
-- **The great stories:** 155 Bible narratives, from Creation to the new Jerusalem, each with what happens, what it teaches, the virtues it commends and the failings it warns against. Filter by era or virtue, or search. The hard stories (Jephthah, the Levite’s concubine, Ananias and Sapphira) are included with how readers have wrestled with them.
-- **Hell, judgement and the afterlife:** Sheol, Hades, Gehenna and Tartarus; eternal punishment, conditional immortality and universal restoration; Jewish, Muslim and older views; and plague as punishment, with the history of “bless you” checked against the sources (the custom is ancient; the plague-of-590 explanation first appears in the 13th-century Golden Legend).
-- **The Twelve, Judas and older stories:** each popular parallel checked against the ancient texts: found, partly supported, or not found.
-- **Miracles and the laws of nature:** thirty events that go beyond physics and biology as now understood, what each would require, and the natural explanations that have been proposed, with sources.
+This release follows an independent review that judged the atlas useful for exploration but not yet dependable as a reference. It corrects the errors the review found and others found while checking, makes sources and their limits visible, and adds a route through the essentials.
 
-Version 3 was a complete rewrite.
+**Corrections** (each is listed, with before and after, in the new Editorial method and corrections unit):
+
+- The 2021 Tall el-Hammam airburst paper is now shown as retracted (April 2025), with the editors’ reasons; the airburst question is separated from the identification of the site with Sodom.
+- The claim that parthenogenetic offspring cannot be male is restricted to mammals; Komodo dragons are the counter-example.
+- The thirty miracle entries no longer assign mechanisms the texts do not give. Each separates what the passage reports, its wording and genre, the difficulty under a stated reading, proposed explanations with their standing, how it has been read, and what remains unknown.
+- The welcome page’s “once doubted, later confirmed” list is replaced by a table of what each find attests and does not; the unsupported claim that scholars denied the Hittites existed is removed; absence of evidence is treated case by case.
+- The Gospels of Judas, Mary and Truth are no longer grouped with the Nag Hammadi find; each has its own manuscripts and dates.
+- The Complutensian New Testament (printed 1514) and Erasmus’s (published 1516) are distinguished; manuscript generalisations are narrowed.
+- Canon counts are separated from the documents’ own lists (Trent, Jerusalem 1672, the Ethiopian 81, Syriac reception).
+- The Trinity–Trivium pairing is labelled as the atlas’s own analogy, with what Augustine, Bonaventure and others actually said.
+- Qur’an 5:116 is no longer said to define the Trinity; comparison cells name the school or movement they describe.
+- Word studies gain cautions on glosses, Strong’s numbers, etymology and counting rules; Logos is set out sense by sense; modern analogies are labelled.
+- Ten hand-typed Scripture and Qur’an quotations that did not match the cited passage are corrected.
+
+**Sources:** compact markers open a source record with its role, what it supports, its limits, how it was checked and when, and any retraction. Every link says where it goes, and books are no longer linked to Wikipedia biographies as if to the books.
+
+**Learning:** a start-here route in eight steps; goals, essential points, examples and explained comprehension checks on the route; optional “go deeper” sections; reading settings (size, spacing, typeface, line length, motion); units marked “visited” rather than “read”; search that reaches inside the interactives and opens the matching item.
+
+**Honesty about limits:** the welcome page no longer says all quotations are generated from source. Bible, Qur’an and lexicon text are; other quotations are hand-entered and listed in a quotation register. Many sources were checked only through search results. No named human expert has reviewed the atlas.
 
 ## Try it
 
 - **Online:** https://raw.githack.com/Ty73r5/Demo/main/index.html
-- **Offline:** download `logos-atlas.html` below and open it. It is one file with everything inside.
+- **Offline:** download `logos-atlas.html` below and open it. It is one file with everything inside; fonts, external links and some voices need a connection.
 - **Full site:** download `logos-atlas-site.zip`, unzip it and open `index.html`.
-
-Press **Guided tour** for the 26-step spoken walk-through.
-
-## What changed
-
-- **Study units.** Thirty-two units in seven parts, each written as study material, with an introduction, sections, an interactive, questions for study, and sources. Movements and people are treated one at a time: Ingersoll, the Templars, Freemasonry and the Rosicrucians each have their own unit, with the record separated from legend.
-- **Fair labelling.** The old six-tag system is gone. A quiet margin label now says what kind of statement a passage makes: what a text says, what the record shows, what scholars conclude, or what a named tradition believes. Belief is labelled the same way for Christians, Jews, Muslims and every other tradition.
-- **Every word in English.** Every Hebrew and Greek word in the atlas has its transliteration, English gloss and Strong’s number. Tapping a word shows its dictionary entry, how often it occurs and how it is usually translated, with links to Bible Hub and Blue Letter Bible. Passages open in up to eleven translations from Wycliffe to the Berean Standard Bible.
-- **New units:** the Dead Sea Scrolls; Arguments about God (six for, five against, each with its strongest reply); the ancient mind and the modern; contributions and harms; virtues and the good life, with the research behind them; and sources and study tools, including advice on studying the Bible with AI.
-- **Islam compared** with Judaism and Christianity on 17 topics, with Qur’an passages in Arabic and English.
-- **One passage across twelve translations**, with the words that changed from one translation to the next highlighted.
-- **Verifiable.** Hundreds of source links (Bible Hub, Sefaria, Quran.com, New Advent, the Stanford Encyclopedia of Philosophy, the Dead Sea Scrolls Digital Library, DOIs for research), checked automatically in GitHub Actions.
-- **Search** across all units and key words, a new reader layout, and light and dark themes.
 
 Hebrew and Greek data: STEP Bible, Tyndale House, Cambridge (CC BY 4.0). Translations and the Qur’an translation are public domain.

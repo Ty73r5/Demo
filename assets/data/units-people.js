@@ -15,10 +15,12 @@ UNITS.push({
   ],
   questions: ['Pick two writers a thousand years apart who are linked in the chart. What did the later one take from the earlier?', 'What is gained and what is lost when the Bible is read primarily as psychology?'],
   sources: [
-    { t: 'Mortimer Adler, The Great Conversation (1952)', url: L.wiki('Great_Books_of_the_Western_World') },
+    { t: 'Mortimer Adler, The Great Conversation (1952)' },
+    { t: 'Great Books of the Western World: an overview', url: L.wiki('Great_Books_of_the_Western_World') },
     { t: 'Christian Classics Ethereal Library', url: 'https://www.ccel.org/' },
     { t: 'Project Gutenberg', url: 'https://www.gutenberg.org/' },
-    { t: 'Jordan B. Peterson, Maps of Meaning (1999)', url: L.wiki('Maps_of_Meaning:_The_Architecture_of_Belief') }
+    { t: 'Jordan B. Peterson, Maps of Meaning (1999)' },
+    { t: 'Maps of Meaning: The Architecture of Belief: an overview', url: L.wiki('Maps_of_Meaning:_The_Architecture_of_Belief') }
   ]
 });
 
@@ -50,7 +52,8 @@ UNITS.push({
   questions: ['Which of Ingersoll’s moral objections do you think Christians have answered best, and which least well?', 'Ingersoll judged Christianity largely by its own ideals. What does that suggest about where those ideals came from?'],
   sources: [
     { t: 'The Works of Robert G. Ingersoll (Project Gutenberg)', url: L.gut('Ingersoll') },
-    { t: 'Susan Jacoby, The Great Agnostic: Robert Ingersoll and American Freethought (2013)', url: L.wiki('Robert_G._Ingersoll') },
+    { t: 'Susan Jacoby, The Great Agnostic: Robert Ingersoll and American Freethought (2013)' },
+    { t: 'Robert G. Ingersoll: an overview', url: L.wiki('Robert_G._Ingersoll') },
     { t: 'Louis A. Lambert, Notes on Ingersoll (1883)', url: L.gut('Notes on Ingersoll') }
   ]
 });
@@ -64,7 +67,8 @@ UNITS.push({
   questions: ['Which critic do you find strongest, and which Christian reply?', 'Origen preserved most of Celsus’s book by quoting it in order to answer it. What does that suggest about how to argue well?'],
   sources: [
     { t: 'Origen, Against Celsus', url: L.na('0416') },
-    { t: 'Bertrand Russell and Frederick Copleston, the BBC debate on the existence of God (1948)', url: L.wiki('Bertrand_Russell') },
+    { t: 'Bertrand Russell and Frederick Copleston, the BBC debate on the existence of God (1948)' },
+    { t: 'Bertrand Russell: background', url: L.wiki('Bertrand_Russell') },
     { t: 'David Hume, An Enquiry Concerning Human Understanding (1748)', url: 'https://www.gutenberg.org/ebooks/9662' }
   ]
 });
@@ -88,7 +92,8 @@ UNITS.push({
   ],
   questions: ['Why do the Templars attract so many legends?', 'What does the Templars’ trial show about the relationship between church and state in the 14th century?'],
   sources: [
-    { t: 'Malcolm Barber, The New Knighthood (1994) and The Trial of the Templars (1978)', url: L.wiki('Knights_Templar') },
+    { t: 'Malcolm Barber, The New Knighthood (1994) and The Trial of the Templars (1978)' },
+    { t: 'Knights Templar: an overview', url: L.wiki('Knights_Templar') },
     { t: 'Bernard of Clairvaux, In Praise of the New Knighthood', url: L.wiki('Bernard_of_Clairvaux') },
     { t: 'The Chinon Parchment', url: L.wiki('Chinon_Parchment') },
     { t: 'Trials of the Knights Templar', url: L.wiki('Trials_of_the_Knights_Templar') }
@@ -119,7 +124,8 @@ UNITS.push({
   sources: [
     { t: 'United Grand Lodge of England', url: 'https://www.ugle.org.uk/' },
     { t: 'Freemasonry: overview with sources', url: L.wiki('Freemasonry') },
-    { t: 'David Stevenson, The Origins of Freemasonry: Scotland’s Century, 1590–1710 (1988)', url: L.wiki('William_Schaw') },
+    { t: 'David Stevenson, The Origins of Freemasonry: Scotland’s Century, 1590–1710 (1988)' },
+    { t: 'William Schaw: an overview', url: L.wiki('William_Schaw') },
     { t: 'The Taxil hoax', url: L.wiki('Taxil_hoax') },
     { t: 'Prince Hall Freemasonry', url: L.wiki('Prince_Hall_Freemasonry') }
   ]
@@ -146,7 +152,8 @@ UNITS.push({
   ],
   questions: ['Why did Renaissance Christians want ancient Egyptian and Jewish wisdom to confirm the Gospel?', 'What does Casaubon’s redating of the Hermetic texts teach about how claims of ancient origin should be tested?'],
   sources: [
-    { t: 'Frances A. Yates, Giordano Bruno and the Hermetic Tradition (1964)', url: L.wiki('Frances_Yates') },
+    { t: 'Frances A. Yates, Giordano Bruno and the Hermetic Tradition (1964)' },
+    { t: 'Frances A. Yates: background on the author', url: L.wiki('Frances_Yates') },
     { t: 'Rosicrucianism: overview', url: L.wiki('Rosicrucianism') },
     { t: 'Christian Kabbalah', url: L.wiki('Christian_Kabbalah') },
     { t: 'Hermeticism', url: L.wiki('Hermeticism') }

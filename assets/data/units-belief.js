@@ -4,6 +4,14 @@ window.UNITS = window.UNITS || [];
 UNITS.push({
   id: 'creeds', part: 'Christian Belief', title: 'Creeds and doctrine',
   kicker: 'What Christians confess together, and where the great traditions differ.',
+  learn: {
+    goal: 'Know what nearly all Christians confess together, and the main points on which Catholic, Orthodox and Protestant churches differ.',
+    take: 'The Nicene Creed is shared by most Christians worldwide: one God, Father, Son and Holy Spirit; the incarnation, death and resurrection of Christ. The churches divide chiefly over authority (Scripture, tradition, the papacy), salvation (faith, works, grace), the sacraments and the Church.',
+    example: 'Catholic, Orthodox and Protestant Christians all recite “I believe in one God, the Father Almighty”; they differ on the single Latin word *Filioque*, “and the Son,” which Western churches added to the creed.',
+    check: { q: 'Is the Filioque a disagreement about whether God is a Trinity?',
+      a: 'No. Both East and West confess the Trinity. The disagreement is about how the Spirit proceeds (from the Father, or from the Father and the Son) and about whether the Western church had authority to add words to a creed agreed by an ecumenical council. Distinguishing a shared doctrine from a disputed detail is the point of this unit.' },
+    next: [['reading', 'route step 6: how Christians and Jews interpret the same texts'], ['orthodoxy', 'the early disputes the creeds answered']]
+  },
   intro: 'Christianity is unusual among religions in summarising its faith in creeds: short, public statements recited in worship. The Apostles’ and Nicene Creeds are shared by most Christians worldwide. Beyond them, Catholic, Orthodox and Protestant churches differ on authority, salvation, the sacraments and the Church. This unit gives the creeds in full and compares nine traditions in their own words, with links to their own documents.',
   sections: [
     { h: 'The Apostles’ Creed', blocks: [
@@ -34,9 +42,11 @@ UNITS.push({
   ],
   questions: ['Why might a religion based on a person produce creeds, while one based on a law produces legal codes?', 'The Filioque is a single word. Why did it matter so much to both East and West?', 'Use the comparison table to find one point on which Catholics and Baptists agree and one on which Lutherans and Catholics agree against most Protestants.'],
   sources: [
-    { t: 'Jaroslav Pelikan and Valerie Hotchkiss, Creeds and Confessions of Faith in the Christian Tradition (2003)', url: L.wiki('Jaroslav_Pelikan') },
+    { t: 'Jaroslav Pelikan and Valerie Hotchkiss, Creeds and Confessions of Faith in the Christian Tradition (2003)' },
+    { t: 'Jaroslav Pelikan: background on the first editor', url: L.wiki('Jaroslav_Pelikan') },
     { t: 'The Seven Ecumenical Councils (Schaff, NPNF II.14)', url: L.ccel('schaff/npnf214.html') },
-    { t: 'Joint Declaration on the Doctrine of Justification (1999)', url: L.wiki('Joint_Declaration_on_the_Doctrine_of_Justification') }
+    { t: 'Joint Declaration on the Doctrine of Justification (1999)' },
+    { t: 'Joint Declaration on the Doctrine of Justification: an overview', url: L.wiki('Joint_Declaration_on_the_Doctrine_of_Justification') }
   ]
 });
 
@@ -56,37 +66,46 @@ UNITS.push({
     { t: 'Basil the Great, On the Holy Spirit (375)', url: L.na('3203') },
     { t: 'Tertullian, Against Praxeas (c. 213)', url: L.na('0317') },
     { t: 'Irenaeus, Against Heresies (c. 180)', url: L.na('0103') },
-    { t: 'Rowan Williams, Arius: Heresy and Tradition (2nd ed., 2001)', url: L.wiki('Arianism') }
+    { t: 'Rowan Williams, Arius: Heresy and Tradition (2nd ed., 2001)' },
+    { t: 'Arianism: an overview', url: L.wiki('Arianism') }
   ]
 });
 
 UNITS.push({
   id: 'trinity', part: 'Christian Belief', title: 'The Trinity and the Trivium',
-  kicker: 'Grammar, logic and rhetoric as an image of the Father, the Word and the Spirit.',
-  intro: 'The Trivium (grammar, logic, rhetoric) was the foundation of education from late antiquity to the early modern period. Christian thinkers repeatedly saw in human speech and thought an image of the triune God: a speaker, the word spoken, and the breath that carries it. This unit sets out the analogy, the sources behind it, and the limits that keep it from becoming error.',
+  kicker: 'An analogy between the three arts of language and the Father, the Word and the Spirit: where it comes from, what is the atlas’s own, and where it breaks.',
+  intro: 'The Trivium (grammar, logic, rhetoric) was the foundation of education from late antiquity to the early modern period. Christian thinkers repeatedly found in human speech and thought an image of the triune God: a speaker, the word spoken, and the breath that carries it; or memory, understanding and will. This unit offers one analogy for reflection, pairing the three arts with the three persons. It separates what earlier writers actually said from the atlas’s own synthesis, and it sets out the limits that keep any such analogy from becoming error.',
   widget: 'triune',
   sections: [
-    { h: 'Where the analogy comes from', blocks: [
-      { k: 'text', x: 'The Psalms already hold speaker, word and breath together: “By the word of the LORD were the heavens made; and all the host of them by the breath (*rûaḥ*) of his mouth” {{Ps.33.6}}. Proverbs names three gifts as a set: wisdom (*ḥoḵmāh*), understanding (*təḇûnāh*) and knowledge (*daʿat*) build and fill a house {{Prov.24.3-4}} and fill the craftsman Bezalel {{Exod.31.3}}.' },
-      { k: 'text', x: 'Theophilus of Antioch (c. 180) is the first writer known to use the word *Trias* (“Triad”) of God: “God, his Word, and his Wisdom” ([To Autolycus 2.15](' + L.na('02042') + ')). Irenaeus calls the Son and the Spirit, the Word and Wisdom, God’s “two hands” ([Against Heresies 4.20.1](' + L.na('0104') + ')).' },
-      { k: 'text', x: 'Augustine finds the image of the Trinity in the human mind: memory, understanding and will, one mind in three acts ([On the Trinity 10.11–12](' + L.na('130110') + ')). He also adopts Cicero’s three tasks of the speaker, to teach, to delight and to move ([On Christian Doctrine 4.12](' + L.na('12024') + ')).' },
-      { k: 'text', x: 'Bonaventure (c. 1250s) treats grammar, logic and rhetoric as the arts of speech (to express, to teach, to move) and sees in the mind’s inner word “clothed in voice” an image of the eternal Word made flesh ([On the Reduction of the Arts to Theology](' + L.wiki('Bonaventure') + ')). Hugh of St Victor’s Didascalicon (1120s) presents the liberal arts as a way of restoring the image of God in the soul.' },
-      { k: 'record', x: 'The seven liberal arts (the Trivium of grammar, logic and rhetoric and the Quadrivium of arithmetic, geometry, music and astronomy) were fixed as a curriculum by Martianus Capella (5th century) and Boethius, who coined the word *quadrivium*. Dorothy L. Sayers’s Oxford lecture “The Lost Tools of Learning” (1947) revived the Trivium and inspired the modern classical-school movement.' } ] },
-    { h: 'How the three belong together', blocks: [
-      { k: 'p', x: 'Each art needs the others. Logic needs grammar to have terms; rhetoric without logic becomes manipulation; grammar is learned through speech that moves. Christian theology describes the persons of the Trinity as dwelling in one another (*perichōrēsis*): “I am in the Father, and the Father in me” {{John.14.11}}.' },
-      { k: 'p', x: 'Order matters too. Basil the Great describes grace as coming from the Father, through the Son, in the Spirit ([On the Holy Spirit](' + L.na('3203') + ')). Learning runs the same way: from what is given, through understanding, into wise speech and action.' } ] },
+    { h: 'Four different things', blocks: [
+      { k: 'list', items: [
+        '**Doctrine:** what the churches confess. One God in three persons, Father, Son and Holy Spirit, “of one substance,” none before or after another in being (the Nicene Creed; the Athanasian Creed).',
+        '**Theological appropriation:** attributing to one person a quality that belongs to all three, to help us know the persons: power to the Father, wisdom to the Son, goodness to the Spirit [[aquinasApprop]].',
+        '**Analogy:** an image from creation that helps the mind think about God while falling short of him, such as Augustine’s memory, understanding and will [[augTrin10]].',
+        '**Historical attribution:** the claim that a particular writer or tradition taught a particular analogy. This is a matter of evidence and needs an exact source.' ] },
+      { k: 'p', x: 'The pairing of the Father with grammar, the Son with logic and the Spirit with rhetoric is an analogy. It is not doctrine and not an appropriation the churches teach, and the atlas has found no earlier writer who sets it out in this form, so it is presented as the atlas’s own synthesis [[trivMap]].', ev: 'ana' } ] },
+    { h: 'What earlier writers actually said', blocks: [
+      { k: 'text', x: 'The Psalms already hold speaker, word and breath together: “By the word of the LORD were the heavens made; and all the host of them by the breath (*rûaḥ*) of his mouth” {{Ps.33.6}}. Proverbs names three gifts as a set: wisdom (*ḥoḵmāh*), understanding (*təḇûnāh*) and knowledge (*daʿat*), by which God founded the world {{Prov.3.19-20}} and by which a house is built and filled {{Prov.24.3-4}}; the same three fill the craftsman Bezalel {{Exod.31.3}}. Neither text speaks of persons in God.' },
+      { k: 'text', x: 'Theophilus of Antioch (c. 180) is the first writer known to use the word *Trias* (“Triad”) of God: “God, his Word, and his Wisdom” [[theophilus]]. Irenaeus calls the Word and Wisdom, the Son and the Spirit, the “hands” by which God made all things [[irenaeus420]]. Both identify Wisdom with the Spirit; most later writers, following Paul {{1Cor.1.24}}, identify it with the Son.' },
+      { k: 'text', x: 'Augustine finds an image of the Trinity in the mind: memory, understanding and will, three acts and one mind [[augTrin10]]. Separately, he adopts Cicero’s three tasks of the speaker, to teach, to delight and to move [[augDoctr4]]. He does not join the two.' },
+      { k: 'text', x: 'Bonaventure (c. 1250s) divides the arts of speech into grammar, logic and rhetoric, which express, teach and move, and finds in human speech, where an inner word is conceived and clothed in voice, an image of the eternal Word and of the incarnation [[bonaventure]]. He relates speech as a whole to the Word; he does not assign one art to each person.' },
+      { k: 'record', x: 'The seven liberal arts (the Trivium of grammar, logic and rhetoric and the Quadrivium of arithmetic, geometry, music and astronomy) were fixed as a curriculum by Martianus Capella (5th century) and Boethius, who coined the word *quadrivium*. In the 20th century Dorothy L. Sayers offered a different Trinitarian analogy, from human creative work (Idea, Energy, Power) [[sayersMaker]], and separately revived the Trivium in her lecture “The Lost Tools of Learning” (1947).' } ] },
+    { h: 'The analogy offered here', blocks: [
+      { k: 'p', x: 'Grammar receives what is given: names, forms, the structure of a language. Logic orders and judges it. Rhetoric carries it to others so that it moves them. The analogy pairs these with the Father as source, the Son as the Word and Reason through whom all things were made {{John.1.3}}, and the Spirit as the breath that carries the Word and moves hearts {{Acts.2.37}}. The Hebrew pairings in the diagram (knowledge, understanding, wisdom) borrow the triad of Proverbs; linking wisdom with the Spirit follows Theophilus and Irenaeus, not the majority tradition.', ev: 'ana' },
+      { k: 'p', x: 'Each art needs the others: logic needs grammar to have terms, and rhetoric without logic becomes manipulation. Christian theology describes the persons as dwelling in one another (*perichōrēsis*): “I am in the Father, and the Father in me” {{John.14.11}}. And order matters: Basil the Great describes grace as coming from the Father, through the Son, in the Spirit ([On the Holy Spirit](' + L.na('3203') + ')). Learning can be pictured the same way: from what is given, through understanding, into wise speech and action.', ev: 'ana' } ] },
     { h: 'Where the analogy breaks', blocks: [
-      { k: 'bel', who: 'Christian', x: 'Aquinas permits “appropriation”: attributing power to the Father, wisdom to the Son and goodness to the Spirit, while holding that each attribute belongs to all three ([Summa I, q.39, a.7–8](' + L.summa('1039') + ')). The Trivium analogy works in the same way and is not doctrine.' },
-      { k: 'bel', who: 'Christian', x: 'Pressed too far it becomes modalism, the teaching that God is one person playing three roles, rejected in the 3rd century. The Father also reasons, the Son also speaks, and the Spirit also knows.' },
-      { k: 'sch', x: 'The tradition is divided on Wisdom: Paul calls Christ “the wisdom of God” {{1Cor.1.24}}, while Theophilus and Irenaeus identify Wisdom with the Spirit. Linking rhetoric to wisdom follows the second line and modern classical-education usage.' },
-      { k: 'bel', who: 'Jewish and Muslim', x: 'Both reject the Trinity as compromising the oneness of God {{Deut.6.4}} {{Q:4:171}}.' },
+      { k: 'bel', who: 'Christian', x: 'The divine persons are not three faculties or functions of one mind, and not three parts that together make up God. Each person is wholly God. The Father also reasons, the Son also speaks, and the Spirit also knows; each of the three arts, if it is applied to God at all, belongs to all three persons, as appropriated attributes do [[aquinasApprop]].' },
+      { k: 'bel', who: 'Christian', x: 'Pressed one way, the analogy becomes **modalism**: one God playing three roles in turn, as one person might do grammar, then logic, then rhetoric. The early Church rejected this (Sabellius, 3rd century). Pressed another way, it becomes **partialism**: each person a third of God, as each art is a third of the Trivium. Classical doctrine rejects both.' },
+      { k: 'sch', x: 'The tradition is divided on Wisdom: Paul calls Christ “the wisdom of God” {{1Cor.1.24}}, while Theophilus and Irenaeus identify Wisdom with the Spirit. The diagram follows the minority line.', ev: 'deb' },
+      { k: 'bel', who: 'Jewish and Muslim', x: 'Both traditions, in their mainstream forms, reject the Trinity as compromising the oneness of God {{Deut.6.4}} {{Q:4:171}}.' },
       { k: 'bel', who: 'Christian', x: 'Christians answer that the Trinity is a description of the one God, not a plurality of gods. The comparison unit sets out the arguments.' } ] }
   ],
-  questions: ['Which lens (Psalm 33, Proverbs, Augustine, Genesis) makes the analogy clearest to you?', 'Why do Christian theologians insist that analogies for the Trinity always fall short?', 'How might studying grammar, logic and rhetoric help a person read Scripture well?'],
+  questions: ['Which earlier image (Psalm 33, Proverbs, Augustine, Bonaventure) makes the idea clearest to you, and why?', 'Why do Christian theologians insist that analogies for the Trinity always fall short? Which way does this one fail first, toward modalism or toward partialism?', 'How might studying grammar, logic and rhetoric help a person read Scripture well, apart from any analogy?'],
   sources: [
     { t: 'Augustine, On the Trinity', url: L.na('1301') },
     { t: 'Theophilus of Antioch, To Autolycus', url: L.na('02042') },
-    { t: 'Dorothy L. Sayers, “The Lost Tools of Learning” (1947)', url: L.wiki('Dorothy_L._Sayers') },
+    { t: 'Bonaventure, On the Reduction of the Arts to Theology, trans. Zachary Hayes (Works of St. Bonaventure 1; St. Bonaventure, NY: Franciscan Institute, 1996)' },
+    { t: 'Dorothy L. Sayers, The Mind of the Maker (London: Methuen, 1941)' },
     { t: 'The Trivium: overview', url: L.wiki('Trivium') }
   ]
 });
@@ -94,12 +113,20 @@ UNITS.push({
 UNITS.push({
   id: 'reading', part: 'Christian Belief', title: 'Reading Scripture',
   kicker: 'Four senses, types and shadows, and the same texts read by synagogue and Church.',
+  learn: {
+    goal: 'Recognise the main ways Scripture has been interpreted, ancient and modern, and what each is good for.',
+    take: 'Readers have always asked more than one question of a text: what it said to its first hearers, what it teaches, how to live, and what to hope for. Modern critical methods add questions about authors, sources and settings. Good interpretation keeps the literal sense as its anchor.',
+    example: 'Jerusalem, in John Cassian’s classic example, is a city (literal), the Church (allegorical), the soul (moral) and the heavenly city (anagogical).',
+    check: { q: 'A preacher says Rahab’s scarlet cord {{Josh.2.18}} is a figure of Christ’s blood. Which kind of reading is that, and what would a historical-critical scholar ask instead?',
+      a: 'It is a typological or allegorical reading, found already in 1 Clement (c. 96). A historical-critical scholar would ask what the cord meant in the story and to its first audience: a sign that marked Rahab’s house for protection. The two questions are different, and an answer to one does not settle the other.' },
+    next: [['arguments', 'route step 7: the arguments for and against God'], ['original', 'read a passage closely in Hebrew or Greek']]
+  },
   intro: 'Jews and Christians share most of a Bible but read it differently. Both traditions developed sophisticated methods of interpretation long before modern scholarship. This unit sets out the classic Christian “four senses” beside the Jewish PaRDeS, the rules readers have used, modern critical methods, the typology by which Christians read the Old Testament as pointing to Christ, and the messianic texts read the Jewish and the Christian way.',
   sections: [
     { h: 'The four senses', widget: 'senses', blocks: [
       { k: 'text', x: 'John Cassian (Conferences 14.8, c. 420) explains the four senses with Jerusalem ([read](' + L.na('350814') + ')). Dante (Letter to Can Grande) uses the Exodus, on {{Ps.114.1}}. A medieval couplet sums them up: *Littera gesta docet, quid credas allegoria, moralis quid agas, quo tendas anagogia*: “the letter teaches what happened; allegory, what to believe; the moral sense, what to do; anagogy, where to aim.”' },
       { k: 'record', x: 'PaRDeS, an acronym of Peshat, Remez, Derash and Sod that spells “orchard,” is attested from 13th-century Spain. It is a close Jewish parallel to the four senses, and the two may have influenced each other.' },
-      { k: 'p', x: 'Thomas Aquinas insisted that all the spiritual senses rest on the literal one ([Summa I, q.1, a.10](' + L.summa('1001') + ')). In Trivium terms, grammar secures the literal sense, logic draws out its teaching, and rhetoric moves the reader to live and hope.' } ] },
+      { k: 'p', x: 'Thomas Aquinas insisted that all the spiritual senses rest on the literal one ([Summa I, q.1, a.10](' + L.summa('1001') + ')). As a modern analogy (the atlas’s, not Aquinas’s): grammar secures the literal sense, logic draws out its teaching, and rhetoric moves the reader to live and hope.', ev: 'ana' } ] },
     { h: 'Rules for reading', blocks: [
       { k: 'list', items: [
         `**The rule of love** (Augustine): whoever thinks they understand Scripture but does not build up love of God and neighbour has not yet understood it ([On Christian Doctrine 1.36.40](${L.na('12021')})).`,
@@ -119,8 +146,10 @@ UNITS.push({
   sources: [
     { t: 'John Cassian, Conferences 14', url: L.na('350814') },
     { t: 'Augustine, On Christian Doctrine', url: L.na('1202') },
-    { t: 'Henri de Lubac, Medieval Exegesis (1959–64)', url: L.wiki('Henri_de_Lubac') },
+    { t: 'Henri de Lubac, Medieval Exegesis (1959–64)' },
+    { t: 'Henri de Lubac: background on the author', url: L.wiki('Henri_de_Lubac') },
     { t: 'Sefaria: the Jewish library online', url: 'https://www.sefaria.org/' },
-    { t: 'Robert Alter, The Art of Biblical Narrative (1981)', url: L.wiki('Robert_Alter') }
+    { t: 'Robert Alter, The Art of Biblical Narrative (1981)' },
+    { t: 'Robert Alter: background on the author', url: L.wiki('Robert_Alter') }
   ]
 });

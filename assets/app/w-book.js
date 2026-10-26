@@ -114,7 +114,7 @@
       const p = LAB.find(x => x.ref === ref) || LAB[0], e = BIBLE[p.ref];
       $$('#lab-pick [data-id]', el).forEach(b => b.setAttribute('aria-selected', String(b.dataset.id === p.ref)));
       $('#lab-card', el).innerHTML = `<p class="eyebrow">${esc(A.refLabel(p.ref))}</p><h3>${esc(p.title)}</h3><p class="muted">${rich(p.why)}</p>
-        ${e ? `<div style="margin:14px 0">${A.interlinear(p.ref)}</div><p><em>${esc(e.tr.KJV || e.tr.DRC || '')}</em> <span class="note">(KJV)</span></p>${e.tr.BSB ? `<p style="margin-top:4px"><em>${esc(e.tr.BSB)}</em> <span class="note">(BSB)</span></p>` : ''}` : ''}
+        ${e ? `<div style="margin:14px 0">${A.interlinear(p.ref)}</div><p><em>${esc(e.tr.KJV || e.tr.DRC || '')}</em> <span class="note">(${e.tr.KJV ? 'KJV' : 'Douay–Rheims'})</span></p>${e.tr.BSB ? `<p style="margin-top:4px"><em>${esc(e.tr.BSB)}</em> <span class="note">(BSB)</span></p>` : ''}` : ''}
         <div class="blk-wrap" style="margin-top:16px">${p.blocks.map(A.block).join('')}</div>
         <p class="linkrow" style="margin-top:14px">${refBtn(p.ref)} <span class="note">All translations, word study and Bible Hub links</span></p>`;
     };
@@ -136,11 +136,11 @@
       $('#kw-card', el).innerHTML = `<p class="eyebrow">${heb ? 'Hebrew' : 'Greek'} · Strong’s ${esc([w.strong, ...(w.also || [])].join(', '))}</p>
         <h3><span lang="${heb ? 'he' : 'grc'}" class="${heb ? 'heb' : ''}" style="font-size:1.1em">${esc(w.w)}</span> <span style="font-size:0.75em">${esc(w.tr)}</span></h3>
         <p><b>${esc(w.gloss)}</b></p>
-        <dl class="kv" style="margin-top:10px"><dt>KJV renders it</dt><dd>${esc(w.kjv)}</dd>${st ? `<dt>Occurrences</dt><dd>${st.n.toLocaleString()} in the ${heb ? 'Hebrew Bible' : 'Greek New Testament'} (counted from STEP Bible’s tagged text)</dd>` : ''}</dl>
-        ${st ? `<h4>How it is glossed</h4><div class="glossbars">${st.top.map(([g, c]) => `<div class="glossbar"><span>${esc(g)}</span><span class="bar" style="width:${Math.max(2, c / max * 100)}%"></span><span class="c">${c}</span></div>`).join('')}</div>` : ''}
+        <dl class="kv" style="margin-top:10px"><dt>KJV renders it</dt><dd>${esc(w.kjv)}</dd>${st ? `<dt>Occurrences</dt><dd>${st.n.toLocaleString()} under ${esc(w.strong)} in ${heb ? 'the Leningrad Codex' : 'the Nestle–Aland text'} as tagged by STEP Bible (<a href="#/words?q=How%20the%20counts">counting rules</a>)</dd>` : ''}</dl>
+        ${st ? `<h4>STEP Bible’s English glosses for its occurrences</h4><div class="glossbars">${st.top.map(([g, c]) => `<div class="glossbar"><span>${esc(g)}</span><span class="bar" style="width:${Math.max(2, c / max * 100)}%"></span><span class="c">${c}</span></div>`).join('')}</div>` : ''}
         <div class="blk-wrap" style="margin-top:16px">${w.notes.map(A.block).join('')}</div>
-        <h4>Read it in context</h4><p>${w.refs.map(refBtn).join(' ')}</p>
-        <p class="linkrow" style="margin-top:10px">${link('Bible Hub concordance', L.strongs(w.strong))}${link('Blue Letter Bible', L.blb(w.strong))}</p>`;
+        <h4>Read it in context</h4><p>${w.refs.map(refBtn).join(' ')}</p><p class="note">The atlas holds these verses only; each opens with a link to its whole chapter. A gloss is a brief aid, and the meaning in any verse depends on its context.</p>
+        ${L.isStrongs(w.strong) ? `<p class="linkrow" style="margin-top:10px">${link('Bible Hub concordance', L.strongs(w.strong))}${link('Blue Letter Bible', L.blb(w.strong))}</p>` : ''}`;
     };
     bindChips($('#kw-lang', el), l => { lang = l; list(); });
     $('#kw-pick', el).addEventListener('click', e => { const b = e.target.closest('[data-id]'); if (b) show(b.dataset.id); });

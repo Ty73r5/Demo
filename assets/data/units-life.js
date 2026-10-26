@@ -4,7 +4,7 @@ window.UNITS = window.UNITS || [];
 UNITS.push({
   id: 'scrolls', part: 'The Book', title: 'The Dead Sea Scrolls',
   kicker: 'About 950 manuscripts from the centuries just before and during the life of Jesus.',
-  intro: 'Between 1947 and 1956, Bedouin shepherds and archaeologists found the remains of a library in eleven caves near Qumran, on the north-west shore of the Dead Sea. The scrolls are the oldest surviving manuscripts of the Hebrew Bible by about a thousand years, and they show Jewish religious life in the period when Christianity began. This unit covers what was found, what it shows about the Bible, and what it does and does not show about Jesus and the first Christians.',
+  intro: 'Between 1947 and 1956, Bedouin shepherds and archaeologists found the remains of a library in eleven caves near Qumran, on the north-west shore of the Dead Sea. Their biblical scrolls are the oldest substantial manuscripts of the Hebrew Bible, about a thousand years older than the oldest complete Hebrew Bibles (only short inscriptions, such as the Ketef Hinnom amulets [[ketefHinnom]], are older), and they show Jewish religious life in the period when Christianity began. This unit covers what was found, what it shows about the Bible, and what it does and does not show about Jesus and the first Christians.',
   sections: [
     { h: 'The discovery', blocks: [
       { k: 'record', x: 'In late 1946 or early 1947, a young Bedouin shepherd, Muhammed edh-Dhib, found jars containing scrolls in what is now Cave 1. Seven scrolls from that cave reached scholars by 1948, including the Great Isaiah Scroll. Over the next nine years ten more caves were found, Cave 4 alone holding fragments of some 600 manuscripts. The Dominican archaeologist Roland de Vaux excavated the nearby site of Qumran (1951–56).' },
@@ -21,7 +21,7 @@ UNITS.push({
       { k: 'record', x: 'The Roman writer Pliny the Elder (Natural History 5.73) placed a community of Essenes on the west side of the Dead Sea, above Ein Gedi. Josephus and Philo describe the Essenes as a strict Jewish movement that shared property and practised ritual washing.' },
       { k: 'sch', x: 'Most scholars identify the community behind the scrolls with the Essenes or a branch of them, citing Pliny’s location and the close match between the scrolls’ rules and ancient descriptions of the Essenes. Others propose that the scrolls came from several libraries, perhaps hidden from Jerusalem during the revolt (Norman Golb), or point to links with the Sadducees in one legal text (4QMMT, Lawrence Schiffman). The scrolls do not name their authors.' } ] },
     { h: 'What they show about the Bible', blocks: [
-      { k: 'sch', x: 'The Great Isaiah Scroll (1QIsaᵃ, c. 125 BC) agrees with the medieval Masoretic text of Isaiah in the large majority of its wording; most differences are spelling and small grammatical changes. This showed the care with which the Hebrew text had been copied across a thousand years.' },
+      { k: 'sch', x: 'The Great Isaiah Scroll (1QIsaᵃ, c. 125 BC) agrees with the medieval Masoretic text of Isaiah in the large majority of its wording; most differences are spelling and small grammatical changes. This showed the care with which the Hebrew text had been copied across a thousand years, at least for this book.' },
       { k: 'sch', x: 'The scrolls also show that several forms of the biblical text circulated side by side. Some Hebrew manuscripts match the text behind the Greek Septuagint, which Christians read, where it differs from the later Hebrew standard. A short form of Jeremiah (4QJerᵇ), about one-eighth shorter than the Masoretic text, matches the Septuagint; so do readings in Deuteronomy, Samuel and Isaiah.' },
       { k: 'list', items: [
         '{{Isa.53.11}}: the Masoretic text reads “he shall see of the travail of his soul”; the Isaiah scrolls and the Septuagint add “light”: “he shall see light.” Several modern translations now follow the scrolls.',
@@ -31,25 +31,34 @@ UNITS.push({
       ] } ] },
     { h: 'The scrolls and Christianity', blocks: [
       { k: 'record', x: 'The scrolls do not mention Jesus, John the Baptist, James or any Christian. Claims that one Greek fragment from Cave 7 (7Q5) is a piece of Mark’s Gospel (José O’Callaghan, 1972; Carsten Thiede, 1990s) are rejected by most scholars: the fragment has about twenty letters, few of them certain.' },
-      { k: 'sch', x: 'The scrolls show that many ideas once thought distinctively Christian were already present in Judaism of the time: the language of “sons of light” and “sons of darkness” {{John.12.36}}; expectation of a coming Messiah (in some texts two, a priestly and a royal one); a community meal with messianic meaning; and the renewal of the covenant.' },
+      { k: 'sch', x: 'The scrolls show that many ideas once thought distinctively Christian were already present in Judaism of the time: the language of “sons of light” and “sons of darkness” (compare “the children of light” in {{John.12.36}}); expectation of a coming Messiah (in some texts two, a priestly and a royal one); a community meal with messianic meaning; and the renewal of the covenant.' },
       { k: 'text', x: 'One text (4Q521) says that in the age of the Messiah the Lord “will heal the wounded, revive the dead and proclaim good news to the poor,” close to Jesus’ answer to John the Baptist {{Luke.7.22}}. Another (4Q246, the “Son of God” text) speaks of a figure who “will be called son of God, and they will call him son of the Most High,” close to the angel’s words to Mary {{Luke.1.32}}. Who that figure is in 4Q246 is debated.' },
       { k: 'bel', who: 'Christian', x: 'Many Christians find in the scrolls a confirmation that the Gospels belong to their Jewish world and that the hopes Jesus is said to have fulfilled were real hopes of his day. The differences are also clear: the Qumran community withdrew from sinners and the impure, while the Gospels show Jesus eating with them {{Mark.2.16-17}}.' } ] },
     { h: 'Forgeries', blocks: [
       { k: 'record', x: 'After 2002, about 70 previously unknown “Dead Sea Scroll” fragments appeared on the antiquities market. In 2020 an independent investigation found that all sixteen fragments held by the Museum of the Bible in Washington were modern forgeries on ancient leather. Scholars now treat unprovenanced fragments from this period with great suspicion.' } ] }
   ],
-  questions: ['Why does a thousand years of difference between manuscripts matter so much for judging how well the Hebrew Bible was copied?', 'What do the scrolls show about Judaism in Jesus’ day that helps a reader understand the Gospels?', 'Why do the scrolls’ variant readings sometimes support the Greek Septuagint over the later Hebrew text?'],
+  questions: ['Why does a thousand years of difference between manuscripts matter so much for judging how well the Hebrew Bible was copied? Why is one well-preserved book not proof for every book?', 'What do the scrolls show about Judaism in Jesus’ day that helps a reader understand the Gospels?', 'Why do the scrolls’ variant readings sometimes support the Greek Septuagint over the later Hebrew text?'],
   sources: [
     { t: 'Leon Levy Dead Sea Scrolls Digital Library', url: 'https://www.deadseascrolls.org.il/' },
     { t: 'The Digital Dead Sea Scrolls (Israel Museum)', url: 'http://dss.collections.imj.org.il/' },
-    { t: 'James C. VanderKam, The Dead Sea Scrolls Today (2nd ed., 2010)', url: L.wiki('Dead_Sea_Scrolls') },
-    { t: 'Geza Vermes, The Complete Dead Sea Scrolls in English (rev. ed., 2011)', url: L.wiki('Geza_Vermes') },
-    { t: 'Museum of the Bible: the forged fragments (2020)', url: L.wiki('Museum_of_the_Bible') }
+    { t: 'James C. VanderKam, The Dead Sea Scrolls Today (2nd ed., Grand Rapids: Eerdmans, 2010)' },
+    { t: 'Dead Sea Scrolls: an overview', url: L.wiki('Dead_Sea_Scrolls') },
+    { t: 'Geza Vermes, The Complete Dead Sea Scrolls in English (rev. ed., London: Penguin, 2011)' },
+    { t: 'Museum of the Bible and its forged fragments: an overview', url: L.wiki('Museum_of_the_Bible') }
   ]
 });
 
 UNITS.push({
   id: 'arguments', part: 'Christian Belief', title: 'Arguments about God',
   kicker: 'Eleven classic arguments, six for and five against, each in its strongest form with the main reply.',
+  learn: {
+    goal: 'Understand the main philosophical arguments for and against God in their strongest forms, and the replies to each.',
+    take: 'No argument on either side is accepted by all philosophers. Each rests on premises that thoughtful people weigh differently, which is why it matters to know the premises, not only the conclusions.',
+    example: 'The problem of evil is usually divided into a logical version (God and evil cannot both exist), which most philosophers think the free-will defence answers, and an evidential version (some evil makes God unlikely), which remains widely debated.',
+    check: { q: 'Even if a cosmological argument succeeded, what would it show, and what would it not show?',
+      a: 'At most that the universe has a cause or explanation beyond itself. It would not by itself show that the cause is personal, good, or the God of any particular religion; those steps need further arguments or appeal to revelation and history, as Aquinas himself recognised.' },
+    next: [['virtues', 'route step 8: from belief to a way of life'], ['miracles', 'miracles and what science can and cannot say']]
+  },
   intro: 'Whether God exists cannot be settled by experiment, but it can be argued about carefully, and philosophers have done so for twenty-five centuries. Each argument below is stated as its strongest advocates would put it, followed by the main objection. Each links to its entry in the peer-reviewed Stanford Encyclopedia of Philosophy.',
   widget: 'args',
   sections: [
@@ -62,8 +71,10 @@ UNITS.push({
   sources: [
     { t: 'Stanford Encyclopedia of Philosophy: philosophy of religion', url: L.sep('philosophy-religion') },
     { t: 'Aquinas, Summa Theologiae I, q. 2 (Does God exist?)', url: L.summa('1002') },
-    { t: 'J. L. Mackie, The Miracle of Theism (1982)', url: L.wiki('J._L._Mackie') },
-    { t: 'Richard Swinburne, The Existence of God (2nd ed., 2004)', url: L.wiki('Richard_Swinburne') }
+    { t: 'J. L. Mackie, The Miracle of Theism (1982)' },
+    { t: 'J. L. Mackie: background on the author', url: L.wiki('J._L._Mackie') },
+    { t: 'Richard Swinburne, The Existence of God (2nd ed., 2004)' },
+    { t: 'Richard Swinburne: background on the author', url: L.wiki('Richard_Swinburne') }
   ]
 });
 
@@ -79,9 +90,12 @@ UNITS.push({
   ],
   questions: ['Pick one word. How does its older meaning change the way you read a familiar verse?', 'Which modern gain would the biblical writers have welcomed most, and which modern loss would they have noticed first?'],
   sources: [
-    { t: 'Charles Taylor, A Secular Age (2007)', url: L.wiki('A_Secular_Age') },
-    { t: 'C. S. Lewis, Studies in Words (1960)', url: L.wiki('C._S._Lewis') },
-    { t: 'Servais Pinckaers, The Sources of Christian Ethics (1995)', url: L.wiki('Servais_Pinckaers') }
+    { t: 'Charles Taylor, A Secular Age (2007)' },
+    { t: 'A Secular Age: an overview', url: L.wiki('A_Secular_Age') },
+    { t: 'C. S. Lewis, Studies in Words (1960)' },
+    { t: 'C. S. Lewis: background on the author', url: L.wiki('C._S._Lewis') },
+    { t: 'Servais Pinckaers, The Sources of Christian Ethics (1995)' },
+    { t: 'Servais Pinckaers: background on the author', url: L.wiki('Servais_Pinckaers') }
   ]
 });
 
@@ -98,9 +112,12 @@ UNITS.push({
   ],
   questions: ['Which contribution do you think has most shaped the modern world?', 'In which harms were Christians also the main critics, and what made them see what others did not?'],
   sources: [
-    { t: 'Tom Holland, Dominion: The Making of the Western Mind (2019)', url: L.wiki('Dominion_(Holland_book)') },
-    { t: 'Rodney Stark, The Rise of Christianity (1996)', url: L.wiki('The_Rise_of_Christianity') },
-    { t: 'Diarmaid MacCulloch, A History of Christianity (2009)', url: L.wiki('Diarmaid_MacCulloch') },
+    { t: 'Tom Holland, Dominion: The Making of the Western Mind (2019)' },
+    { t: 'Dominion (Holland book): an overview', url: L.wiki('Dominion_(Holland_book)') },
+    { t: 'Rodney Stark, The Rise of Christianity (1996)' },
+    { t: 'The Rise of Christianity: an overview', url: L.wiki('The_Rise_of_Christianity') },
+    { t: 'Diarmaid MacCulloch, A History of Christianity (2009)' },
+    { t: 'Diarmaid MacCulloch: background on the author', url: L.wiki('Diarmaid_MacCulloch') },
     { t: 'Robert Woodberry, “The Missionary Roots of Liberal Democracy” (2012)', url: L.doi('10.1017/S0003055412000093') }
   ]
 });
@@ -127,24 +144,33 @@ UNITS.push({
 
 UNITS.push({
   id: 'virtues', part: 'Living It', title: 'Virtues and the good life',
-  kicker: 'Twelve virtues: where they are taught, why they are good, and what research finds.',
+  kicker: 'Twelve virtues: where they are taught, why they are good, and what research finds, with its limits.',
+  learn: {
+    goal: 'Connect Christian teaching with practice through the virtues, and read research about them with care.',
+    take: 'Christian ethics joins the classical virtues (prudence, justice, fortitude, temperance) with faith, hope and love. Virtues are built by practice. Research on related practices is mostly observational: it shows associations, not guarantees.',
+    example: 'A study finding that frequent attenders at religious services lived longer cannot show that attending caused it: healthier people may attend more, and other differences may matter.',
+    check: { q: 'What is the difference between “people who forgive report less depression” and “forgiveness reduces depression”? Which kind of study can support the second?',
+      a: 'The first is an association; the second is a causal claim. Only a design that controls who does what, such as a randomised trial of a forgiveness intervention, can support the causal claim, and even then only for the people and setting studied.' },
+    next: [['inner', 'prayer and the contemplative tradition'], ['impact', 'Christianity’s contributions and harms in history']]
+  },
   intro: 'Christian moral teaching joins two inheritances: the classical virtues of Greece and Rome (prudence, justice, fortitude, temperance) and the theological virtues of the New Testament (faith, hope, love). This unit presents each virtue with its scriptural and classical sources, parallels in other traditions, the reasons given for why it is good, and, where available, research on its effects.',
   widget: 'virtues',
   sections: [
     { h: 'Why virtue?', blocks: [
       { k: 'p', x: 'A virtue (Latin *virtus*, “strength”; Greek *aretē*, “excellence”) is a settled disposition to act well, built by practice the way a skill is. Aristotle argued that we become just by doing just acts, as we become builders by building. Christian teaching agrees and adds that grace heals and raises nature: the virtues are given as well as acquired.' },
-      { k: 'p', x: 'The case for the virtues does not rest on religion alone. They make cooperation, trust and self-government possible, and a growing body of research links several of them with health, longevity and well-being. The religious traditions add a further claim: that the virtues fit human nature because they reflect the character of its Maker {{Matt.5.48}}.' },
+      { k: 'p', x: 'The case for the virtues does not rest on religion alone. They make cooperation, trust and self-government possible, and a growing body of research associates several of them with health, longevity and well-being, though associations do not show cause and effect. The religious traditions add a further claim: that the virtues fit human nature because they reflect the character of its Maker {{Matt.5.48}}.' },
       { k: 'text', x: 'In the Gospels, Jesus summarises the Law in two commandments: to love God with all one’s heart, soul, mind and strength, and one’s neighbour as oneself {{Mark.12.30-31}}. The prophet Micah had put it as doing justly, loving mercy and walking humbly with God {{Mic.6.8}}.' } ] },
     { h: 'The seven capital vices', widget: 'vices', blocks: [] },
     { h: 'Whole-life health', widget: 'pillars', blocks: [
-      { k: 'p', x: 'This atlas was asked to serve spiritual, intellectual, physical, financial and emotional health. Each area below gives the scriptural teaching, a few practices drawn from Christian tradition, and a related research finding. The findings are associations and experiments in particular groups, not guarantees, and the Bible itself warns against treating faith as a technique for prosperity {{1Tim.6.5-6}}.' } ] },
+      { k: 'p', x: 'Christian tradition speaks to the whole of life: spiritual, intellectual, physical, financial, emotional and relational. Each area below gives the scriptural teaching, a few practices drawn from Christian tradition, and a related research finding, labelled by the kind of study it is. Most findings are associations observed in particular groups, which cannot show that the practice causes the outcome; none is a promise. Religious practice does not guarantee money, health or success, and the Bible itself warns against treating faith as a technique for prosperity {{1Tim.6.5-6}}. Devotional advice is not medical or financial advice.' } ] },
     { h: 'The evening examen', widget: 'examen', blocks: [] }
   ],
   questions: ['Which virtue would most change your life if you grew in it this year, and what one practice would build it?', 'Why do you think Christianity made humility and forgiveness central when classical ethics largely did not?'],
   sources: [
     { t: 'Aristotle, Nicomachean Ethics', url: 'https://www.gutenberg.org/ebooks/8438' },
     { t: 'Aquinas, Summa Theologiae II-II (the virtues)', url: L.summa('3') },
-    { t: 'Josef Pieper, The Four Cardinal Virtues (1966)', url: L.wiki('Josef_Pieper') },
+    { t: 'Josef Pieper, The Four Cardinal Virtues (1966)' },
+    { t: 'Josef Pieper: background on the author', url: L.wiki('Josef_Pieper') },
     { t: 'Harvard Human Flourishing Program', url: 'https://hfh.fas.harvard.edu/' },
     { t: 'Tyler VanderWeele, “On the promotion of human flourishing” (2017)', url: L.doi('10.1073/pnas.1702996114') }
   ]
