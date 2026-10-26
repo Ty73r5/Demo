@@ -1,5 +1,7 @@
 [
 "links.js",
+"sources.js",
+"corrections.js",
 "geo.js",
 "texts.js",
 "books.js",
@@ -16,6 +18,7 @@
 "stories-data.js",
 "miracles-data.js",
 "units-book.js",
+"units-method.js",
 "units-life.js",
 "units-history.js",
 "units-belief.js",

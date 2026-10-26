@@ -3,7 +3,7 @@
   'use strict';
   const { W, $, $$, esc, rich, link, refBtn, chips, bindChips } = A;
 
-  W.stories = el => {
+  W.stories = (el, u, params) => {
     const eras = Object.fromEntries(STORY_ERAS.map(([k, n, s]) => [k, [n, s]]));
     const count = {};
     STORIES.forEach(s => (s.vt || []).forEach(v => { count[v] = (count[v] || 0) + 1; }));
@@ -23,9 +23,9 @@
         ${s.vt && s.vt.length ? `<h4>Virtues</h4><div class="chips">${s.vt.map(v => `<button type="button" class="chip" data-virtue="${esc(v)}">${esc(v)}</button>`).join('')}</div>` : ''}
         ${s.w && s.w.length ? `<h4>Warns against</h4><div class="chips">${s.w.map(v => `<span class="chip" style="cursor:default">${esc(v)}</span>`).join('')}</div>` : ''}
         ${s.hard ? `<h4>A hard story: how readers have wrestled with it</h4><p>${rich(s.hard)}</p>` : ''}
-        ${s.v ? `<p style="margin-top:12px">${refBtn(s.v)} <span class="note">Key verse, in the original and eleven translations</span></p>` : ''}`;
+        ${s.v ? `<p style="margin-top:12px">${refBtn(s.v)} <span class="note">Key verse, in the original and in translation</span></p>` : ''}`;
       $$('.card', grid).forEach(c => c.setAttribute('aria-selected', String(c.dataset.id === id)));
-      card.scrollIntoView({ block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      card.scrollIntoView({ block: 'nearest', behavior: A.reduceMotion() ? 'auto' : 'smooth' });
     };
     const render = () => {
       const re = q ? new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i') : null;
@@ -39,6 +39,7 @@
     grid.addEventListener('click', e => { const c = e.target.closest('[data-id]'); if (c) show(c.dataset.id); });
     card.addEventListener('click', e => { const b = e.target.closest('[data-virtue]'); if (b) { virtue = b.dataset.virtue; $('#st-virtue', el).value = virtue; era = 'all'; $$('#st-era [data-id]', el).forEach(x => x.setAttribute('aria-selected', String(x.dataset.id === 'all'))); render(); } });
     render();
+    if (params && params.get('s')) show(params.get('s'));
   };
 })();
 
@@ -57,13 +58,32 @@
 (() => {
   'use strict';
   const { W, $, esc, rich, link, refBtn, chips, bindChips } = A;
-  W.miracles = el => {
-    el.innerHTML = `<div class="chips" id="mr-cat">${chips([['all', 'All']].concat(MIRACLE_CATS.map(([k, n]) => [k, esc(n)])), 'all')}</div><div class="grid-cards" id="mr-out" style="margin-top:12px"></div>
-      <p class="note" style="margin-top:8px">“What it would require” states the physics or biology plainly; it is not a judgement on whether the event happened. Proposed natural explanations are listed with their sources where they exist, and most are debated.</p>`;
-    const show = c => {
-      $('#mr-out', el).innerHTML = MIRACLES.filter(m => c === 'all' || m.cat === c).map(m => `<div class="card"><p class="meta">${refBtn(m.v)}</p><h3>${esc(m.n)}</h3><p>${rich(m.x)}</p>
-        <p class="note"><b>What it would require:</b> ${rich(m.req)}</p><p class="note"><b>Proposed explanations:</b> ${rich(m.nat)}${m.src ? ' ' + link('Study', m.src) : ''}</p></div>`).join('');
-    };
+  W.miracles = (el, u, params) => {
+    const ST = window.MIRACLE_STATUS;
+    el.innerHTML = `<div class="chips" id="mr-cat">${chips([['all', 'All']].concat(MIRACLE_CATS.map(([k, n]) => [k, esc(n)])), 'all')}</div>
+      <p class="note" style="margin-top:8px">Each card says what the passage reports and, for a stated way of reading it, what ordinary physics, chemistry or biology would not produce. The narratives rarely describe a mechanism and the atlas does not supply one; this is not a judgement on whether the event happened. Open a card for the wording, the proposed explanations with their standing, how the story has been read, and what remains unknown.</p>
+      <div class="grid-cards" id="mr-out" style="margin-top:12px"></div>`;
+    const card = (m, i) => `<div class="card" id="mr-${i}"><p class="meta">${refBtn(m.v)}</p><h3>${esc(m.n)}</h3><p>${rich(m.x)}</p>
+        <p class="note" style="margin-top:6px"><b>The difficulty:</b> ${rich(m.diff)}</p>
+        <details${params && params.get('m') === String(i) ? ' open' : ''}><summary class="note">Wording, explanations, readings, unknowns</summary>
+          <p class="note"><b>Wording and context:</b> ${rich(m.ctx)}</p>
+          <p class="note"><b>Proposed explanations:</b></p><ul class="note">${m.prop.map(([t, s, url]) => `<li><i>${esc(ST[s] || s)}:</i> ${rich(t)}${url ? ' ' + link('study', url) : ''}</li>`).join('')}</ul>
+          <p class="note"><b>How it has been read:</b> ${rich(m.theo)}</p>
+          <p class="note"><b>What remains unknown:</b> ${rich(m.unk)}</p></details></div>`;
+    const show = c => { $('#mr-out', el).innerHTML = MIRACLES.map((m, i) => c === 'all' || m.cat === c ? card(m, i) : '').join(''); };
     bindChips($('#mr-cat', el), show); show('all');
+    const m = params && params.get('m');
+    if (m && $('#mr-' + m, el)) setTimeout(() => { const t = $('#mr-' + m, el); t.scrollIntoView({ block: 'center' }); t.classList.add('spotlight'); setTimeout(() => t.classList.remove('spotlight'), 2500); }, 80);
+  };
+})();
+
+(() => {
+  'use strict';
+  const { W, esc, rich, citeBtn } = A;
+  const KIND = { error: 'Factual error', overreach: 'Stated too widely', label: 'Misleading label or link', provenance: 'Provenance conflated', method: 'Framing of the claim' };
+  W.corrections = el => {
+    el.innerHTML = `<div class="corrections">${(window.CORRECTIONS || []).map(c => `<article class="card corr"><p class="meta">${esc(c.d)} · ${esc(KIND[c.kind] || c.kind)} · <a href="#/${esc(c.unit)}">${esc(A.byId[c.unit] ? A.byId[c.unit].title : c.unit)}</a></p>
+      <h3>${esc(c.what)}</h3>
+      <dl class="kv"><dt>Before</dt><dd>${rich(c.before)}</dd><dt>Now</dt><dd>${rich(c.after)}</dd><dt>Why</dt><dd>${rich(c.why)}</dd>${c.src && c.src.length ? `<dt>Sources</dt><dd>${c.src.map(citeBtn).join(' ')}</dd>` : ''}</dl></article>`).join('')}</div>`;
   };
 })();
