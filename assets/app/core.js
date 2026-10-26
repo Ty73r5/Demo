@@ -329,7 +329,7 @@
       ${st ? `<p class="dlg-note">${st.n.toLocaleString()} occurrences under this Strong’s number in ${heb ? 'the Leningrad Codex as tagged by STEP Bible (Hebrew words only; Aramaic words have their own numbers)' : 'the Nestle–Aland text as tagged by STEP Bible (words found only in the Textus Receptus are not counted)'}. STEP Bible’s most frequent English glosses for it:</p><div class="glossbars">${st.top.map(([g, c]) => `<div class="glossbar"><span>${esc(g)}</span><span class="bar" style="width:${Math.max(2, c / max * 100)}%"></span><span class="c">${c}</span></div>`).join('')}</div>` : ''}
       <p class="dlg-note">A gloss is a brief aid, not a translation of every occurrence; a Strong’s number identifies a dictionary entry, not an interpretation. Context decides what a word means in a given verse. <a href="#/words">About word study</a>.</p>
       ${lx.def ? `<details><summary class="dlg-note">Lexicon entry (${heb ? 'Brown–Driver–Briggs, abridged' : 'Abbott-Smith'}, via STEP Bible)</summary><p class="def">${esc(lx.def.slice(0, 900))}${lx.def.length > 900 ? '…' : ''}</p></details>` : ''}
-      <div class="linkrow">${A.link('Bible Hub concordance', L.strongs(w[3]))}${A.link('Blue Letter Bible', L.blb(w[3]))}</div>
+      ${L.isStrongs(w[3]) ? `<div class="linkrow">${A.link('Bible Hub concordance', L.strongs(w[3]))}${A.link('Blue Letter Bible', L.blb(w[3]))}</div>` : `<p class="dlg-note">${esc(w[3])} is a STEP Bible extended number, beyond Strong’s numbering, so Bible Hub and Blue Letter Bible have no entry for it.</p>`}
     </div>`;
   }
   function renderBible() {

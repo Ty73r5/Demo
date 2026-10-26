@@ -140,7 +140,7 @@
         ${st ? `<h4>STEP Bible’s English glosses for its occurrences</h4><div class="glossbars">${st.top.map(([g, c]) => `<div class="glossbar"><span>${esc(g)}</span><span class="bar" style="width:${Math.max(2, c / max * 100)}%"></span><span class="c">${c}</span></div>`).join('')}</div>` : ''}
         <div class="blk-wrap" style="margin-top:16px">${w.notes.map(A.block).join('')}</div>
         <h4>Read it in context</h4><p>${w.refs.map(refBtn).join(' ')}</p><p class="note">The atlas holds these verses only; each opens with a link to its whole chapter. A gloss is a brief aid, and the meaning in any verse depends on its context.</p>
-        <p class="linkrow" style="margin-top:10px">${link('Bible Hub concordance', L.strongs(w.strong))}${link('Blue Letter Bible', L.blb(w.strong))}</p>`;
+        ${L.isStrongs(w.strong) ? `<p class="linkrow" style="margin-top:10px">${link('Bible Hub concordance', L.strongs(w.strong))}${link('Blue Letter Bible', L.blb(w.strong))}</p>` : ''}`;
     };
     bindChips($('#kw-lang', el), l => { lang = l; list(); });
     $('#kw-pick', el).addEventListener('click', e => { const b = e.target.closest('[data-id]'); if (b) show(b.dataset.id); });
