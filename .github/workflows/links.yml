@@ -4,7 +4,7 @@ name: Check links
 # and Quran.com links. Runs when the content changes, or on demand with --all from the Actions tab.
 on:
   push:
-    paths: ['assets/data/**', 'tools/check_links.js', '.github/workflows/links.yml']
+    paths: ['assets/data/**', 'assets/app/**', 'tools/**', 'README.md', 'RELEASE_NOTES.md', 'index.html', '.github/workflows/links.yml']
   workflow_dispatch:
     inputs:
       all:
@@ -22,5 +22,7 @@ jobs:
           node-version: 20
       - name: Check data consistency
         run: node tools/check_data.js
+      - name: Check quoted Scripture against the cited passages
+        run: node tools/quote_register.js
       - name: Check links
         run: node tools/check_links.js ${{ github.event.inputs.all == 'true' && '--all' || '' }}

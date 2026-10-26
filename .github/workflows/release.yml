@@ -24,6 +24,9 @@ jobs:
       - name: Check data consistency
         run: node tools/check_data.js
 
+      - name: Check quoted Scripture against the cited passages
+        run: node tools/quote_register.js
+
       - name: Build single-file edition
         run: python3 tools/build_artifact.py dist/logos-atlas.html
 
