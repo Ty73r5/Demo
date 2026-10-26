@@ -10,19 +10,19 @@ It is written to be fair to Christians, who should recognise their faith in it, 
 - **Download:** the [latest release](https://github.com/Ty73r5/Demo/releases/latest) has `logos-atlas.html`, a single file that opens in any browser, and `logos-atlas-site.zip` with the full site.
 - **Your own GitHub Pages address (optional):** Settings → Pages → *Deploy from a branch* → `main`, `/ (root)`. The site appears at https://ty73r5.github.io/Demo/.
 
-Press **Guided tour** for a 22-step spoken walk-through. Chrome, Edge and Safari have the best voices.
+Press **Guided tour** for a 26-step spoken walk-through. Chrome, Edge and Safari have the best voices.
 
 ## Contents
 
-Twenty-eight study units in seven parts. Each has an introduction, sections, an interactive, questions for study and sources.
+Thirty-two study units in seven parts. Each has an introduction, sections, an interactive, questions for study and sources.
 
 | Part | Units |
 |---|---|
 | I. Orientation | How to use this atlas |
-| II. The Book | The Bible as a library (books and canons by tradition) · How the text reached us (lines of transmission; one passage across twelve translations with changes highlighted) · The Dead Sea Scrolls · Reading the original (32 passages word by word) · Key words (66 Hebrew and Greek words) |
+| II. The Book | The Bible as a library (books and canons by tradition) · How the text reached us (lines of transmission; one passage across twelve translations with changes highlighted) · The Dead Sea Scrolls · Reading the original (32 passages word by word) · Key words (66 Hebrew and Greek words) · The great stories (155 narratives with their meanings, virtues and hard cases) |
 | III. History | The Atlas (97 places, 2600 BC to today) · Jesus of Nazareth · Days, dates and deep time |
-| IV. Christian Belief | Creeds and doctrine (nine churches on 14 questions) · Heresy and orthodoxy · The Trinity and the Trivium · Reading Scripture · Arguments about God (six for, five against) |
-| V. Comparisons | Judaism, Christianity and Islam (17 topics) · Ancient traditions · Kemet and the Metu Neter |
+| IV. Christian Belief | Creeds and doctrine (nine churches on 14 questions) · Heresy and orthodoxy · The Trinity and the Trivium · Reading Scripture · Arguments about God (six for, five against) · Miracles and the laws of nature (30 events, what each would require, proposed explanations) · Hell, judgement and the afterlife (including plague and the history of “bless you”) |
+| V. Comparisons | Judaism, Christianity and Islam (17 topics) · Ancient traditions · The Twelve, Judas and older stories (claimed parallels checked against the sources) · Kemet and the Metu Neter |
 | VI. People & Movements | The Great Conversation (61 writers; Peterson’s *Maps of Meaning*) · Robert G. Ingersoll · Critics of Christianity · The Knights Templar · Freemasonry · Rosicrucians, Hermeticism and Christian Kabbalah |
 | VII. Living It | The ancient mind and the modern · Contributions and harms · The inner life · Virtues and the good life (with research and an evening examen) · Sources and study tools (including studying with AI) |
 
