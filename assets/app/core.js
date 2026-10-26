@@ -56,7 +56,7 @@
 
   /* ── Units, parts and order ─────────────────────────────── */
   const PARTS = A.PARTS = ['Orientation', 'The Book', 'History', 'Christian Belief', 'Comparisons', 'People & Movements', 'Living It'];
-  const ORDER = ['welcome', 'library', 'transmission', 'scrolls', 'original', 'words', 'stories', 'atlas', 'jesus', 'time', 'creeds', 'orthodoxy', 'trinity', 'reading', 'arguments', 'hell', 'abrahamic', 'ancient', 'kemet', 'conversation', 'ingersoll', 'critics', 'templars', 'freemasonry', 'rosicrucians', 'mind', 'impact', 'inner', 'virtues', 'sources'];
+  const ORDER = ['welcome', 'library', 'transmission', 'scrolls', 'original', 'words', 'stories', 'atlas', 'jesus', 'time', 'creeds', 'orthodoxy', 'trinity', 'reading', 'arguments', 'hell', 'abrahamic', 'ancient', 'parallels', 'kemet', 'conversation', 'ingersoll', 'critics', 'templars', 'freemasonry', 'rosicrucians', 'mind', 'impact', 'inner', 'virtues', 'sources'];
   const ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
   const units = A.units = (window.UNITS || []).slice().sort((a, b) => {
     const ia = ORDER.indexOf(a.id), ib = ORDER.indexOf(b.id);

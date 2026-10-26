@@ -41,3 +41,15 @@
     render();
   };
 })();
+
+(() => {
+  'use strict';
+  const { W, $, esc, rich, chips, bindChips } = A;
+  const V = { found: ['Found in the sources', 'var(--verdigris)'], partial: ['Partly supported', 'var(--gold)'], unsupported: ['Not found in the ancient sources', 'var(--vermilion)'] };
+  W.parallels = el => {
+    el.innerHTML = `<div class="chips" id="pl-g">${chips([['all', 'All'], ['twelve', 'Twelve'], ['betrayal', 'Betrayal']], 'all')}</div>
+      <div class="tbl-wrap" style="margin-top:12px"><table class="tbl"><thead><tr><th>Claimed parallel</th><th>Verdict</th><th>What the sources show</th></tr></thead><tbody id="pl-rows"></tbody></table></div>`;
+    const show = g => { $('#pl-rows', el).innerHTML = PARALLELS.filter(p => g === 'all' || p.g === g).map(p => `<tr><td>${esc(p.n)}</td><td style="white-space:nowrap;font-family:var(--f-ui);font-size:var(--s-0);color:${V[p.v][1]}">${V[p.v][0]}</td><td style="font-weight:400">${rich(p.x)}</td></tr>`).join(''); };
+    bindChips($('#pl-g', el), show); show('all');
+  };
+})();

@@ -70,3 +70,55 @@ UNITS.push({
     { t: 'David Bentley Hart, That All Shall Be Saved (2019)', url: L.wiki('Universal_reconciliation') }
   ]
 });
+
+/* Claimed parallels to the Twelve and to Judas, with what the primary sources support. v: found / partial / unsupported. */
+window.PARALLELS = [
+  { g: 'twelve', n: 'The twelve tribes of Israel', v: 'found', x: 'Jacob’s twelve sons become Israel’s twelve tribes {{Gen.49.28}}. Jesus links the two directly: the Twelve will sit on twelve thrones judging the tribes {{Matt.19.28}}. Most historians read the Twelve as a sign that Jesus was gathering a renewed Israel (E. P. Sanders).' },
+  { g: 'twelve', n: 'The council of twelve at Qumran', v: 'found', x: 'The Community Rule describes a council of “twelve men and three priests” (1QS 8.1), a Jewish group of Jesus’ own time using twelve to represent Israel.' },
+  { g: 'twelve', n: 'The zodiac and the twelve months', v: 'partial', x: 'Twelve signs and twelve months were standard in Babylonian and Greco-Roman astronomy, and Mithraic temple reliefs often surround the bull-slaying scene with the zodiac. This shows twelve was a widespread symbol of completeness; it does not show the Twelve were modelled on the signs, and the Gospels never connect them.' },
+  { g: 'twelve', n: 'Mithras and twelve disciples', v: 'unsupported', x: 'No Mithraic text or image gives Mithras twelve disciples. The claim goes back to 19th-century writers and was popularised by the film Zeitgeist (2007); the twelve figures sometimes around Mithraic reliefs are the zodiac signs.' },
+  { g: 'twelve', n: 'Horus and twelve disciples', v: 'unsupported', x: 'No Egyptian source gives Horus twelve disciples, a betrayal or a crucifixion. These claims come from Gerald Massey (Ancient Egypt, the Light of the World, 1907), not from Egyptian texts.' },
+  { g: 'twelve', n: 'Hercules’ twelve labours; the twelve Olympians', v: 'partial', x: 'Both are documented in Greek sources, but they are tasks and gods, not followers; the shared feature is only the number.' },
+  { g: 'betrayal', n: 'Ahithophel, David’s counsellor', v: 'found', x: 'David’s trusted adviser joins Absalom’s revolt and, when his advice is rejected, goes home and hangs himself {{2Sam.17.23}}. The Gospels apply David’s lament, “mine own familiar friend … which did eat of my bread, hath lifted up his heel against me” {{Ps.41.9}}, to Judas {{John.13.18}}. Scholars widely see Ahithophel as a model for how Judas’s end is told.' },
+  { g: 'betrayal', n: 'Joseph sold for silver', v: 'found', x: 'It is Judah (in Greek, *Ioudas*, the same name as Judas) who proposes selling his brother Joseph for twenty pieces of silver {{Gen.37.26-28}}.' },
+  { g: 'betrayal', n: 'Thirty pieces of silver', v: 'found', x: 'Thirty shekels is the price of a slave in the Law {{Exod.21.32}}. Zechariah is paid thirty pieces of silver and throws them to the potter in the temple {{Zech.11.12-13}}; Matthew uses this text for Judas’s payment and the potter’s field {{Matt.27.9-10}}, attributing it to Jeremiah.' },
+  { g: 'betrayal', n: 'Osiris betrayed by his brother Set', v: 'found', x: 'Plutarch (On Isis and Osiris 13) tells how Set and seventy-two conspirators trick Osiris into a chest and kill him. The shared theme is a good king destroyed through treachery by one close to him; the differences are large: a brother not a disciple, a cosmic myth not a dated event, and Osiris rules the dead rather than returning to life.' },
+  { g: 'betrayal', n: 'Baldr and Loki', v: 'partial', x: 'In the Prose Edda (Snorri Sturluson, c. 1220) Loki tricks the blind god Höd into killing the beloved Baldr with mistletoe. The story was written down more than two centuries after Iceland became Christian, so influence may run in either direction.' },
+  { g: 'betrayal', n: 'Devadatta and the Buddha', v: 'found', x: 'In the Pali Vinaya (Cullavagga 7), the Buddha’s cousin and disciple Devadatta tries to kill him and split the community out of ambition. The pattern of a jealous insider is close; the texts are independent of the Gospels, and the outcome differs (the Buddha is unharmed).' },
+  { g: 'betrayal', n: 'Krishna or Mithras crucified and betrayed', v: 'unsupported', x: 'No Hindu or Mithraic source describes Krishna or Mithras being betrayed by a disciple or crucified. The claims come from Kersey Graves, The World’s Sixteen Crucified Saviors (1875), a book historians of every persuasion regard as unreliable.' },
+  { g: 'betrayal', n: 'Judas in later tradition', v: 'found', x: 'The Gospel of Judas (2nd century; a Coptic copy published 2006) recasts Judas as the disciple who understood Jesus. Some Muslim commentators on Qur’an 4:157 taught that Judas was made to resemble Jesus and crucified in his place, a view also found in the late Gospel of Barnabas.' }
+];
+
+UNITS.push({
+  id: 'parallels', part: 'Comparisons', title: 'The Twelve, Judas and older stories',
+  kicker: 'Is the story of the twelve disciples and the betrayer borrowed from older religions? What the sources show, claim by claim.',
+  intro: 'It is often said that the Gospels repeat older stories: that other gods had twelve disciples, or were betrayed by a follower. Some of these parallels are real and well documented; others cannot be found in any ancient source. This unit sets out what the Gospels say about the Twelve and Judas, how historians assess them, the main explanations for repeated story patterns, and a claim-by-claim table showing which parallels the primary sources support.',
+  widget: 'parallels',
+  sections: [
+    { h: 'The Twelve in the sources', blocks: [
+      { k: 'text', x: 'Mark, Matthew, Luke and Acts each list the Twelve {{Mark.3.16-19}}. The lists agree on most names and differ on one (Thaddaeus, or Judas son of James). After Judas’s death the remaining eleven choose Matthias by lot to restore the number {{Acts.1.26}}.' },
+      { k: 'record', x: 'The earliest reference is in Paul, writing about AD 54: the risen Christ “was seen of Cephas, then of the twelve” {{1Cor.15.5}}. This shows “the Twelve” was an established group within about twenty-five years of the crucifixion.' },
+      { k: 'sch', x: 'Most historians, including sceptical ones, accept that Jesus chose an inner circle of twelve as a symbol of Israel’s twelve tribes, part of his announcement that God was restoring Israel (E. P. Sanders, Jesus and Judaism, 1985).' } ] },
+    { h: 'Judas in the sources', blocks: [
+      { k: 'text', x: 'Mark says only that Judas, “one of the twelve,” went to the chief priests to hand Jesus over and was promised money {{Mark.14.10-11}}. Matthew adds the thirty pieces of silver and his suicide by hanging {{Matt.27.5}}; Acts says he bought a field, fell headlong and burst open {{Acts.1.18}}; John calls him a thief who kept the common purse {{John.12.6}}. The two death accounts differ, and ancient and modern readers have proposed harmonisations.' },
+      { k: 'sch', x: 'Most scholars accept that Judas existed and handed Jesus over, chiefly because the early church would not invent the embarrassing fact that one of Jesus’ own chosen Twelve betrayed him (the criterion of embarrassment). A minority, such as Hyam Maccoby (Judas Iscariot and the Myth of Jewish Evil, 1992), see Judas as a literary figure. The meaning of “Iscariot” is debated: “man of Kerioth,” a link to the *sicarii* (dagger-men), or “the false one.”' } ] },
+    { h: 'Why stories repeat', blocks: [
+      { k: 'p', x: 'When two stories resemble each other, there are several possible explanations, and each case has to be judged on its evidence.' },
+      { k: 'list', items: [
+        '**Deliberate echo within the Bible.** The Gospels openly tell Jesus’ story with Old Testament patterns, and this is the best-documented kind of repetition: Judas is described with the words of the Psalms and Zechariah, and his end recalls Ahithophel. The Gospel writers saw this as fulfilment, not borrowing.',
+        '**Borrowing from other religions.** This requires evidence that the older story existed in that form, was known to the later writers, and shares specific details. Several popular claims fail the first test: the details cannot be found in the ancient sources.',
+        '**Shared human patterns.** Betrayal by an insider and the death of a good leader are common human experiences, and scholars such as Lord Raglan (The Hero, 1936), Carl Jung and Joseph Campbell argued that hero stories everywhere follow similar shapes. Similarity alone does not prove copying.',
+        '**Literary imitation.** Dennis MacDonald (The Homeric Epics and the Gospel of Mark, 2000) argues that Mark consciously imitates episodes from Homer; most New Testament scholars have not been persuaded, but the method is debated.'
+      ] },
+      { k: 'bel', who: 'Christian', x: 'Christians have offered two classic answers to parallels. Justin Martyr (c. 155) argued that demons had imitated prophecies of Christ in pagan myths ([First Apology 54](https://www.newadvent.org/fathers/0126.htm)). C. S. Lewis argued instead that myths are longings that the Gospel fulfils: “myth became fact” (1944).' },
+      { k: 'p', x: 'The table below lists the parallels most often claimed. “Found in the sources” means the ancient text says what is claimed; it does not mean the Gospels borrowed from it.' } ] }
+  ],
+  questions: ['Which parallel in the table is closest to the Gospel story, and what are the differences?', 'Why does the criterion of embarrassment make most historians think Judas was real?', 'What would you need to show to prove that one story borrowed from another?'],
+  sources: [
+    { t: 'E. P. Sanders, Jesus and Judaism (1985)', url: L.wiki('E._P._Sanders') },
+    { t: 'Judas Iscariot: sources and interpretations', url: L.wiki('Judas_Iscariot') },
+    { t: 'Plutarch, On Isis and Osiris', url: L.wiki('De_Iside_et_Osiride') },
+    { t: 'Gospel of Judas', url: L.wiki('Gospel_of_Judas') },
+    { t: 'Jesus in comparative mythology', url: L.wiki('Jesus_in_comparative_mythology') }
+  ]
+});
