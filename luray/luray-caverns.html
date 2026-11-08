@@ -298,6 +298,21 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
 .dock .opts2{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap}
 .dock .prog{position:absolute;left:0;top:-1px;height:2px;background:var(--accent);width:0;transition:width .3s}
 @media (max-width:640px){.dock select{max-width:140px}}
+
+/* generic interactive plate: controls + chart */
+.ix{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:0}
+.ix .controls{padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:1rem;border-right:1px solid var(--line);min-width:0}
+.ix .chart{padding:.75rem;min-width:0;display:flex;align-items:center}
+.ix .chart svg{display:block;width:100%;height:auto}
+.ix .verdict{font-size:.92rem;padding:.6rem .75rem;border-radius:8px;background:var(--bg);border:1px solid var(--line)}
+.ix .verdict.bad{border-color:var(--b-no);color:var(--b-no)}
+.ix .verdict.good{border-color:var(--b-est)}
+@media (max-width:860px){.ix{grid-template-columns:1fr}.ix .controls{border-right:0;border-bottom:1px solid var(--line)}}
+.chart .ax text,.ix svg .lbl{fill:var(--muted);font-family:var(--f-mono);font-size:11px}
+.ix svg .lbl-c{fill:var(--calcite);font-family:var(--f-mono);font-size:11px}
+@keyframes flow{to{stroke-dashoffset:-24}}
+.flowline{stroke-dasharray:8 16;animation:flow 1s linear infinite}
+.voice-note{font-size:.78rem;color:var(--muted)}
 </style>
 
 <header class="bar" id="top">
@@ -307,14 +322,18 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
       <a href="#glance">Overview</a>
       <a href="#rock">Rock story</a>
       <a href="#chem">Chemistry</a>
-      <a href="#lab">Lab</a>
+      <a href="#equil">Carbonate lab</a>
+      <a href="#lab">Grow a column</a>
+      <a href="#speleo">Cave origins</a>
       <a href="#guide">Formations</a>
       <a href="#minerals">Minerals</a>
+      <a href="#air">Cave weather</a>
+      <a href="#physics">Sound &amp; light</a>
       <a href="#laws">Laws</a>
       <a href="#inside">Inside Luray</a>
       <a href="#history">History</a>
       <a href="#people">People</a>
-      <a href="#clocks">Dating</a>
+      <a href="#clocks">Dating &amp; climate</a>
       <a href="#theories">Theories</a>
       <a href="#quiz">Quiz</a>
       <a href="#sources">Sources</a>
@@ -339,7 +358,7 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
         <button class="btn primary" type="button" id="tourBtn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>Play the narrated tour</button>
         <a class="btn" href="#glance">Explore on my own</a>
       </div>
-      <p class="hint">The narrator reads each section aloud and scrolls for you, like a video you can pause. Use <b>Plain</b>, <b>Both</b> or <b>Technical</b> at the top to set how deep the explanations go. Every claim carries a label saying how sure we are.</p>
+      <p class="hint">A natural-sounding narrator reads each section aloud and scrolls for you, like a video you can pause. Pick Heart or Michael in the narrator bar. Use <b>Plain</b>, <b>Both</b> or <b>Technical</b> at the top to set how deep the explanations go. Every claim carries a label saying how sure we are.</p>
     </div>
   </div>
 </section>
@@ -417,11 +436,59 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
   </div>
 </section>
 
+
+<section class="sec" id="equil" data-title="The carbonate system">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="t"><p class="eyebrow">04 · Aqueous geochemistry</p><h2>The carbonate system, hands on</h2><p class="sub">Two interactive charts: how dissolved carbon changes form with pH, and why mixing two saturated waters can make water that dissolves rock again.</p></div>
+      <button class="btn small play-sec" type="button" data-play="equil">▶ Narrate</button>
+    </div>
+    <div class="prose" style="margin-bottom:1.5rem">
+      <p class="say plain plain-label">Carbon dioxide dissolved in water doesn't stay as one thing. Depending on how acidic the water is, it shifts among three forms: dissolved gas, bicarbonate, and carbonate. Only carbonate can lock onto calcium to make calcite. So anything that makes the water less acidic, like losing CO₂ to cave air, pushes carbon toward carbonate and pushes calcite out of solution.</p>
+      <p class="say tech">The speciation follows two acid dissociation constants. At 12 degrees Celsius, pK₁ is about 6.44 for carbonic acid going to bicarbonate, and pK₂ is about 10.46 for bicarbonate going to carbonate. Between the two, bicarbonate dominates, which is why almost all cave and karst waters, at pH 7 to 8.5, carry their inorganic carbon as bicarbonate. Calcite saturation depends on the product of calcium and carbonate activities. Carbonate is a small fraction near pH 8, but that fraction grows about tenfold for each pH unit, so a small rise in pH from degassing changes the saturation state a lot.</p>
+    </div>
+    <div class="plate ix">
+      <div class="controls">
+        <div class="ctl"><label for="phS">pH <output id="phOut">8.0</output></label><input type="range" id="phS" min="4" max="12" step="0.05" value="8"></div>
+        <div class="readout">
+          <div><b id="fA">—</b><span>CO₂(aq) + H₂CO₃</span></div>
+          <div><b id="fB">—</b><span>bicarbonate HCO₃⁻</span></div>
+          <div><b id="fC">—</b><span>carbonate CO₃²⁻</span></div>
+          <div><b id="phWhere">—</b><span>typical water at this pH</span></div>
+        </div>
+        <p class="muted" style="font-size:.86rem">Bjerrum plot for 12 °C, ideal activities. Dashed lines mark pK₁ and pK₂, where neighboring species are equal.</p>
+      </div>
+      <div class="chart"><svg id="bjerrum" viewBox="0 0 560 300" role="img" aria-label="Fractions of carbonate species versus pH"></svg></div>
+    </div>
+
+    <h3 style="margin:2.25rem 0 .75rem">Mixing corrosion: two full sponges make a thirsty one</h3>
+    <div class="prose" style="margin-bottom:1.25rem">
+      <p class="say plain plain-label">Here is a surprising result. Take two waters that are each completely saturated with limestone, one from deep soil with lots of CO₂ and one with little. Mix them, and the mixture can dissolve more limestone. The curve of how much limestone water can hold bends, so the straight line between any two points on it falls below the curve. Where underground streams meet, caves can grow even if every stream arriving was already saturated.</p>
+      <p class="say tech">For an open system, the equilibrium calcium concentration scales roughly with the cube root of pCO₂, a concave curve. Mixing is linear in total calcium and in dissolved CO₂, so any mixture of two saturated end-members lies on the chord, below the equilibrium curve, and is undersaturated. This is Bögli's mixing corrosion (1964). The chemistry is established. How much it matters compared with ordinary soil-CO₂ dissolution in real caves is debated. It is probably important at conduit junctions and where vadose seepage meets phreatic water.</p>
+    </div>
+    <div class="plate ix">
+      <div class="controls">
+        <div class="ctl"><label for="mixA">Water A pCO₂ <output id="mixAOut">0.5%</output></label><input type="range" id="mixA" min="0.04" max="10" step="0.02" value="0.5"></div>
+        <div class="ctl"><label for="mixB">Water B pCO₂ <output id="mixBOut">8.0%</output></label><input type="range" id="mixB" min="0.04" max="10" step="0.02" value="8"></div>
+        <div class="ctl"><label for="mixF">Share of water B in the mix <output id="mixFOut">50%</output></label><input type="range" id="mixF" min="0" max="100" step="1" value="50"></div>
+        <div class="readout">
+          <div><b id="mxC">—</b><span>mixture calcium, mmol/L</span></div>
+          <div><b id="mxEq">—</b><span>it could hold, mmol/L</span></div>
+          <div><b id="mxSI">—</b><span>saturation index</span></div>
+          <div><b id="mxPH">—</b><span>pH of the mixture</span></div>
+        </div>
+        <p class="verdict" id="mxVerdict"></p>
+      </div>
+      <div class="chart"><svg id="mixChart" viewBox="0 0 560 300" role="img" aria-label="Calcite solubility curve with a mixing line"></svg></div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= LAB ================= -->
 <section class="sec" id="lab" data-title="Formation lab">
   <div class="wrap">
     <div class="sec-head">
-      <div class="t"><p class="eyebrow">04 · Hands-on</p><h2>Grow a column</h2><p class="sub">Set the soil, the cave air and the drip rate. Watch a stalactite and stalagmite race to meet. The numbers come from a real deposition model, simplified.</p></div>
+      <div class="t"><p class="eyebrow">05 · Hands-on</p><h2>Grow a column</h2><p class="sub">Set the soil, the cave air and the drip rate. Watch a stalactite and stalagmite race to meet. The numbers come from a real deposition model, simplified.</p></div>
       <button class="btn small play-sec" type="button" data-play="lab">▶ Narrate</button>
     </div>
     <div class="plate lab">
@@ -436,7 +503,7 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
           <div><b id="rRate">—</b><span>stalagmite growth, mm/yr</span></div>
           <div><b id="rInch">—</b><span>years per inch</span></div>
         </div>
-        <p class="verdict say" id="verdict" aria-live="polite"></p>
+        <p class="verdict" id="verdict" aria-live="polite"></p>
       </div>
       <div class="viz">
         <canvas id="simCanvas" width="600" height="460" aria-label="Simulated stalactite and stalagmite growth"></canvas>
@@ -450,11 +517,58 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
   </div>
 </section>
 
+
+<section class="sec" id="speleo" data-title="How caves are born">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="t"><p class="eyebrow">06 · Speleogenesis</p><h2>How caves are born: a century of theories</h2><p class="sub">Why does water carve one long tunnel instead of nibbling evenly everywhere? Geologists argued about this for decades. Two simulators show the answers that won.</p></div>
+      <button class="btn small play-sec" type="button" data-play="speleo">▶ Narrate</button>
+    </div>
+    <div class="theories" style="margin-bottom:1.75rem">
+      <div class="hyp"><span class="badge b-no">Superseded</span><span class="say"><b>Deep phreatic theory.</b> William Morris Davis, 1930: caves dissolve slowly far below the water table, then drain when the land rises. Caves do loop deep below the water table, but not as Davis pictured.</span></div>
+      <div class="hyp"><span class="badge b-deb">Partly right</span><span class="say"><b>Water-table theory.</b> Swinnerton in 1932, and Rhoades and Sinacori in 1941: flow and dissolution concentrate at the water table, so caves form at that level. This explains the stacked horizontal levels seen in many caves, including those tied to river downcutting.</span></div>
+      <div class="hyp"><span class="badge b-deb">Partly right</span><span class="say"><b>Vadose theory.</b> Martel and others around 1900: free-flowing streams in air-filled passages carve caves. This is true for canyon-shaped passages cut into the floors of older tubes, but not for how most caves start.</span></div>
+      <div class="hyp"><span class="badge b-lead">Leading view</span><span class="say"><b>The four-state model.</b> Ford and Ewers, 1978: all three are right in different rocks. How densely the rock is fractured decides whether a cave forms as deep loops, shallow loops, or along the water table. Try it below.</span></div>
+      <div class="hyp"><span class="badge b-est">Established</span><span class="say"><b>Kinetic breakthrough.</b> White in 1977, Dreybrodt in 1990 and Palmer in 1991: dissolution slows sharply as water nears saturation. That lets slightly aggressive water travel kilometers along a crack, widening all of it slowly, until the far end opens and flow suddenly speeds up. This is why caves exist at all. Try it below.</span></div>
+      <div class="hyp"><span class="badge b-lead">Leading view</span><span class="say"><b>Luray.</b> An epigenic cave, carved by surface water draining toward the Shenandoah, with levels probably tied to the river's downcutting. Hypogene origins, from deep rising water as at Carlsbad, are not indicated.</span></div>
+    </div>
+
+    <h3 style="margin:0 0 .75rem">The four-state model</h3>
+    <div class="plate ix">
+      <div class="controls">
+        <div class="ctl"><label for="feS">Fissure frequency <output id="feOut">State 2</output></label><input type="range" id="feS" min="1" max="4" step="1" value="2"><span class="help">How many open cracks the water can choose from, from few to many.</span></div>
+        <p id="feText" style="font-size:.95rem"></p>
+      </div>
+      <div class="chart" style="background:var(--air)"><svg id="feSvg" viewBox="0 0 560 280" role="img" aria-label="Cave profile for the selected state"></svg></div>
+    </div>
+
+    <h3 style="margin:2.25rem 0 .75rem">Breakthrough simulator: a crack becomes a cave</h3>
+    <div class="prose" style="margin-bottom:1.25rem">
+      <p class="say plain plain-label">Picture one crack in limestone, a kilometer long and thinner than a credit card. Water seeps in at one end and out the other. If the water dissolved rock at a steady pace until it was full, it would use up all its acid in the first few centimeters, and the far end would never open. In reality, dissolution slows to a crawl as the water nears saturation. That slow tail lets the water keep nibbling the whole length. After thousands of years the far end opens, flow jumps a thousandfold, and a cave begins to grow fast.</p>
+      <p class="say tech">The model is a single parallel-plate fracture, 1 meter wide, with laminar flow by the cubic law, Q = ρg w Δh / 12μ Σ(Δx / a³). Calcite dissolves by the Dreybrodt rate law: F = k₁(1 − c/c_eq) below 90 percent saturation, with k₁ = 4×10⁻¹¹ mol/cm²/s, switching to F = k₄(1 − c/c_eq)⁴ above it, with k₄ = 4×10⁻⁸. Concentration is integrated along the fracture exactly within each regime. The aperture widens by 2F times the molar volume of calcite, with adaptive time steps. Breakthrough is defined here as a thousandfold rise in flow. Switch on linear kinetics only, and the penetration length collapses to centimeters. That is the result that made nonlinear kinetics central to speleogenesis.</p>
+    </div>
+    <div class="plate ix">
+      <div class="controls">
+        <div class="ctl"><label for="btA">Starting crack width <output id="btAOut">0.20 mm</output></label><input type="range" id="btA" min="0.05" max="0.5" step="0.01" value="0.2"></div>
+        <div class="ctl"><label for="btL">Crack length <output id="btLOut">1.0 km</output></label><input type="range" id="btL" min="0.1" max="5" step="0.1" value="1"></div>
+        <div class="ctl"><label for="btI">Hydraulic gradient <output id="btIOut">0.010</output></label><input type="range" id="btI" min="0.001" max="0.1" step="0.001" value="0.01"><span class="help">The water-table drop per meter of crack. Steeper means faster flow.</span></div>
+        <label style="display:flex;gap:.5rem;align-items:center;font-size:.9rem"><input type="checkbox" id="btLin"> Linear kinetics only, the "naive" model</label>
+        <div class="readout">
+          <div><b id="btT">—</b><span>breakthrough time</span></div>
+          <div><b id="btQ">—</b><span>flow at start → end, L/day</span></div>
+        </div>
+        <p class="verdict" id="btVerdict"></p>
+      </div>
+      <div class="chart"><svg id="btSvg" viewBox="0 0 560 330" role="img" aria-label="Crack width along its length at successive times, and flow versus time"></svg></div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= FIELD GUIDE ================= -->
 <section class="sec" id="guide" data-title="Field guide to formations" data-q="guide">
   <div class="wrap">
     <div class="sec-head">
-      <div class="t"><p class="eyebrow">05 · Field guide</p><h2>Twelve kinds of formation</h2><p class="sub">Geologists call cave formations <i>speleothems</i>, Greek for "cave deposits." Tap any card for how it forms, the physics behind it, and an analogy.</p></div>
+      <div class="t"><p class="eyebrow">07 · Field guide</p><h2>Twelve kinds of formation</h2><p class="sub">Geologists call cave formations <i>speleothems</i>, Greek for "cave deposits." Tap any card for how it forms, the physics behind it, and an analogy.</p></div>
       <button class="btn small play-sec" type="button" data-play="guide">▶ Narrate all twelve</button>
     </div>
     <div class="guide" id="guideGrid"></div>
@@ -467,7 +581,7 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
 <section class="sec" id="minerals" data-title="Minerals and colors">
   <div class="wrap">
     <div class="sec-head">
-      <div class="t"><p class="eyebrow">06 · Mineralogy</p><h2>Minerals, crystals and colors</h2><p class="sub">Pure calcite is white or clear. Every other color is an impurity telling a story about the soil and rock above.</p></div>
+      <div class="t"><p class="eyebrow">08 · Mineralogy</p><h2>Minerals, crystals and colors</h2><p class="sub">Pure calcite is white or clear. Every other color is an impurity telling a story about the soil and rock above.</p></div>
       <button class="btn small play-sec" type="button" data-play="minerals">▶ Narrate</button>
     </div>
     <div class="prose" style="margin-bottom:1.5rem">
@@ -480,11 +594,96 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
   </div>
 </section>
 
+
+<section class="sec" id="air" data-title="Cave weather">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="t"><p class="eyebrow">09 · Cave climate</p><h2>Cave weather: why the cave breathes and stays at 54 °F</h2><p class="sub">The physics that gave the cave away in 1878 and sets the rhythm of formation growth.</p></div>
+      <button class="btn small play-sec" type="button" data-play="air">▶ Narrate</button>
+    </div>
+    <div class="prose" style="margin-bottom:1.25rem">
+      <p class="say plain plain-label">A cave with two openings at different heights works like a chimney. In summer the cave air is colder and heavier than outside air, so it pours out of the lower opening, just like cold air sliding out of an open freezer. In winter it flips: the cave air is warmer and lighter, so it rises out of the upper opening and cold outside air is sucked in below. That winter flushing clears CO₂ from the cave and speeds up formation growth.</p>
+      <p class="say tech">The driving pressure is ΔP = g·Δz·(ρ_outside − ρ_cave), with density from the ideal gas law, ρ = P / R_d T. Velocity through a constriction scales as v ≈ C_d √(2|ΔP| / ρ). The discharge coefficient folds in friction; we use 0.3 for a rough passage, so treat the numbers as orders of magnitude. Single-entrance caves breathe mainly in response to barometric changes. Seasonal flushing lowers cave pCO₂ in winter, raising degassing and growth rates, which can produce annual layers in stalagmites.</p>
+    </div>
+    <div class="plate ix">
+      <div class="controls">
+        <div class="ctl"><label for="airT">Outside temperature <output id="airTOut">30 °C</output></label><input type="range" id="airT" min="-15" max="38" step="1" value="30"></div>
+        <div class="ctl"><label for="airZ">Height between the two openings <output id="airZOut">40 m</output></label><input type="range" id="airZ" min="5" max="120" step="1" value="40"></div>
+        <div class="readout">
+          <div><b id="airP">—</b><span>pressure difference, Pa</span></div>
+          <div><b id="airV">—</b><span>draft speed estimate, m/s</span></div>
+        </div>
+        <p class="verdict" id="airVerdict"></p>
+      </div>
+      <div class="chart" style="background:var(--air)"><svg id="airSvg" viewBox="0 0 560 300" role="img" aria-label="Cave cross-section with airflow arrows"></svg></div>
+    </div>
+
+    <h3 style="margin:2.25rem 0 .75rem">Why 54 °F: the seasons fade into the rock</h3>
+    <div class="prose" style="margin-bottom:1.25rem">
+      <p class="say plain plain-label">Rock is a slow conductor of heat. Summer's heat and winter's cold soak in only a little way before they fade out. A few meters down, the yearly swing is small, and deeper still the rock sits at about the average yearly temperature of the land above, which around Luray is about 54 degrees. Stranger still, at about ten meters the swing arrives so late that the rock is warmest in winter.</p>
+      <p class="say tech">This is the solution of the heat equation for a periodic surface temperature: T(z, t) = T_mean + A·e^(−z/d)·sin(ωt − z/d). The damping depth is d = √(2κ/ω). For limestone, with thermal diffusivity κ ≈ 1.2×10⁻⁶ m²/s and a one-year period, d is about 3.5 meters. The amplitude falls by e at each damping depth, and the phase lags by one radian, about 58 days, per damping depth. At z = πd, about 11 meters, the lag is half a year: the seasons are inverted.</p>
+    </div>
+    <div class="plate ix">
+      <div class="controls">
+        <div class="ctl"><label for="dzS">Depth below the surface <output id="dzOut">3.0 m</output></label><input type="range" id="dzS" min="0" max="20" step="0.5" value="3"></div>
+        <div class="readout">
+          <div><b id="dzAmp">—</b><span>yearly swing, ± °F</span></div>
+          <div><b id="dzLag">—</b><span>lag behind the surface</span></div>
+        </div>
+        <p class="muted" style="font-size:.86rem">Surface: 54 °F mean with a ±22 °F seasonal swing. Diffusivity 1.2×10⁻⁶ m²/s.</p>
+      </div>
+      <div class="chart"><svg id="dzSvg" viewBox="0 0 560 280" role="img" aria-label="Temperature through the year at the surface and at the chosen depth"></svg></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="physics" data-title="Sound and light">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="t"><p class="eyebrow">10 · Physics</p><h2>Sound and light: the organ and the lake</h2><p class="sub">Tune a stalactite and hear it, then find out why a 20-inch pool looks like a canyon.</p></div>
+      <button class="btn small play-sec" type="button" data-play="physics">▶ Narrate</button>
+    </div>
+    <div class="prose" style="margin-bottom:1.25rem">
+      <p class="say plain plain-label">A stalactite rings like a tuning fork attached at one end. Longer stalactites ring lower. Thicker ones ring higher, because they are stiffer for their weight. That is why the organ's builder could lower a note by grinding a stalactite thinner.</p>
+      <p class="say tech">Treat the stalactite as a cantilevered Euler-Bernoulli beam. Its natural frequencies are f_n = (β_n² / 2πL²)·√(EI / ρA), with β₁ = 1.875, β₂ = 4.694 and β₃ = 7.855. For a solid cylinder of radius r, √(I/A) = r/2, so f₁ ∝ r / L². Calcite's Young's modulus is about 75 GPa and its density 2,710 kg/m³, giving a bending wave speed √(E/ρ) of about 5,260 m/s. The overtones sit at 6.27 and 17.55 times the fundamental, which is inharmonic. That is why stone sounds like a bell or marimba rather than a pipe organ. Real stalactites taper, which raises the frequency compared with a cylinder of the same base radius.</p>
+    </div>
+    <div class="plate ix">
+      <div class="controls">
+        <div class="ctl"><label for="stL">Length <output id="stLOut">60 cm</output></label><input type="range" id="stL" min="10" max="200" step="1" value="60"></div>
+        <div class="ctl"><label for="stR">Radius <output id="stROut">2.0 cm</output></label><input type="range" id="stR" min="0.3" max="8" step="0.1" value="2"></div>
+        <div class="readout">
+          <div><b id="stF">—</b><span>fundamental, Hz</span></div>
+          <div><b id="stN">—</b><span>nearest note</span></div>
+        </div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap"><button class="btn primary small" type="button" id="stPlay">▶ Strike it</button><button class="btn small" type="button" id="stShave">Shave 5% thinner</button></div>
+      </div>
+      <div class="chart" style="background:var(--air)"><svg id="stSvg" viewBox="0 0 560 260" role="img" aria-label="Stalactite with its first three bending modes"></svg></div>
+    </div>
+
+    <h3 style="margin:2.25rem 0 .75rem">Dream Lake: reflection is about contrast, not brightness</h3>
+    <div class="prose" style="margin-bottom:1.25rem">
+      <p class="say plain plain-label">Looking straight down, water reflects only about two percent of the light. So why does Dream Lake look like a perfect mirror? Two reasons. Visitors see it at a low angle, where water reflects much more. And the lake floor is dark. A faint reflection of a brightly lit ceiling easily outshines a floor that gets almost no light. Drag the sliders and watch the mirror appear.</p>
+      <p class="say tech">The Fresnel equations give reflectance for s and p polarization. Unpolarized light averages the two: R = ½(R_s + R_p). For water, with n = 1.333, R is about 2 percent at normal incidence, falls to zero for p-polarized light at Brewster's angle, about 53 degrees, and rises toward 100 percent at grazing incidence. What we perceive is the ratio of reflected ceiling radiance to light returned from the floor. The mirror effect is strong whenever R·L_ceiling is much greater than (1 − R)·L_floor, even when R is small.</p>
+    </div>
+    <div class="plate ix">
+      <div class="controls">
+        <div class="ctl"><label for="flA">Your viewing angle above the water <output id="flAOut">15°</output></label><input type="range" id="flA" min="2" max="90" step="1" value="15"></div>
+        <div class="ctl"><label for="flB">Light reaching the lake floor <output id="flBOut">3%</output></label><input type="range" id="flB" min="0" max="100" step="1" value="3"></div>
+        <div class="readout">
+          <div><b id="flR">—</b><span>water reflectance R</span></div>
+          <div><b id="flM">—</b><span>share of what you see that is reflection</span></div>
+        </div>
+      </div>
+      <div class="chart" style="background:var(--air);padding:0"><canvas id="flCanvas" width="560" height="300" style="display:block;width:100%;height:auto" aria-label="Simulated view of Dream Lake"></canvas></div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= LAWS ================= -->
 <section class="sec" id="laws" data-title="Laws and principles" data-q="laws">
   <div class="wrap">
     <div class="sec-head">
-      <div class="t"><p class="eyebrow">07 · Principles</p><h2>The laws written into the stone</h2><p class="sub">Fifteen principles from chemistry, physics and geology, each tied to something you can see in the cave.</p></div>
+      <div class="t"><p class="eyebrow">11 · Principles</p><h2>The laws written into the stone</h2><p class="sub">Fifteen principles from chemistry, physics and geology, each tied to something you can see in the cave.</p></div>
       <button class="btn small play-sec" type="button" data-play="laws">▶ Narrate</button>
     </div>
     <div class="laws" id="lawGrid"></div>
@@ -495,7 +694,7 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
 <section class="sec" id="inside" data-title="Inside Luray" data-q="inside">
   <div class="wrap">
     <div class="sec-head">
-      <div class="t"><p class="eyebrow">08 · The tour route</p><h2>Inside Luray: the named places</h2><p class="sub">The famous stops, what each one is geologically, and where its name came from.</p></div>
+      <div class="t"><p class="eyebrow">12 · The tour route</p><h2>Inside Luray: the named places</h2><p class="sub">The famous stops, what each one is geologically, and where its name came from.</p></div>
       <button class="btn small play-sec" type="button" data-play="inside">▶ Walk the route</button>
     </div>
     <div class="plate mapgrid">
@@ -510,7 +709,7 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
 <section class="sec" id="history" data-title="Discovery and history" data-q="history">
   <div class="wrap">
     <div class="sec-head">
-      <div class="t"><p class="eyebrow">09 · History</p><h2>Discovery, lawsuits, lights and an organ</h2><p class="sub">Deep-time events in blue, human events in orange.</p></div>
+      <div class="t"><p class="eyebrow">13 · History</p><h2>Discovery, lawsuits, lights and an organ</h2><p class="sub">Deep-time events in blue, human events in orange.</p></div>
       <button class="btn small play-sec" type="button" data-play="history">▶ Narrate</button>
     </div>
     <div class="prose" style="margin-bottom:1.75rem">
@@ -524,7 +723,7 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
 <section class="sec" id="people" data-title="People and the cave">
   <div class="wrap">
     <div class="sec-head">
-      <div class="t"><p class="eyebrow">10 · Anthropology</p><h2>People, meaning and the cave</h2><p class="sub">Who lived above it, how people named and used it, and what that says about us.</p></div>
+      <div class="t"><p class="eyebrow">14 · Anthropology</p><h2>People, meaning and the cave</h2><p class="sub">Who lived above it, how people named and used it, and what that says about us.</p></div>
       <button class="btn small play-sec" type="button" data-play="people">▶ Narrate</button>
     </div>
     <div class="essays">
@@ -567,7 +766,7 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
 <section class="sec" id="clocks" data-title="Clocks in the stone">
   <div class="wrap">
     <div class="sec-head">
-      <div class="t"><p class="eyebrow">11 · Dating and climate</p><h2>Clocks and climate records in the stone</h2><p class="sub">A stalagmite works like a tree trunk with a built-in atomic clock.</p></div>
+      <div class="t"><p class="eyebrow">15 · Dating and climate</p><h2>Clocks and climate records in the stone</h2><p class="sub">A stalagmite works like a tree trunk with a built-in atomic clock.</p></div>
       <button class="btn small play-sec" type="button" data-play="clocks">▶ Narrate</button>
     </div>
     <div class="prose" style="margin-bottom:1.5rem">
@@ -586,6 +785,24 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
       <p class="say plain plain-label">Stalagmites also record climate. Oxygen comes in light and heavy forms, and the mix in rainwater shifts with temperature, rainfall and where storms come from. Each calcite layer locks in that mix, so a single stalagmite can hold a year-by-year climate diary going back tens of thousands of years.</p>
       <p class="say tech">Paleoclimate work uses δ¹⁸O, the per-mil deviation of the ¹⁸O/¹⁶O ratio from a standard. In calcite it reflects drip-water δ¹⁸O, which tracks the rain, plus temperature-dependent fractionation of about −0.2 per mil per degree Celsius. δ¹³C records vegetation and soil activity, roughly C3 versus C4 plants, and degassing. Chinese stalagmites from Hulu and Sanbao caves produced the benchmark record of Asian monsoon strength over 640,000 years, tied to orbital precession. Eastern U.S. stalagmites have been used to reconstruct rainfall and temperature too. We have not seen Luray specimens in that literature, and show-cave formations are rarely sampled.</p>
     </div>
+
+    <h3 style="margin:2.25rem 0 .75rem">The oxygen-isotope thermometer, and why it is tricky</h3>
+    <div class="prose" style="margin-bottom:1.25rem">
+      <p class="say plain plain-label">Colder water leaves calcite slightly richer in heavy oxygen. That should make stalagmites into thermometers. But colder climates also change the rain, usually making it lighter in heavy oxygen. The two effects push in opposite directions, so the same stalagmite signal could mean warmer or colder depending on the place. That is why scientists calibrate each region and cross-check with other measurements.</p>
+      <p class="say tech">The equilibrium calcite-water fractionation of Kim and O'Neil (1997) is 1000 ln α = 18.03·(10³/T) − 32.42, with T in kelvin, about −0.22 per mil per degree Celsius near cave temperatures. Drip water inherits the rainfall δ¹⁸O, and its spatial temperature dependence, the Dansgaard relation, is about +0.6 per mil per degree, though temporal slopes at a single midlatitude site are often 0.2 to 0.4, and moisture source and amount effects add more. The net calcite slope is the sum. Kinetic fractionation during fast degassing can also push calcite away from equilibrium, which the Hendy test checks.</p>
+    </div>
+    <div class="plate ix">
+      <div class="controls">
+        <div class="ctl"><label for="isoT">Cave temperature <output id="isoTOut">12.0 °C</output></label><input type="range" id="isoT" min="0" max="25" step="0.5" value="12"></div>
+        <div class="ctl"><label for="isoW">Drip-water δ¹⁸O (VSMOW) <output id="isoWOut">−6.5 ‰</output></label><input type="range" id="isoW" min="-14" max="-1" step="0.1" value="-6.5"></div>
+        <div class="ctl"><label for="isoK">Rain δ¹⁸O change per °C <output id="isoKOut">+0.30 ‰/°C</output></label><input type="range" id="isoK" min="0" max="0.7" step="0.01" value="0.3"><span class="help">Set to 0 to see the pure thermometer.</span></div>
+        <div class="readout">
+          <div><b id="isoC">—</b><span>calcite δ¹⁸O (VPDB)</span></div>
+          <div><b id="isoS">—</b><span>net slope, ‰ per °C</span></div>
+        </div>
+      </div>
+      <div class="chart"><svg id="isoSvg" viewBox="0 0 560 280" role="img" aria-label="Calcite oxygen isotope value versus temperature"></svg></div>
+    </div>
   </div>
 </section>
 
@@ -593,7 +810,7 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
 <section class="sec" id="theories" data-title="Theories and open questions" data-q="theories">
   <div class="wrap">
     <div class="sec-head">
-      <div class="t"><p class="eyebrow">12 · Open questions</p><h2>Best guesses, debates and folklore</h2><p class="sub">Each question lists the competing explanations with an honest rating. Tap to open.</p></div>
+      <div class="t"><p class="eyebrow">16 · Open questions</p><h2>Best guesses, debates and folklore</h2><p class="sub">Each question lists the competing explanations with an honest rating. Tap to open.</p></div>
       <button class="btn small play-sec" type="button" data-play="theories">▶ Narrate</button>
     </div>
     <div class="theories" id="theoryList"></div>
@@ -604,7 +821,7 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
 <section class="sec" id="quiz" data-title="Quiz">
   <div class="wrap">
     <div class="sec-head">
-      <div class="t"><p class="eyebrow">13 · Head to head</p><h2>The two-player cave quiz</h2><p class="sub">Take turns. Each right answer is a point. Every answer comes with the explanation.</p></div>
+      <div class="t"><p class="eyebrow">17 · Head to head</p><h2>The two-player cave quiz</h2><p class="sub">Take turns. Each right answer is a point. Every answer comes with the explanation.</p></div>
     </div>
     <div class="plate quiz">
       <div class="side">
@@ -622,11 +839,11 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
 <section class="sec" id="sources" data-title="Sources">
   <div class="wrap">
     <div class="sec-head">
-      <div class="t"><p class="eyebrow">14 · Sources and limits</p><h2>Where this comes from, and how sure to be</h2></div>
+      <div class="t"><p class="eyebrow">18 · Sources and limits</p><h2>Where this comes from, and how sure to be</h2></div>
     </div>
     <div class="prose" style="margin-bottom:1.5rem">
       <p>Claude, an AI model, compiled this explorer from general geoscience knowledge and checked the Luray-specific facts against the sources below in November 2026. No cave scientist has reviewed it. Figures from the caverns' own materials are labeled <span class="badge b-rep">Reported</span>. Sources disagree on a few points, such as the date of the first electric lights and the size of the discovery party. We show the disagreement instead of picking a side.</p>
-      <p class="muted">There are no photographs here, because this page can't load images from other sites. Every picture is a drawing made for the page. For real photos, see the caverns' gallery and Wikimedia Commons, linked below.</p>
+      <p class="muted">The narration was generated ahead of time with Kokoro, an open neural text-to-speech model, so it sounds the same on every device. Your device's own voices remain available as a fallback. There are no photographs here, because this page can't load images from other sites. Every picture is a drawing made for the page. For real photos, see the caverns' gallery and Wikimedia Commons, linked below.</p>
     </div>
     <ul class="srcs" id="srcList"></ul>
   </div>
@@ -649,7 +866,7 @@ footer{padding-block:2rem 3rem;color:var(--muted);font-size:.88rem}
       <button class="ib" type="button" id="nStop" aria-label="Stop narration"><svg viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg></button>
     </div>
     <div class="opts2">
-      <label class="muted" for="voiceSel" style="font-size:.8rem">Voice</label>
+      <label class="muted" for="voiceSel" style="font-size:.8rem">Narrator</label>
       <select id="voiceSel"></select>
       <label class="muted" for="rateSel" style="font-size:.8rem">Speed</label>
       <select id="rateSel"><option value="0.85">0.85×</option><option value="0.95" selected>0.95×</option><option value="1.05">1.05×</option><option value="1.2">1.2×</option><option value="1.4">1.4×</option></select>
@@ -995,7 +1212,15 @@ const QUIZ = [
   {q:'What host rock is Luray in?',o:['Granite','Sandstone','Beekmantown carbonates (dolomite and limestone)','Basalt'],a:2,e:'Early Ordovician carbonates, about 470 to 485 million years old.'},
   {q:'Why did the discoverers lose the cave?',o:['A flood','They bought the land without disclosing the cave','It was federal land','Fire'],a:1,e:'The Supreme Court of Virginia voided their purchase of Samuel Buracker\'s land.'},
   {q:'Rimstone dams grow at their lips because…',o:['Water is deepest there','Thin, turbulent water degasses fastest there','Bats perch there','Gravity pulls calcite up'],a:1,e:"Fick's law: a thin film has a steep CO₂ gradient, so it degasses and deposits fastest. That is a positive feedback."},
-  {q:'Most big ceiling collapses in caves happen…',o:['While full of water','After the water drains','Only in earthquakes','Never'],a:1,e:'Water holds up about 37 percent of the rock\'s weight. When it drains, beds can fail.'}
+  {q:'Most big ceiling collapses in caves happen…',o:['While full of water','After the water drains','Only in earthquakes','Never'],a:1,e:'Water holds up about 37 percent of the rock\'s weight. When it drains, beds can fail.'},
+  {q:'At pH 8, most dissolved inorganic carbon is present as…',o:['Dissolved CO₂','Bicarbonate (HCO₃⁻)','Carbonate (CO₃²⁻)','Carbonic acid only'],a:1,e:'Between pK₁ ≈ 6.4 and pK₂ ≈ 10.5, bicarbonate dominates. Carbonate is under 1% at pH 8, but that share rises about tenfold per pH unit.'},
+  {q:'Mix two waters, each saturated with calcite but at different pCO₂. The mixture is…',o:['Supersaturated','Exactly saturated','Undersaturated','Impossible to predict'],a:2,e:'Mixing corrosion (Bögli 1964). The solubility curve is concave, roughly following the cube root of pCO₂, so the mixing chord lies below it.'},
+  {q:'Why can a kilometer-long crack widen along its whole length before breakthrough?',o:['Water flows too fast to react','The dissolution rate drops sharply, nonlinearly, near saturation','Bacteria eat the rock','Pressure melts the calcite'],a:1,e:'Above about 90% saturation, the rate follows (1 − c/c_eq)⁴, so slightly aggressive water survives far down the crack and keeps dissolving.'},
+  {q:'In the Ford–Ewers four-state model, very many open fissures produce…',o:['Deep bathyphreatic loops','Water-table caves','No caves','Vertical shafts only'],a:1,e:'Dense fissures let water take a nearly level path at the water table: state 4.'},
+  {q:'About 11 m into the rock, the yearly temperature cycle is…',o:['The same as the surface','Larger than the surface','Inverted: warmest in winter','Exactly zero'],a:2,e:'At z = πd, about 11 m for limestone, the phase lag is half a year and the amplitude is only about 4% of the surface swing.'},
+  {q:'Grinding a stalactite thinner makes its note…',o:['Higher','Lower','No change','Louder only'],a:1,e:'For a cantilever, f₁ is proportional to r / L². A smaller radius means a lower pitch.'},
+  {q:'Water reflects about 2% looking straight down. Dream Lake looks like a mirror mainly because…',o:['The water is unusually pure','A low viewing angle plus a dark floor','Calcite coats the surface','Lighting tricks only'],a:1,e:'Fresnel reflectance rises at grazing angles, and the faint reflection of a lit ceiling outshines a floor that gets little light.'},
+  {q:'With drip-water δ¹⁸O held constant, a 1 °C cooler cave makes calcite δ¹⁸O…',o:['About 0.22‰ higher','About 0.22‰ lower','About 2‰ higher','Unchanged'],a:0,e:'The Kim and O\'Neil (1997) equilibrium fractionation gives about −0.22‰ per °C, so colder means heavier calcite. The change in rain can offset or reverse this.'}
 ];
 
 const SOURCES = [
@@ -1016,8 +1241,15 @@ const SOURCES = [
   ['Hill & Forti, Cave Minerals of the World (NSS, 1997)','https://www.worldcat.org/search?q=Cave+Minerals+of+the+World','Speleothem types and mineralogy.'],
   ['Fairchild & Baker, Speleothem Science (Wiley, 2012)','https://onlinelibrary.wiley.com/doi/book/10.1002/9781444361094','Dating, isotopes, paleoclimate.'],
   ['Cheng et al., "The Asian monsoon over the past 640,000 years", Nature 2016','https://www.nature.com/articles/nature18591','Benchmark stalagmite climate record.'],
-  ['NPS: Thunderbird Archeological District','https://www.nps.gov/subjects/nationalhistoriclandmarks/index.htm','Paleoindian site near Front Royal (NHL program).']
+  ['NPS: Thunderbird Archeological District','https://www.nps.gov/subjects/nationalhistoriclandmarks/index.htm','Paleoindian site near Front Royal (NHL program).'],
+  ['Bögli, "Mischungskorrosion" (Erdkunde, 1964)','https://www.jstor.org/action/doBasicSearch?Query=B%C3%B6gli+Mischungskorrosion','Origin of the mixing-corrosion concept.'],
+  ['Ford & Ewers, "The development of limestone cave systems in the dimensions of length and depth" (Can. J. Earth Sci., 1978)','https://doi.org/10.1139/e78-163','The four-state model.'],
+  ['Palmer, "Origin and morphology of limestone caves" (GSA Bulletin, 1991)','https://doi.org/10.1130/0016-7606(1991)103%3C0001:OAMOLC%3E2.3.CO;2','Cave patterns, breakthrough, levels.'],
+  ['Dreybrodt, "The role of dissolution kinetics in the development of karst aquifers in limestone" (J. Geology, 1990)','https://doi.org/10.1086/629435','Nonlinear kinetics and breakthrough; rate constants used in the simulator.'],
+  ['Kim & O\'Neil, "Equilibrium and nonequilibrium oxygen isotope effects in synthetic carbonates" (GCA, 1997)','https://doi.org/10.1016/S0016-7037(97)00169-5','Calcite–water fractionation used in the isotope thermometer.'],
+  ['Kokoro-82M text-to-speech model (Apache 2.0)','https://huggingface.co/hexgrad/Kokoro-82M','The natural narrator voices, generated ahead of time.']
 ];
+window.NARR={voices:{}};
 /* ================= APP ================= */
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1269,23 +1501,42 @@ $('#qRestart').onclick=qStart;qStart();
 
 /* ================= NARRATOR ================= */
 const synth=window.speechSynthesis||null;
-const N={items:[],i:0,playing:false,gen:0,voice:null,rate:+store.get('rate',0.95),timer:null,secs:[]};
-$('#rateSel').value=String(N.rate);if(!$('#rateSel').value)$('#rateSel').value='0.95';
-function sayify(t){return t.replace(/CaCO₃/g,'calcium carbonate').replace(/CaMg\(CO₃\)₂/g,'calcium magnesium carbonate').replace(/H₂CO₃/g,'carbonic acid').replace(/HCO₃⁻/g,'bicarbonate').replace(/Ca²⁺/g,'calcium ions').replace(/Mg²⁺/g,'magnesium ions').replace(/pCO₂/g,'C O 2 pressure').replace(/CO₂/g,'C O 2').replace(/H₂O/g,'water').replace(/Fe₂O₃/g,'iron oxide').replace(/FeO\(OH\)/g,'iron oxyhydroxide').replace(/SiO₂/g,'silica').replace(/CaSO₄·2H₂O/g,'gypsum')
-  .replace(/δ¹⁸O/g,'delta oxygen 18').replace(/δ¹³C/g,'delta carbon 13').replace(/²³⁰Th/g,'thorium 230').replace(/²³⁴U/g,'uranium 234').replace(/²³²Th/g,'thorium 232').replace(/¹⁸O\/¹⁶O/g,'oxygen 18 to oxygen 16')
-  .replace(/⇌/g,' is in balance with ').replace(/→/g,' becomes ').replace(/≈/g,' about ').replace(/~/g,'about ').replace(/°F/g,' degrees Fahrenheit').replace(/°C/g,' degrees Celsius').replace(/‰/g,' per mil').replace(/(\d)\s?Ma\b/g,'$1 million years ago').replace(/×/g,' times ').replace(/–/g,' to ').replace(/K_sp|Ksp/g,'K S P').replace(/\bSI\b/g,'S I').replace(/\bpH\b/g,'P H').replace(/\s+/g,' ').trim()}
-function rankVoices(){if(!synth)return[];const vs=synth.getVoices().filter(v=>/^en/i.test(v.lang));
-  const score=v=>{let s=0;const n=v.name;if(/natural|neural|online|premium|enhanced/i.test(n))s+=6;if(/google/i.test(n))s+=3;if(/samantha|daniel|ava|allison|serena|karen|moira|aria|jenny|guy|libby|ryan|sonia|alex/i.test(n))s+=2;if(/en[-_]US/i.test(v.lang))s+=1;if(/en[-_]GB/i.test(v.lang))s+=.8;if(/novelty|bells|whisper|zarvox|bad news|bubbles|jester|organ|trinoids|cellos|albert|boing|fred|junior|ralph|kathy|superstar|wobble|good news/i.test(n))s-=20;return s};
+const NARR=window.NARR||{voices:{}};
+const N={items:[],i:0,playing:false,gen:0,choice:store.get('narrator','heart'),dev:null,rate:+store.get('rate',1),timer:null,poll:null};
+const audio=new Audio();audio.preload='auto';
+$('#rateSel').innerHTML=['0.85','0.95','1','1.1','1.25','1.4'].map(v=>`<option value="${v}">${v}×</option>`).join('');$('#rateSel').value=String(N.rate);if(!$('#rateSel').value){$('#rateSel').value='1';N.rate=1}
+const SUP={'⁰':'0','¹':'1','²':'2','³':'3','⁴':'4','⁵':'5','⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁻':'minus ','·':'.'};
+const deSup=t=>t.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹⁻·]/g,c=>SUP[c]);
+const GREEK={λ:'lambda',α:'alpha',δ:'delta',Δ:'delta',ρ:'rho',μ:'mu',ω:'omega',κ:'kappa',γ:'gamma',θ:'theta',β:'beta',π:'pi',σ:'sigma',ν:'nu',Σ:'the sum of'};
+function sayify(t){
+  t=t.replace(/CaMg\(CO₃\)₂/g,'calcium magnesium carbonate').replace(/CaCO₃/g,'calcium carbonate').replace(/H₂CO₃/g,'carbonic acid').replace(/HCO₃⁻/g,'bicarbonate').replace(/CO₃²⁻/g,'carbonate').replace(/Ca²⁺/g,'calcium').replace(/Mg²⁺/g,'magnesium').replace(/CO₂\(aq\)/g,'dissolved C O 2')
+   .replace(/pCO₂/g,'C O 2 pressure').replace(/CO₂/g,'C O 2').replace(/H₂O/g,'water').replace(/Fe₂O₃/g,'iron oxide').replace(/FeO\(OH\)/g,'iron oxyhydroxide').replace(/SiO₂/g,'silica').replace(/CaSO₄·2H₂O/g,'gypsum')
+   .replace(/Mg\/Ca/g,'magnesium to calcium ratio').replace(/Sr\/Ca/g,'strontium to calcium ratio')
+   .replace(/δ¹⁸O/g,'delta oxygen 18').replace(/δ¹³C/g,'delta carbon 13').replace(/²³⁰Th\s?\/\s?²³⁴U/g,'thorium 230 to uranium 234').replace(/²³⁰Th/g,'thorium 230').replace(/²³⁴U/g,'uranium 234').replace(/²³²Th/g,'thorium 232').replace(/¹⁸O\/¹⁶O/g,'oxygen 18 to oxygen 16')
+   .replace(/VSMOW/g,'V SMOW').replace(/VPDB/g,'V P D B').replace(/\bUV\b/g,'U V').replace(/\bLED\b/g,'L E D').replace(/\bN170\b/g,'N 170').replace(/\bpH\b/g,'P H').replace(/\bpK/g,'p K').replace(/K_sp|Ksp/g,'K S P').replace(/\bSI\b/g,'S I').replace(/\bNNL\b/g,'National Natural Landmark')
+   .replace(/(\d)\s?×\s?10([⁻⁰¹²³⁴⁵⁶⁷⁸⁹·]+)/g,(m,a,e)=>a+' times 10 to the '+deSup(e)).replace(/10([⁻][⁰¹²³⁴⁵⁶⁷⁸⁹·]+)/g,(m,e)=>'10 to the '+deSup(e))
+   .replace(/mol\/cm²\/s/g,'moles per square centimeter per second').replace(/m²\/s/g,'square meters per second').replace(/cm³\/mol/g,'cubic centimeters per mole').replace(/kg\/m³/g,'kilograms per cubic meter').replace(/g\/cm³/g,'grams per cubic centimeter').replace(/mol\/L\/atm/g,'moles per liter per atmosphere').replace(/mmol\/L/g,'millimoles per liter').replace(/mg\/L/g,'milligrams per liter').replace(/mm\/yr/g,'millimeters per year').replace(/m\/s\b/g,'meters per second').replace(/\bGPa\b/g,'gigapascals').replace(/\bHz\b/g,'hertz').replace(/\bPa\b/g,'pascals').replace(/cm³/g,'cubic centimeters').replace(/‰/g,' per mil')
+   .replace(/°F/g,' degrees Fahrenheit').replace(/°C/g,' degrees Celsius').replace(/(\d)°/g,'$1 degrees').replace(/(\d)\s?Ma\b/g,'$1 million years ago')
+   .replace(/√/g,'the square root of ').replace(/∝/g,' is proportional to ').replace(/≈/g,' is about ').replace(/~/g,'about ').replace(/⇌/g,' is in balance with ').replace(/→/g,' becomes ').replace(/×/g,' times ').replace(/·/g,' times ')
+   .replace(/_eq\b/g,' equilibrium').replace(/_/g,' ').replace(/\^\(([^)]*)\)/g,' to the power of $1 ').replace(/\^/g,' to the power ')
+   .replace(/([A-Za-z0-9)])²/g,'$1 squared').replace(/([A-Za-z0-9)])³/g,'$1 cubed').replace(/([A-Za-z)])⁴/g,'$1 to the fourth power').replace(/½/g,'one half of ').replace(/\blog\(/g,'log of (').replace(/\bsin\(/g,'sine of (').replace(/\s\+\s/g,' plus ').replace(/Bögli/g,'Burgli').replace(/[₀₁₂₃₄₅₆₇₈₉]/g,c=>' '+'0123456789'['₀₁₂₃₄₅₆₇₈₉'.indexOf(c)]).replace(/[λαδΔρμωκγθβπσνΣ]/g,c=>' '+GREEK[c]+' ')
+   .replace(/(\d)\s?−\s?(\d)/g,'$1 minus $2').replace(/−/g,' minus ').replace(/–/g,' to ').replace(/\s=\s/g,' equals ').replace(/([a-z)])\s?\/\s?([a-zA-Z(])/g,'$1 over $2').replace(/\s\/\s/g,' over ')
+   .replace(/\bLuray\b/g,'Luray');
+  return t.replace(/\s+/g,' ').replace(/\s([,.;:])/g,'$1').trim()}
+function speechText(el){const c=el.cloneNode(true);c.querySelectorAll('sup').forEach(s=>s.replaceWith(' to the power of '+s.textContent.replace(/−/g,'minus ').replace(/1\/3/,'one third')+' '));c.querySelectorAll('sub').forEach(s=>s.replaceWith('_'+s.textContent));return c.textContent}
+function hash(t){let h=0x811c9dc5;for(let i=0;i<t.length;i++){h^=t.charCodeAt(i);h=Math.imul(h,0x01000193)}return(h>>>0).toString(16).padStart(8,'0')}
+function devVoices(){if(!synth)return[];const vs=synth.getVoices().filter(v=>/^en/i.test(v.lang));
+  const score=v=>{let s=0;const n=v.name;if(/natural|neural|online|premium|enhanced/i.test(n))s+=6;if(/google/i.test(n))s+=3;if(/samantha|daniel|ava|allison|serena|aria|jenny|guy|libby|ryan|sonia/i.test(n))s+=2;if(/novelty|bells|whisper|zarvox|bad news|bubbles|jester|organ|trinoids|cellos|albert|boing|fred|junior|ralph|kathy|superstar|wobble|good news/i.test(n))s-=20;return s};
   return vs.sort((a,b)=>score(b)-score(a))}
-function fillVoices(){const vs=rankVoices();const sel=$('#voiceSel');if(!vs.length){sel.innerHTML='<option>No voice available</option>';sel.disabled=true;return}
-  sel.disabled=false;const saved=store.get('voice',null);sel.innerHTML=vs.map(v=>`<option value="${v.name}">${v.name.replace(/Microsoft |Google /,'').slice(0,38)} (${v.lang})</option>`).join('');
-  const pick=vs.find(v=>v.name===saved)||vs[0];sel.value=pick.name;N.voice=pick}
-if(synth){fillVoices();synth.onvoiceschanged=fillVoices}else{$('#voiceSel').innerHTML='<option>Speech not supported</option>';$('#voiceSel').disabled=true}
-$('#voiceSel').onchange=e=>{N.voice=rankVoices().find(v=>v.name===e.target.value)||null;store.set('voice',e.target.value);if(N.playing)speakCurrent()};
-$('#rateSel').onchange=e=>{N.rate=+e.target.value;store.set('rate',N.rate);if(N.playing)speakCurrent()};
+function fillVoices(){const sel=$('#voiceSel');const nat=Object.entries(NARR.voices).map(([k,v])=>`<option value="${k}">${v.label}</option>`).join('');
+  const dv=devVoices();sel.innerHTML=(nat?`<optgroup label="Natural narrators">${nat}</optgroup>`:'')+(dv.length?`<optgroup label="This device's voices">${dv.map(v=>`<option value="dev:${v.name}">${v.name.replace(/Microsoft |Google /,'').slice(0,34)}</option>`).join('')}</optgroup>`:'');
+  if(![...sel.options].some(o=>o.value===N.choice))N.choice=nat?Object.keys(NARR.voices)[0]:(dv[0]?'dev:'+dv[0].name:'');sel.value=N.choice;N.dev=dv.find(v=>'dev:'+v.name===N.choice)||dv[0]||null}
+fillVoices();if(synth)synth.onvoiceschanged=fillVoices;
+$('#voiceSel').onchange=e=>{N.choice=e.target.value;store.set('narrator',N.choice);fillVoices();if(N.playing)speakCurrent()};
+$('#rateSel').onchange=e=>{N.rate=+e.target.value;store.set('rate',N.rate);audio.playbackRate=N.rate;if(N.playing&&!NARR.voices[N.choice])speakCurrent()};
 const visible=el=>!!(el.offsetParent||el.getClientRects().length);
 function defaultItems(sec){const title=sec.dataset.title;const items=[{el:sec.querySelector('h2'),text:sec.querySelector('h2').textContent+'.',sec:title}];
-  sec.querySelectorAll('.say').forEach(el=>{if(!visible(el))return;if(el.closest('details:not([open])'))return;items.push({el,text:el.textContent,sec:title})});return items}
+  sec.querySelectorAll('.say').forEach(el=>{if(!visible(el))return;if(el.closest('details:not([open])'))return;items.push({el,text:speechText(el),sec:title})});return items}
 const BUILDERS={
   rock(sec){const mode=document.documentElement.dataset.mode;const out=[{el:sec.querySelector('h2'),text:'The story of the rock, in seven scenes.',sec:sec.dataset.title}];
     STAGES.forEach((s,i)=>{const t=[`Scene ${i+1}. ${s.name}. ${s.when}.`];if(mode!=='tech')t.push(s.plain);if(mode!=='plain')t.push(s.tech);
@@ -1302,7 +1553,8 @@ const BUILDERS={
   inside(sec){const mode=document.documentElement.dataset.mode;const out=[{el:sec.querySelector('h2'),text:'Inside Luray. A walk past the named places.',sec:sec.dataset.title}];
     ROUTE.forEach(id=>{const p=STOPS.find(s=>s.id===id);const t=[p.name+'.'];if(mode!=='tech')t.push(p.plain);if(mode!=='plain')t.push(p.tech);t.push('The name: '+p.origin);out.push({get el(){return $('#mapInfo')},text:t.join(' '),sec:'Stop · '+p.name,before:()=>{showStop(id);$('#mapSvg').scrollIntoView({behavior:RM?'auto':'smooth',block:'center'})}})});return out}};
 function buildFor(ids){let items=[];ids.forEach(id=>{const sec=document.getElementById(id);if(!sec)return;const b=BUILDERS[sec.dataset.q];const its=(b?b(sec):defaultItems(sec));its.forEach(x=>x.secId=id);items=items.concat(its)});return items}
-const TOUR=['glance','rock','chem','lab','guide','minerals','laws','inside','history','people','clocks','theories'];
+const TOUR=['glance','rock','chem','equil','lab','speleo','guide','minerals','air','physics','laws','inside','history','people','clocks','theories'];
+window.__luray={buildFor,sayify,hash,TOUR};
 function startNarration(ids){stopNarration(true);N.items=buildFor(ids);N.i=0;N.playing=true;$('#dock').hidden=false;setPlayIcon();runItem()}
 function clearReading(){$$('.reading').forEach(e=>e.classList.remove('reading'))}
 function runItem(){clearReading();if(N.i>=N.items.length){N.playing=false;setPlayIcon();$('#dockText').textContent='Finished. Thanks for exploring.';$('#dockProg').style.width='100%';return}
@@ -1310,17 +1562,24 @@ function runItem(){clearReading();if(N.i>=N.items.length){N.playing=false;setPla
   setTimeout(()=>{const el=it.el;if(el){el.classList.add('reading');if(!it.before)el.scrollIntoView({behavior:RM?'auto':'smooth',block:'center'})}},it.before?60:0);
   $('#dockSec').textContent=it.sec;$('#dockText').textContent=it.text.replace(/\s+/g,' ').slice(0,160);$('#dockProg').style.width=(N.i/N.items.length*100)+'%';
   speakCurrent()}
-function speakCurrent(){const it=N.items[N.i];if(!it)return;const g=++N.gen;clearTimeout(N.timer);
-  const text=sayify(it.text);const parts=(text.match(/[^.!?]+[.!?]+["')\]]*|[^.!?]+$/g)||[text]).map(s=>s.trim()).filter(Boolean);
-  if(!synth||!N.voice){ // silent fallback: timed reading
-    const ms=Math.max(2500,text.split(' ').length/(2.6*N.rate)*1000);N.timer=setTimeout(()=>{if(g===N.gen&&N.playing){N.i++;runItem()}},ms);return}
+function haltAll(){clearTimeout(N.timer);clearInterval(N.poll);if(synth)synth.cancel();try{audio.pause()}catch(e){}}
+function advance(g){if(g!==N.gen||!N.playing)return;N.i++;runItem()}
+function speakCurrent(){const it=N.items[N.i];if(!it)return;const g=++N.gen;haltAll();const text=sayify(it.text);
+  const nv=NARR.voices[N.choice];const clip=nv&&nv.clips[hash(text)];
+  if(clip){const src=nv.files[clip[0]],start=clip[1],dur=clip[2];
+    const go=()=>{if(g!==N.gen)return;try{audio.currentTime=start}catch(e){}audio.playbackRate=N.rate;const p=audio.play();if(p&&p.catch)p.catch(()=>{if(g===N.gen)deviceSpeak(text,g)});
+      N.poll=setInterval(()=>{if(g!==N.gen){clearInterval(N.poll);return}if(audio.currentTime>=start+dur||audio.ended){clearInterval(N.poll);audio.pause();setTimeout(()=>advance(g),160)}},40)};
+    if(!audio.src.endsWith(src)){audio.src=src;audio.onerror=()=>{if(g===N.gen)deviceSpeak(text,g)};audio.addEventListener('loadedmetadata',go,{once:true});audio.load()}else go();return}
+  deviceSpeak(text,g)}
+function deviceSpeak(text,g){const parts=(text.match(/[^.!?]+[.!?]+["')\]]*|[^.!?]+$/g)||[text]).map(s=>s.trim()).filter(Boolean);
+  if(!synth||!N.dev){const ms=Math.max(2500,text.split(' ').length/(2.6*N.rate)*1000);N.timer=setTimeout(()=>advance(g),ms);return}
   synth.cancel();let k=0;N._u=[];
-  const next=()=>{if(g!==N.gen||!N.playing)return;if(k>=parts.length){N.i++;runItem();return}
-    const u=new SpeechSynthesisUtterance(parts[k++]);u.voice=N.voice;u.lang=N.voice.lang;u.rate=N.rate;u.pitch=.98;u.onend=()=>setTimeout(next,90);u.onerror=e=>{if(e.error==='interrupted'||e.error==='canceled')return;setTimeout(next,90)};N._u.push(u);synth.speak(u)};
+  const next=()=>{if(g!==N.gen||!N.playing)return;if(k>=parts.length){advance(g);return}
+    const u=new SpeechSynthesisUtterance(parts[k++]);u.voice=N.dev;u.lang=N.dev.lang;u.rate=N.rate;u.onend=()=>setTimeout(next,90);u.onerror=e=>{if(e.error==='interrupted'||e.error==='canceled')return;setTimeout(next,90)};N._u.push(u);synth.speak(u)};
   setTimeout(next,synth.speaking?120:20)}
-function stopNarration(keepDock){N.gen++;N.playing=false;clearTimeout(N.timer);if(synth)synth.cancel();clearReading();setPlayIcon();if(!keepDock)$('#dock').hidden=true}
+function stopNarration(keepDock){N.gen++;N.playing=false;haltAll();clearReading();setPlayIcon();if(!keepDock)$('#dock').hidden=true}
 function setPlayIcon(){$('#nPlayIcon').innerHTML=N.playing?'<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>':'<path d="M7 4v16l13-8z"/>';$('#nPlay').setAttribute('aria-label',N.playing?'Pause':'Play')}
-$('#nPlay').onclick=()=>{if(N.playing){N.gen++;N.playing=false;clearTimeout(N.timer);if(synth)synth.cancel();setPlayIcon()}else{if(N.i>=N.items.length)N.i=0;N.playing=true;setPlayIcon();runItem()}};
+$('#nPlay').onclick=()=>{if(N.playing){N.gen++;N.playing=false;haltAll();setPlayIcon()}else{if(N.i>=N.items.length)N.i=0;N.playing=true;setPlayIcon();runItem()}};
 $('#nNext').onclick=()=>{N.i=Math.min(N.items.length,N.i+1);N.playing=true;setPlayIcon();runItem()};
 $('#nPrev').onclick=()=>{N.i=Math.max(0,N.i-1);N.playing=true;setPlayIcon();runItem()};
 function jumpSec(dir){const cur=N.items[N.i]?.secId;let j=N.i;if(dir>0){while(j<N.items.length&&N.items[j].secId===cur)j++}else{while(j>0&&N.items[j].secId===cur)j--;const prev=N.items[j]?.secId;while(j>0&&N.items[j-1].secId===prev)j--}N.i=Math.max(0,j);N.playing=true;setPlayIcon();runItem()}
@@ -1329,7 +1588,6 @@ $('#nStop').onclick=()=>stopNarration(false);
 $('#tourBtn').onclick=()=>startNarration(TOUR);
 $$('[data-play]').forEach(b=>b.addEventListener('click',()=>startNarration([b.dataset.play])));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#dock').hidden)stopNarration(false)});
-// Chrome pauses long speech queues on hidden tabs; keep it alive
 setInterval(()=>{if(synth&&N.playing&&synth.paused)synth.resume()},4000);
 
 /* ---------- nav highlight ---------- */
@@ -1337,9 +1595,196 @@ const navLinks=$$('#nav a');const io=new IntersectionObserver(es=>{es.forEach(e=
 $$('section.sec').forEach(s=>io.observe(s));
 
 /* ---------- theme + resize ---------- */
-function rethemed(){readTokens();buildHero();paintRock(curStage,curStage,false)}
+function rethemed(){readTokens();buildHero();paintRock(curStage,curStage,false);if(typeof rethemeScience==='function')rethemeScience()}
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change',rethemed);
 new MutationObserver(rethemed).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{buildHero();paintRock(curStage,curStage,false);simSize()},150)});
 
+/* ================= SCIENCE MODULES ================= */
+// generic axis helper: returns scale fns + axis svg
+function axes(o){const W=o.W||560,H=o.H||300,l=o.l??58,r=o.r??16,t=o.t??14,b=o.b??40;
+  const lx=!!o.logx,ly=!!o.logy,L=Math.log10;
+  const X=v=>l+((lx?L(v):v)-(lx?L(o.x[0]):o.x[0]))/((lx?L(o.x[1]):o.x[1])-(lx?L(o.x[0]):o.x[0]))*(W-l-r);
+  const Y=v=>H-b-((ly?L(v):v)-(ly?L(o.y[0]):o.y[0]))/((ly?L(o.y[1]):o.y[1])-(ly?L(o.y[0]):o.y[0]))*(H-t-b);
+  let s='<g class="ax">';
+  (o.xt||[]).forEach(v=>{s+=`<line x1="${X(v)}" y1="${t}" x2="${X(v)}" y2="${H-b}"/><text x="${X(v)}" y="${H-b+16}" text-anchor="middle">${o.xf?o.xf(v):v}</text>`});
+  (o.yt||[]).forEach(v=>{s+=`<line x1="${l}" y1="${Y(v)}" x2="${W-r}" y2="${Y(v)}"/><text x="${l-6}" y="${Y(v)+4}" text-anchor="end">${o.yf?o.yf(v):v}</text>`});
+  if(o.xl)s+=`<text x="${(l+W-r)/2}" y="${H-b+32}" text-anchor="middle">${o.xl}</text>`;
+  if(o.yl)s+=`<text x="${12}" y="${(t+H-b)/2}" text-anchor="middle" transform="rotate(-90 12 ${(t+H-b)/2})">${o.yl}</text>`;
+  return{X,Y,svg:s+'</g>',l,r,t,b,W,H}}
+const pathOf=(pts)=>pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join('');
+const debounce=(f,ms=120)=>{let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>f(...a),ms)}};
+
+/* ---------- Bjerrum plot ---------- */
+const PK1=6.44,PK2=10.46,KH=0.054;
+function spec(pH){const h=10**-pH,K1=10**-PK1,K2=10**-PK2,D=h*h+K1*h+K1*K2;return[h*h/D,K1*h/D,K1*K2/D]}
+function bjerrum(){const pH=+$('#phS').value;$('#phOut').textContent=pH.toFixed(2);const f=spec(pH);
+  ['fA','fB','fC'].forEach((id,i)=>$('#'+id).textContent=(f[i]*100<0.1?(f[i]*100).toExponential(1):(f[i]*100).toFixed(1))+'%');
+  $('#phWhere').textContent=pH<5?'acid rain, bog water':pH<6?'clean rain (≈5.6)':pH<7?'soil water, high CO₂':pH<8.6?'karst springs, drip water':pH<10?'degassed pools':'concrete runoff';
+  const A=axes({x:[4,12],y:[0,1],xt:[4,5,6,7,8,9,10,11,12],yt:[0,.25,.5,.75,1],xl:'pH',yl:'fraction of dissolved carbon'});
+  let s=A.svg;const cols=['var(--water)','var(--accent)','var(--b-spec)'],names=['CO₂(aq)','HCO₃⁻','CO₃²⁻'],lx=[4.7,8.4,11.4];
+  [PK1,PK2].forEach(p=>s+=`<line x1="${A.X(p)}" y1="${A.t}" x2="${A.X(p)}" y2="${A.H-A.b}" style="stroke:var(--muted)" stroke-dasharray="3 4"/>`);
+  for(let k=0;k<3;k++){const pts=[];for(let x=4;x<=12.001;x+=.05)pts.push([A.X(x),A.Y(spec(x)[k])]);s+=`<path d="${pathOf(pts)}" style="fill:none;stroke:${cols[k]}" stroke-width="2.6"/>`;
+    s+=`<text x="${A.X(lx[k])}" y="${A.Y(spec(lx[k])[k])-8}" text-anchor="middle" style="fill:${cols[k]};font-family:var(--f-mono);font-size:12px;font-weight:600">${names[k]}</text>`}
+  s+=`<line x1="${A.X(pH)}" y1="${A.t}" x2="${A.X(pH)}" y2="${A.H-A.b}" style="stroke:var(--ink)" stroke-width="1.5"/>`;
+  f.forEach((v,k)=>s+=`<circle cx="${A.X(pH)}" cy="${A.Y(v)}" r="4.5" style="fill:${cols[k]}"/>`);
+  $('#bjerrum').innerHTML=s}
+$('#phS').addEventListener('input',bjerrum);bjerrum();
+
+/* ---------- mixing corrosion ---------- */
+const ceqP=p=>8*Math.cbrt(p); // mmol/L, p as fraction of 1 atm
+const pHof=(c,p)=>PK1+Math.log10(2*c*1e-3/(KH*p));
+function mixing(){const pA=+$('#mixA').value/100,pB=+$('#mixB').value/100,f=+$('#mixF').value/100;
+  $('#mixAOut').textContent=(pA*100).toFixed(2)+'%';$('#mixBOut').textContent=(pB*100).toFixed(2)+'%';$('#mixFOut').textContent=Math.round(f*100)+'%';
+  const cA=ceqP(pA),cB=ceqP(pB),pm=pA*(1-f)+pB*f,cm=cA*(1-f)+cB*f,ce=ceqP(pm),SI=3*Math.log10(cm/ce);
+  $('#mxC').textContent=cm.toFixed(3);$('#mxEq').textContent=ce.toFixed(3);$('#mxSI').textContent=(SI>=0?'+':'')+SI.toFixed(3);$('#mxPH').textContent=pHof(cm,pm).toFixed(2);
+  const v=$('#mxVerdict');const gap=ce-cm;v.className='verdict '+(SI<-0.003?'good':'');
+  v.textContent=SI<-0.003?`Aggressive. Each water was saturated on its own, but the mix is undersaturated (SI ${SI.toFixed(3)}) and can take up roughly ${(gap*100).toFixed(0)} mg of calcite per liter, about ${(gap/cm*100).toFixed(1)}% more. Bigger CO₂ contrasts and 50/50 mixes give the strongest effect.`:'Little or no effect. Mixing corrosion needs two waters with different CO₂ levels, and a real share of each in the mix.';
+  const A=axes({x:[0,10],y:[0,4],xt:[0,2,4,6,8,10],yt:[0,1,2,3,4],xl:'pCO₂ (%)',yl:'calcium at saturation, mmol/L'});let s=A.svg;
+  const pts=[];for(let p=0.0005;p<=0.1001;p+=0.0015)pts.push([A.X(p*100),A.Y(ceqP(p))]);
+  s+=`<path d="${pathOf(pts)}" style="fill:none;stroke:var(--water)" stroke-width="2.6"/><text x="${A.X(9.2)}" y="${A.Y(ceqP(.092))-10}" text-anchor="end" style="fill:var(--water);font-family:var(--f-mono);font-size:12px">saturation curve</text>`;
+  s+=`<line x1="${A.X(pA*100)}" y1="${A.Y(cA)}" x2="${A.X(pB*100)}" y2="${A.Y(cB)}" style="stroke:var(--accent)" stroke-width="1.6" stroke-dasharray="5 4"/>`;
+  s+=`<line x1="${A.X(pm*100)}" y1="${A.Y(cm)}" x2="${A.X(pm*100)}" y2="${A.Y(ce)}" style="stroke:var(--b-no)" stroke-width="2"/>`;
+  [[pA,cA,'A'],[pB,cB,'B']].forEach(([p,c,n])=>s+=`<circle cx="${A.X(p*100)}" cy="${A.Y(c)}" r="6" style="fill:var(--water)"/><text x="${A.X(p*100)+9}" y="${A.Y(c)+16}" style="fill:var(--ink);font-family:var(--f-mono);font-size:12px">${n}</text>`);
+  s+=`<circle cx="${A.X(pm*100)}" cy="${A.Y(cm)}" r="6" style="fill:var(--accent)"/><text x="${A.X(pm*100)+9}" y="${A.Y(cm)+16}" style="fill:var(--accent);font-family:var(--f-mono);font-size:12px">mix</text>`;
+  $('#mixChart').innerHTML=s}
+['mixA','mixB','mixF'].forEach(id=>$('#'+id).addEventListener('input',mixing));mixing();
+
+/* ---------- Ford–Ewers four-state model ---------- */
+const FE=[null,
+ 'State 1, bathyphreatic. Very few open fractures. Water must follow the few paths available, which can dive tens to hundreds of meters below the water table before rising to the spring. Typical of thick, massive, sparsely fractured limestone.',
+ 'State 2, multi-loop phreatic. More fractures are open, so the cave forms as a series of loops that get shallower toward the spring as new, higher routes become available.',
+ 'State 3, mixed loops and water-table passages. Loops become shallow and long stretches run right along the water table.',
+ 'State 4, ideal water-table cave. Fractures are so dense that water can take a nearly level route just below the water table. The result is gentle, horizontal passages, often stacked in levels as the river cuts down. Luray\'s broad, largely horizontal development fits states 3 to 4 best.'];
+function fourState(){const st=+$('#feS').value;$('#feOut').textContent='State '+st;$('#feText').textContent=FE[st];
+  const wt=x=>96+x*0.05;let s=`<rect x="0" y="40" width="560" height="240" style="fill:var(--rock)"/><rect x="0" y="0" width="560" height="40" style="fill:var(--air)"/>`;
+  let seed=st*13+5;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};
+  const nf=[0,4,10,22,48][st];for(let i=0;i<nf;i++){const x=rnd()*560,y=50+rnd()*200,len=20+rnd()*60,a=(rnd()-.5)*1.4;s+=`<line x1="${x}" y1="${y}" x2="${x+Math.sin(a)*len}" y2="${y+Math.cos(a)*len}" style="stroke:var(--rock-2)" stroke-width="1.2"/>`}
+  s+=`<path d="M0 ${wt(0)} L560 ${wt(560)}" style="stroke:var(--water);fill:none" stroke-width="2" stroke-dasharray="8 6"/><text x="72" y="${wt(72)-6}" class="lbl-c">water table</text>`;
+  const loops=[[],[1],[3],[5],[9]][st].length?[0,1,3,5,9][st]:1;const depth=[0,150,95,35,6][st];
+  const x0=50,x1=520,pts=[];for(let i=0;i<=200;i++){const x=x0+(x1-x0)*i/200;const ph=i/200*loops;const decay=st===2?(1-0.55*i/200):1;let d=Math.abs(Math.sin(Math.PI*ph))*depth*decay;if(st===3&&Math.floor(ph)%2===1)d*=.15;pts.push([x,wt(x)+6+d])}
+  const d=pathOf(pts);s+=`<path d="M${x0} 40 L${x0} ${wt(x0)+6}" style="stroke:var(--air)" stroke-width="12"/><path d="${d}" style="fill:none;stroke:var(--air)" stroke-width="12" stroke-linejoin="round"/><path d="${d}" class="flowline" style="fill:none;stroke:var(--water)" stroke-width="3"/>`;
+  s+=`<text x="${x0}" y="30" text-anchor="middle" class="lbl-c">sinking stream</text><text x="${x1+6}" y="${wt(x1)+10}" text-anchor="end" class="lbl-c" dy="-16">spring →</text>`;
+  s+=`<text x="550" y="272" text-anchor="end" class="lbl-c">${['','few fissures','more fissures','many fissures','very many fissures'][st]}</text>`;
+  $('#feSvg').innerHTML=s}
+$('#feS').addEventListener('input',fourState);fourState();
+
+/* ---------- breakthrough simulator ---------- */
+const BT={w:100,C0:6240,ceq:2e-6,k1:4e-11,k4:4e-8,Vm:36.9,N:50};
+function btCell(c,dx,Q,lin){const b1=2*BT.w*BT.k1/(Q*BT.ceq);let u=1-c/BT.ceq;if(lin)return BT.ceq*(1-u*Math.exp(-b1*dx));
+  let x=dx;const us=0.1;if(u>us){const xs=Math.log(u/us)/b1;if(xs>=x)return BT.ceq*(1-u*Math.exp(-b1*x));u=us;x-=xs}
+  const b4=2*BT.w*BT.k4/(Q*BT.ceq);u=Math.pow(Math.pow(u,-3)+3*b4*x,-1/3);return BT.ceq*(1-u)}
+function btRun(a0,L,grad,lin){const N=BT.N,dx=L/N,dh=grad*L;const a=new Float64Array(N).fill(a0);const hist=[];let t=0,Q0=null,TB=null;const YR=3.156e7,TMAX=1e7*YR;
+  for(let step=0;step<6000;step++){let R=0;for(let i=0;i<N;i++)R+=dx/(a[i]**3);const Q=BT.C0*BT.w*dh/R;if(Q0===null)Q0=Q;
+    if(step%3===0||Q>500*Q0)hist.push({t,Q,a:Array.from(a)});
+    if(Q>=1000*Q0){TB=t;hist.push({t,Q,a:Array.from(a)});break}
+    let c=0;const g=new Float64Array(N);let mx=0;for(let i=0;i<N;i++){const c2=btCell(c,dx,Q,lin);const F=Q*(c2-c)/(2*BT.w*dx);g[i]=2*F*BT.Vm;c=c2;mx=Math.max(mx,g[i]/a[i])}
+    if(mx<=0)break;let dt=0.04/mx;if(t+dt>TMAX){dt=TMAX-t}
+    for(let i=0;i<N;i++)a[i]+=g[i]*dt;t+=dt;if(t>=TMAX){let R2=0;for(let i=0;i<N;i++)R2+=dx/(a[i]**3);hist.push({t,Q:BT.C0*BT.w*dh/R2,a:Array.from(a)});break}}
+  return{hist,Q0,TB,lam:(Q0*BT.ceq)/(2*BT.w*BT.k1)}}
+function fmtYears(y){return y>=1e6?(y/1e6).toFixed(y>=1e7?0:1)+' million yr':y>=1e4?fmt(Math.round(y/1000)*1000)+' yr':fmt(Math.round(y/10)*10)+' yr'}
+const breakthrough=debounce(function(){const a0=+$('#btA').value/10,Lkm=+$('#btL').value,grad=+$('#btI').value,lin=$('#btLin').checked;
+  $('#btAOut').textContent=(a0*10).toFixed(2)+' mm';$('#btLOut').textContent=Lkm.toFixed(1)+' km';$('#btIOut').textContent=grad.toFixed(3);
+  const L=Lkm*1e5;const r=btRun(a0,L,grad,lin);const YR=3.156e7;const last=r.hist[r.hist.length-1];
+  $('#btT').textContent=r.TB!=null?fmtYears(r.TB/YR):'> 10 million yr';$('#btQ').textContent=(r.Q0*86.4).toPrecision(2)+' → '+(last.Q*86.4).toPrecision(2);
+  const v=$('#btVerdict');v.className='verdict '+(r.TB!=null?'good':'bad');
+  v.textContent=r.TB!=null?`Breakthrough after about ${fmtYears(r.TB/YR)}. For most of that time the flow barely changes. Then, in the last stretch, it shoots up a thousandfold. After this the flow turns turbulent and the conduit widens at up to about a millimeter per year: a cave is born. Try halving the starting width: breakthrough time rises steeply, which is why the first wide crack wins. The entrance flares into a funnel because the freshest, most aggressive water dissolves fastest there.`
+   :`No breakthrough within 10 million years. ${lin?`With linear kinetics the water is almost saturated within its penetration length of about ${r.lam<100?r.lam.toFixed(1)+' cm':(r.lam/100).toFixed(1)+' m'}, so only the entrance widens.`:'The crack is too narrow, too long or too gently sloped for flow to accelerate in that time.'} Real karst would route the water elsewhere.`;
+  // chart
+  const W=560;const amin=a0*.9;let amax=a0;r.hist.forEach(h=>h.a.forEach(x=>amax=Math.max(amax,x)));amax*=1.15;
+  const A1=axes({W,H:200,t:14,b:30,x:[0,Lkm],y:[amin,amax],logy:true,xt:[0,Lkm/4,Lkm/2,3*Lkm/4,Lkm].map(v=>+v.toFixed(2)),xf:v=>v+' km',yt:logTicks(amin,amax),yf:v=>v>=100?(v/100)+' m':v>=.1?(v*10).toFixed(0)+' mm':(v*10).toFixed(2)+' mm',yl:'crack width'});
+  let s=A1.svg;const tEnd=last.t||1;const want=r.TB!=null?[0,.5,.8,.93,.98,1]:[0,.001,.01,.1,.5,1];
+  want.forEach((fr,k)=>{let best=r.hist[0];for(const h of r.hist){if(Math.abs(h.t-fr*tEnd)<Math.abs(best.t-fr*tEnd))best=h}
+    const pts=best.a.map((x,i)=>[A1.X((i+.5)/BT.N*Lkm),A1.Y(Math.max(amin,x))]);const col=mix(T.rock,T.accent,k/(want.length-1));
+    s+=`<path d="${pathOf(pts)}" fill="none" stroke="${col}" stroke-width="${k===want.length-1?3:1.8}"/>`;
+    if(k===want.length-1||k===0)s+=`<text x="${pts[pts.length-1][0]-4}" y="${pts[pts.length-1][1]-6}" text-anchor="end" style="fill:${col};font-family:var(--f-mono);font-size:11px">${k?fmtYears(best.t/YR):'start'}</text>`});
+  const Qs=r.hist.map(h=>h.Q*86.4);const qmin=Math.min(...Qs)*.8,qmax=Math.max(...Qs)*1.3;const tY=tEnd/YR;
+  const A2=axes({W,H:130,t:6,b:30,x:[0,tY],y:[qmin,qmax],logy:true,xt:[0,tY/2,tY],xf:v=>fmtYears(v).replace(' yr',''),yt:logTicks(qmin,qmax),yf:v=>v>=1000?fmt(v/1000)+'k':v>=1?fmt(v):String(+v.toPrecision(2)),yl:'flow L/day'});
+  s+=`<g transform="translate(0 200)">${A2.svg}<path d="${pathOf(r.hist.map(h=>[A2.X(h.t/YR),A2.Y(h.Q*86.4)]))}" style="fill:none;stroke:var(--water)" stroke-width="2.4"/><text x="${A2.W-A2.r}" y="${A2.H-6}" text-anchor="end" class="lbl">years</text></g>`;
+  $('#btSvg').innerHTML=s},150);
+function logTicks(a,b){const out=[];for(let e=Math.floor(Math.log10(a));e<=Math.ceil(Math.log10(b));e++){const v=10**e;if(v>=a&&v<=b)out.push(v)}if(out.length<2){out.length=0;out.push(a,b)}return out}
+['btA','btL','btI','btLin'].forEach(id=>$('#'+id).addEventListener('input',breakthrough));breakthrough();
+
+/* ---------- chimney effect ---------- */
+function chimney(){const To=+$('#airT').value,dz=+$('#airZ').value,Tc=12;$('#airTOut').textContent=To+' °C ('+Math.round(To*9/5+32)+' °F)';$('#airZOut').textContent=dz+' m';
+  const rho=T=>101325/(287.05*(T+273.15));const dP=9.81*dz*(rho(To)-rho(Tc));const v=0.3*Math.sqrt(2*Math.abs(dP)/rho(Tc));
+  $('#airP').textContent=dP.toFixed(2);$('#airV').textContent=v.toFixed(2);
+  const still=Math.abs(To-Tc)<1;const out=dP<0; // outside lighter (warmer): cave air drains out lower entrance
+  $('#airVerdict').textContent=still?'Outside and cave air have nearly the same density. The chimney stalls, and only barometric breathing moves air.':out?`Summer mode. Cave air at 12 °C is denser than outside air, so it drains out of the lower opening like water, and warm air is drawn in at the top. That is the cool breeze the 1878 discoverers felt. Cave CO₂ builds up, and formation growth slows.`:`Winter mode. Cave air is warmer and lighter than outside air, so it rises out of the upper opening, sometimes steaming, and cold air pours in below. This flushes CO₂, so drip water degasses more and formations grow faster.`;
+  let s=`<rect width="560" height="300" style="fill:var(--air)"/><path d="M0 230 L80 230 C140 230 160 120 240 90 C320 60 400 50 460 52 L560 52 L560 300 L0 300Z" style="fill:var(--rock)"/>`;
+  const pass='M95 228 C150 226 170 210 230 200 C300 188 330 170 380 150 C420 134 440 100 452 58';
+  s+=`<path d="${pass}" style="fill:none;stroke:var(--air)" stroke-width="26" stroke-linecap="round"/>`;
+  if(!still){const dur=Math.max(.35,2.4/(v+.2));const d=out?pass:'M452 58 C440 100 420 134 380 150 C330 170 300 188 230 200 C170 210 150 226 95 228';
+    s+=`<path d="${out?'M452 58 C440 100 420 134 380 150 C330 170 300 188 230 200 C170 210 150 226 95 228':pass}" class="flowline" style="fill:none;stroke:${out?'var(--water)':'var(--accent)'};animation-duration:${dur}s" stroke-width="4"/>`;
+    s+=out?`<path d="M90 228 L40 228" class="flowline" style="stroke:var(--water);animation-duration:${dur}s" stroke-width="4"/><text x="30" y="250" class="lbl-c">cold air out</text><text x="470" y="40" class="lbl-c">warm air in</text>`
+          :`<path d="M452 56 L452 14" class="flowline" style="stroke:var(--accent);animation-duration:${dur}s" stroke-width="4"/><text x="380" y="18" class="lbl-c" text-anchor="end">warm cave air out</text><text x="30" y="250" class="lbl-c">cold air in</text>`}
+  s+=`<text x="96" y="215" class="lbl-c" text-anchor="middle">lower opening</text><text x="470" y="75" class="lbl-c">upper opening</text><text x="270" y="250" class="lbl-c" text-anchor="middle">cave 12 °C · outside ${To} °C</text>`;
+  s+=`<line x1="520" y1="58" x2="520" y2="228" style="stroke:var(--calcite)" stroke-dasharray="3 4"/><text x="526" y="150" class="lbl-c">Δz ${dz} m</text>`;
+  $('#airSvg').innerHTML=s}
+['airT','airZ'].forEach(id=>$('#'+id).addEventListener('input',chimney));chimney();
+
+/* ---------- heat with depth ---------- */
+function depthT(){const z=+$('#dzS').value;$('#dzOut').textContent=z.toFixed(1)+' m';const kap=1.2e-6,om=2*Math.PI/3.156e7,d=Math.sqrt(2*kap/om);
+  const amp=22*Math.exp(-z/d),lagRad=z/d,lagDays=lagRad/(2*Math.PI)*365.25;$('#dzAmp').textContent=amp.toFixed(amp<1?2:1);$('#dzLag').textContent=lagDays>150&&lagDays<215?Math.round(lagDays)+' days: inverted':Math.round(lagDays)+' days';
+  const A=axes({H:280,x:[0,12],y:[30,78],xt:[0,2,4,6,8,10,12],xf:v=>['Jan','Mar','May','Jul','Sep','Nov','Jan'][v/2],yt:[30,42,54,66,78],yf:v=>v+'°',yl:'°F'});let s=A.svg;
+  const curve=(am,lag)=>{const p=[];for(let m=0;m<=12.001;m+=.1)p.push([A.X(m),A.Y(54+am*Math.sin(2*Math.PI*(m-3.5)/12-lag))]);return pathOf(p)};
+  s+=`<path d="${curve(22,0)}" style="fill:none;stroke:var(--muted)" stroke-width="1.8" stroke-dasharray="5 4"/><text x="${A.X(6.6)}" y="${A.Y(77)}" class="lbl">surface</text>`;
+  s+=`<path d="${curve(amp,lagRad)}" style="fill:none;stroke:var(--accent)" stroke-width="2.8"/><text x="${A.X(0.2)}" y="${A.Y(54+amp*Math.sin(2*Math.PI*(0.2-3.5)/12-lagRad))-8}" style="fill:var(--accent);font-family:var(--f-mono);font-size:11px">${z} m down</text>`;
+  $('#dzSvg').innerHTML=s}
+$('#dzS').addEventListener('input',depthT);depthT();
+
+/* ---------- stalactite acoustics ---------- */
+const NOTES=['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'];let actx=null;
+function stalF(){const L=+$('#stL').value/100,r=+$('#stR').value/100;return 1.875**2/(2*Math.PI*L*L)*(r/2)*5260}
+function stal(){const L=+$('#stL').value,r=+$('#stR').value;$('#stLOut').textContent=L+' cm';$('#stROut').textContent=r.toFixed(1)+' cm';const f=stalF();
+  $('#stF').textContent=f<10?f.toFixed(2):f.toFixed(1);const midi=69+12*Math.log2(f/440);const n=Math.round(midi),cents=Math.round((midi-n)*100);
+  $('#stN').textContent=f<16?'below hearing':f>16000?'above hearing':`${NOTES[(n%12+12)%12]}${Math.floor(n/12)-1} ${cents>=0?'+':''}${cents}¢`;
+  let s='<rect width="560" height="260" style="fill:var(--air)"/><rect width="560" height="18" style="fill:var(--rock)"/>';
+  const len=20+L/200*215,w=Math.max(2,r/8*30);s+=`<path d="M${90-w} 18 Q${90-w*.3} ${18+len*.7} 90 ${18+len} Q${90+w*.3} ${18+len*.7} ${90+w} 18Z" style="fill:var(--calcite)"/>`;
+  s+=`<text x="90" y="252" text-anchor="middle" class="lbl-c">${L} cm × r ${r.toFixed(1)} cm</text>`;
+  const B=[[1.875,.734],[4.694,1.0185],[7.855,.9992]],ratio=[1,6.267,17.547];
+  B.forEach(([b,sg],k)=>{const x0=210+k*120;const pts=[];let mxv=0;const vals=[];for(let i=0;i<=60;i++){const x=i/60*b;const v=Math.cosh(x)-Math.cos(x)-sg*(Math.sinh(x)-Math.sin(x));vals.push(v);mxv=Math.max(mxv,Math.abs(v))}
+    vals.forEach((v,i)=>pts.push([x0+v/mxv*34,18+i/60*200]));s+=`<line x1="${x0}" y1="18" x2="${x0}" y2="218" style="stroke:var(--rock)" stroke-dasharray="3 4"/><path d="${pathOf(pts)}" style="fill:none;stroke:var(--glow)" stroke-width="2.6"/>`;
+    s+=`<text x="${x0}" y="236" text-anchor="middle" class="lbl-c">mode ${k+1}</text><text x="${x0}" y="252" text-anchor="middle" class="lbl-c">${(f*ratio[k]).toFixed(0)} Hz</text>`});
+  $('#stSvg').innerHTML=s}
+['stL','stR'].forEach(id=>$('#'+id).addEventListener('input',stal));stal();
+$('#stShave').onclick=()=>{const el=$('#stR');el.value=Math.max(+el.min,(+el.value*0.95)).toFixed(2);stal()};
+$('#stPlay').onclick=()=>{try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();if(actx.state==='suspended')actx.resume();const f=stalF(),now=actx.currentTime;
+  [[1,1,2.8],[6.267,.32,1.1],[17.547,.1,.45]].forEach(([m,a,dec])=>{const fr=f*m;if(fr<20||fr>18000)return;const o=actx.createOscillator(),g=actx.createGain();o.type='sine';o.frequency.value=fr;g.gain.setValueAtTime(0,now);g.gain.linearRampToValueAtTime(.32*a,now+.004);g.gain.exponentialRampToValueAtTime(.0001,now+dec);o.connect(g).connect(actx.destination);o.start(now);o.stop(now+dec+.05)});
+  if(f<20)$('#stN').textContent='too low to hear'}catch(e){$('#stN').textContent='audio unavailable'}};
+
+/* ---------- Dream Lake / Fresnel ---------- */
+function fresnel(thDeg,n=1.333){const ti=thDeg*Math.PI/180,ci=Math.cos(ti),st=Math.sin(ti)/n,ct=Math.sqrt(1-st*st);const rs=((ci-n*ct)/(ci+n*ct))**2,rp=((ct-n*ci)/(ct+n*ci))**2;return(rs+rp)/2}
+function lake(){const ang=+$('#flA').value,fl=+$('#flB').value/100;$('#flAOut').textContent=ang+'°';$('#flBOut').textContent=Math.round(fl*100)+'%';
+  const R=fresnel(90-ang),share=R/(R+(1-R)*fl+1e-9);$('#flR').textContent=(R*100).toFixed(1)+'%';$('#flM').textContent=Math.round(share*100)+'%';
+  const c=$('#flCanvas'),x=c.getContext('2d'),W=c.width,H=c.height,wl=150;x.fillStyle=T.air;x.fillRect(0,0,W,H);
+  let seed=3;const rnd=()=>{seed=(seed*16807)%2147483647;return seed/2147483647};const st=[];for(let i=0;i<34;i++)st.push([rnd()*W,20+rnd()*95,3+rnd()*9]);
+  const g=x.createLinearGradient(0,0,0,wl);g.addColorStop(0,mix(T.rock,T.air,.3));g.addColorStop(1,T.air);x.fillStyle=g;x.fillRect(0,0,W,wl);
+  x.fillStyle=mix(T.rock,T.air,.1);x.fillRect(0,0,W,14);
+  const drawSt=(alpha,flip)=>{x.globalAlpha=alpha;st.forEach(([sx,L,w])=>{const lg=x.createLinearGradient(sx-w,0,sx+w,0);lg.addColorStop(0,mix(T.calcite,T.rock,.5));lg.addColorStop(.5,T.calcite);lg.addColorStop(1,mix(T.calcite,T.rock,.7));x.fillStyle=lg;x.beginPath();
+    if(!flip){x.moveTo(sx-w,14);x.quadraticCurveTo(sx-w*.3,14+L*.7,sx,14+L);x.quadraticCurveTo(sx+w*.3,14+L*.7,sx+w,14)}else{const y0=2*wl-14;x.moveTo(sx-w,y0);x.quadraticCurveTo(sx-w*.3,y0-L*.7,sx,y0-L);x.quadraticCurveTo(sx+w*.3,y0-L*.7,sx+w,y0)}x.fill()});x.globalAlpha=1};
+  drawSt(1,false);
+  // lake floor
+  x.fillStyle=T.air;x.fillRect(0,wl,W,H-wl);x.globalAlpha=Math.min(1,(1-share)*1.1);for(let i=0;i<40;i++){x.fillStyle=mix(T.rock,T.calcite,rnd()*.3);x.beginPath();x.ellipse(rnd()*W,wl+60+rnd()*90,8+rnd()*22,4+rnd()*9,0,0,Math.PI*2);x.fill()}x.globalAlpha=1;
+  drawSt(share,true);
+  x.fillStyle=rgba(T.water,.12);x.fillRect(0,wl,W,H-wl);x.strokeStyle=rgba(T.calcite,.5);x.beginPath();x.moveTo(0,wl);x.lineTo(W,wl);x.stroke();
+  x.fillStyle=rgba(T.calcite,.85);x.font='12px "JetBrains Mono",monospace';x.fillText('water surface',8,wl-6);x.fillText(share>.6?'you see: reflection (looks deep)':share>.35?'you see: a mix':'you see: the shallow floor',8,H-10)}
+['flA','flB'].forEach(id=>$('#'+id).addEventListener('input',lake));lake();
+
+/* ---------- isotope thermometer ---------- */
+function d18c(Tc,dw){const TK=Tc+273.15;const a=Math.exp((18.03*(1e3/TK)-32.42)/1000);const sm=(dw+1000)*a-1000;return(sm-30.91)/1.03091}
+function iso(){const Tc=+$('#isoT').value,dw0=+$('#isoW').value,k=+$('#isoK').value;$('#isoTOut').textContent=Tc.toFixed(1)+' °C';$('#isoWOut').textContent=(dw0<0?'−':'')+Math.abs(dw0).toFixed(1)+' ‰';$('#isoKOut').textContent='+'+k.toFixed(2)+' ‰/°C';
+  const dw=T_=>dw0+k*(T_-Tc);const c=d18c(Tc,dw0);const slope=(d18c(Tc+.5,dw(Tc+.5))-d18c(Tc-.5,dw(Tc-.5)));
+  $('#isoC').textContent=(c<0?'−':'+')+Math.abs(c).toFixed(2)+' ‰';$('#isoS').textContent=(slope>=0?'+':'−')+Math.abs(slope).toFixed(2);
+  const ys=[];for(let t=0;t<=25;t+=1){ys.push(d18c(t,dw(t)),d18c(t,dw0))}const y0=Math.floor(Math.min(...ys))-1,y1=Math.ceil(Math.max(...ys))+1;
+  const A=axes({H:280,x:[0,25],y:[y0,y1],xt:[0,5,10,15,20,25],xf:v=>v+'°C',yt:Array.from({length:5},(_,i)=>+(y0+(y1-y0)*i/4).toFixed(1)),yl:'calcite δ¹⁸O ‰ VPDB'});let s=A.svg;
+  const cv=(f)=>{const p=[];for(let t=0;t<=25.001;t+=.25)p.push([A.X(t),A.Y(f(t))]);return pathOf(p)};
+  s+=`<path d="${cv(t=>d18c(t,dw0))}" style="fill:none;stroke:var(--muted)" stroke-width="1.8" stroke-dasharray="5 4"/><text x="${A.X(24.5)}" y="${A.Y(d18c(24.5,dw0))+16}" text-anchor="end" class="lbl">thermometer only</text>`;
+  s+=`<path d="${cv(t=>d18c(t,dw(t)))}" style="fill:none;stroke:var(--accent)" stroke-width="2.8"/><text x="${A.X(24.5)}" y="${A.Y(d18c(24.5,dw(24.5)))-8}" text-anchor="end" style="fill:var(--accent);font-family:var(--f-mono);font-size:11px">with rain change</text>`;
+  s+=`<circle cx="${A.X(Tc)}" cy="${A.Y(c)}" r="6" style="fill:var(--accent)"/>`;
+  $('#isoSvg').innerHTML=s}
+['isoT','isoW','isoK'].forEach(id=>$('#'+id).addEventListener('input',iso));iso();
+
+/* redraw theme-dependent science charts */
+function rethemeScience(){breakthrough();lake()}
 </script>
