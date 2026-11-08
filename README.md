@@ -69,3 +69,7 @@ What the checks can and cannot show: `check_data.js` confirms that references re
 No build step and no dependencies; the only network request the page makes itself is for Google Fonts.
 
 To publish a release, open the Actions tab, choose **Release**, press **Run workflow** and enter a tag such as `v3.2.0`.
+
+## Also in this repository: Luray Caverns Explorer
+
+`luray/index.html` is a separate, single-file interactive explorer of Luray Caverns in Virginia. It covers the geology, cave chemistry, a formation-growth simulator, a field guide to twelve formation types, minerals and colors, fifteen laws and principles, the named places on the tour, history, anthropology, uranium-thorium dating, open questions and a two-player quiz. It has spoken narration in the browser and Plain, Both and Technical reading levels. Open it directly in a browser; it needs no build step. (`luray/luray-caverns.html` is the same page without the document wrapper, used for publishing as a claude.ai artifact.)
